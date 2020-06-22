@@ -1,12 +1,12 @@
 <template>
   <div id="app" class="container">
     <div class="menu">
-      <img src="../../assets/Logo.png" />
+      <img src="../../assets/logo.png" />
       <p>Sàn đấu giá sỉ hoa quả nơi nông sản của bạn được trả giá tốt nhất.</p>
     </div>
     <div class="wrap">
       <div class="coverimg">
-        <img src="../../assets/Logo.png" />
+        <img src="https://media.mnn.com/assets/images/2016/05/Fresh-fruit-pretty.jpg.1440x960_q100_crop-scale_upscale.jpg" />
       </div>
       <div class="contentright">
         <b-tabs position="is-centered" class="block">
