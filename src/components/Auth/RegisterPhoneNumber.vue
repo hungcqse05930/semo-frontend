@@ -1,41 +1,39 @@
 <template>
-  <div id="app" class="container">
+    <div id="app" class="container">
     <div class="wrap">
-      <ContenLeftPicture />
-      <div class="contentright">
-        <LoginAndRegister />
-        <section class="inputtext">
-          <p>Đăng nhập bằng số điện thoại của bạn</p>
+       <ContentLeftPicture />
+       <div class="contentright">
+           <LoginAndRegister />
+           <section class="inputtext">
+          <p>Sử dụng số điện thoại của bạn để đăng ký</p>
           <b-field>
             <b-input placeholder="Số điện thoại của bạn"></b-input>
-          </b-field>
-          <b-field>
-            <b-input placeholder="Mật khẩu"></b-input>
           </b-field>
           <NextButton />
         </section>
         <ContentLast />
-      </div>
+       </div>
     </div>
-  </div>
+    </div>
 </template>
 
 <script>
-
+import ContentLeftPicture from "./ContentLeftPicture";
+import LoginAndRegister from "./LoginAndRegister.vue";
 import NextButton from "./NextButton.vue";
 import ContentLast from "./ContentLast.vue";
-import ContenLeftPicture from "./ContentLeftPicture.vue";
-import LoginAndRegister from "./LoginAndRegister.vue";
+
 export default {
-  name: "login",
-  components: {
-    NextButton,
-    ContentLast,
-    ContenLeftPicture,
-    LoginAndRegister
-  }
+    name: "registerphonenumber",
+    components: {
+        ContentLeftPicture,
+        LoginAndRegister,
+        NextButton,
+        ContentLast
+    }
 }
 </script>
+
 <style>
 .wrap {
   margin-left: auto;

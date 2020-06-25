@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: "PageTitleBar"
+  name: "PageTitleBar",
 };
 </script>
 

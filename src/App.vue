@@ -3,6 +3,8 @@
     <div class="title">
       <page-title-bar />
       <page-subtitle-bar />
+      <login />
+      <register-phone-number />
     </div>
   </div>
 </template>
@@ -10,12 +12,16 @@
 <script>
 import PageTitleBar from "./components/PageTitleBar.vue";
 import PageSubtitleBar from "./components/PageSubtitleBar.vue";
+import Login from "./components/Auth/Login";
+import RegisterPhoneNumber from "./components/Auth/RegisterPhoneNumber.vue";
 
 export default {
   name: "App",
   components: {
     PageTitleBar,
-    PageSubtitleBar
+    PageSubtitleBar,
+    Login,
+    RegisterPhoneNumber
   }
 };
 </script>
