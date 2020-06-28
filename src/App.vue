@@ -5,6 +5,8 @@
       <page-subtitle-bar />
       <login />
       <register-phone-number />
+      <register-o-t-p />
+      <create-password />
     </div>
   </div>
 </template>
@@ -14,6 +16,8 @@ import PageTitleBar from "./components/PageTitleBar.vue";
 import PageSubtitleBar from "./components/PageSubtitleBar.vue";
 import Login from "./components/Auth/Login";
 import RegisterPhoneNumber from "./components/Auth/RegisterPhoneNumber.vue";
+import RegisterOTP from "./components/Auth/RegisterOTP.vue";
+import CreatePassword from "./components/Auth/CreatePassword.vue";
 
 export default {
   name: "App",
@@ -21,7 +25,9 @@ export default {
     PageTitleBar,
     PageSubtitleBar,
     Login,
-    RegisterPhoneNumber
+    RegisterPhoneNumber,
+    RegisterOTP,
+    CreatePassword
   }
 };
 </script>
