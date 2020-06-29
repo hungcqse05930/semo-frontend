@@ -10,7 +10,10 @@
             <b-input placeholder="Số điện thoại của bạn"></b-input>
           </b-field>
           <b-field>
-            <b-input placeholder="Mật khẩu"></b-input>
+            <b-input type="password"
+                placeholder="Mật khẩu"
+                password-reveal>
+            </b-input>
           </b-field>
           <NextButton />
         </section>

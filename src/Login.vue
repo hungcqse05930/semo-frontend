@@ -1,40 +1,19 @@
 <template>
-  <div id="app">
-    <div class="title">
-      <page-title-bar />
-      <page-subtitle-bar />
-      <login />
-      <register-phone-number />
-      <register-o-t-p />
-      <create-password />
-      <confirm-information />
+    <div id="login">
+        <div class="title">
+            <login/>
+        </div>
     </div>
-  </div>
 </template>
-
 <script>
-import PageTitleBar from "./components/PageTitleBar.vue";
-import PageSubtitleBar from "./components/PageSubtitleBar.vue";
 import Login from "./components/Auth/Login";
-import RegisterPhoneNumber from "./components/Auth/RegisterPhoneNumber.vue";
-import RegisterOTP from "./components/Auth/RegisterOTP.vue";
-import CreatePassword from "./components/Auth/CreatePassword.vue";
-import ConfirmInformation from "./components/Auth/ConfirmInformation.vue";
-
 export default {
-  name: "App",
-  components: {
-    PageTitleBar,
-    PageSubtitleBar,
-    Login,
-    RegisterPhoneNumber,
-    RegisterOTP,
-    CreatePassword,
-    ConfirmInformation
-  }
+    name: "Login",
+    components: {
+    Login
+    }
 };
 </script>
-
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 </style>

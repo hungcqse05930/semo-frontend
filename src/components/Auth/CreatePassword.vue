@@ -3,14 +3,16 @@
     <div class="wrap">
       <ContenLeftPicture />
       <div class="contentright">
-        <b-tabs class="block">
-          <b-tab-item label="Tạo mật khẩu"></b-tab-item>
-        </b-tabs>
+        <div class="blockpass">
+          <p>Tạo mật khẩu</p>
+        </div>
         <section class="inputtext">
           <p>Mật khẩu là chìa khóa để bạn sử dụng tài khoản.
 Hãy ghi lại và nhớ nó thật kĩ và không để ai biết nhé.</p>
-        <b-field type="is-success">
-            <b-input placeholder="Mật khẩu mới của bạn"></b-input>
+    <b-field>
+            <b-input type="password"
+                placeholder="Mật khẩu mới của bạn">
+            </b-input>
         </b-field>
         <div class="contentmidle">
             <p>Mật khẩu của bạn phải:</p>
@@ -20,7 +22,7 @@ Hãy ghi lại và nhớ nó thật kĩ và không để ai biết nhé.</p>
             </div>
         </div>
         <b-field type="is-success">
-            <b-input placeholder="Mật khẩu mới của bạn"></b-input>
+            <b-input type="password" placeholder="Mật khẩu mới của bạn"></b-input>
         </b-field>
           <ConfirmButton />
         </section>
@@ -54,19 +56,28 @@ export default {
 .inputtext p {
   font-family: Roboto;
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
+  margin-top: 45px;
 }
 .inputtext {
   width: 626px;
   height: 224px;
 }
-.block {
+.blockpass {
   font-family: Merriweather;
   font-size: 32px;
   color: #b88cd8;
   opacity: 1;
-}   
+}
+.blockpass p {
+  width: 222px;
+  height: 43px;
+  border-bottom: #01d28e solid 3px;
+}
 .passworddetail {
     padding-left: 5px;  
+}
+.contentmidle p{
+  margin-top: 18px;
 }
 </style>
