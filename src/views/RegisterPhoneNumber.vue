@@ -18,11 +18,10 @@
 </template>
 
 <script>
-import ContentLeftPicture from "./ContentLeftPicture";
-import LoginAndRegister from "./LoginAndRegister.vue";
-import NextButton from "./NextButton.vue";
-import ContentLast from "./ContentLast.vue";
-
+import NextButton from "../components/Auth/NextButton.vue";
+import ContentLast from "../components/Auth/ContentLast.vue";
+import ContentLeftPicture from "../components/Auth/ContentLeftPicture.vue";
+import LoginAndRegister from "../components/Auth/LoginAndRegister";
 export default {
     name: "registerphonenumber",
     components: {

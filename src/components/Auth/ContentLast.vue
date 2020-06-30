@@ -9,7 +9,7 @@
         </div>
 </template>
 
-<style>
+<style scoped>
 .contentlast p{
   width: 265px;
   height: 52px;

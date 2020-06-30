@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="container">
     <div class="wrap">
-      <ContenLeftPicture />
-      <div class="contentright">
+      <ContentLeftPicture />
+      <div class="content-right">
         <LoginAndRegister />
-        <section class="inputtext">
+        <section class="input-text">
           <p>Đăng nhập bằng số điện thoại của bạn</p>
           <b-field>
             <b-input placeholder="Số điện thoại của bạn"></b-input>
@@ -24,37 +24,36 @@
 </template>
 
 <script>
-
-import NextButton from "./NextButton.vue";
-import ContentLast from "./ContentLast.vue";
-import ContenLeftPicture from "./ContentLeftPicture.vue";
-import LoginAndRegister from "./LoginAndRegister.vue";
+import NextButton from "../components/Auth/NextButton.vue";
+import ContentLast from "../components/Auth/ContentLast.vue";
+import ContentLeftPicture from "../components/Auth/ContentLeftPicture.vue";
+import LoginAndRegister from "../components/Auth/LoginAndRegister";
 export default {
   name: "login",
   components: {
     NextButton,
     ContentLast,
-    ContenLeftPicture,
+    ContentLeftPicture,
     LoginAndRegister
   }
 }
 </script>
-<style>
+<style scoped>
 .wrap {
   margin-left: auto;
   margin-right: auto;
   width: 1366px;
   display: flex;
 }
-.contentright {
+.content-right {
   padding-left: 60px;
 }
-.inputtext p {
+.input-text p {
   font-family: Roboto;
   font-size: 18px;
   margin-bottom: 10px;
 }
-.inputtext {
+.input-text {
   width: 626px;
   height: 224px;
 }

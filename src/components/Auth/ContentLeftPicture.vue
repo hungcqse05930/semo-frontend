@@ -4,7 +4,7 @@
       </div>
 </template>
 
-<style>
+<style scoped>
 .coverimg {
   width: 540px;
   height: 627px;

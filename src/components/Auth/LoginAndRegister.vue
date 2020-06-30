@@ -5,7 +5,7 @@
         </b-tabs>
 </template>
 
-<style>
+<style scoped>
 .block {
   font-family: Merriweather;
   font-size: 32px;
