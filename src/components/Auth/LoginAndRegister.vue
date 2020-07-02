@@ -1,5 +1,5 @@
 <template>
-    <b-tabs position="is-centered" class="block">
+    <b-tabs class="block">
           <b-tab-item label="Đăng nhập"></b-tab-item>
           <b-tab-item label="Đăng kí"></b-tab-item>
         </b-tabs>

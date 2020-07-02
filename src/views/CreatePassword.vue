@@ -36,14 +36,14 @@ Hãy ghi lại và nhớ nó thật kĩ và không để ai biết nhé.</p>
 import ContentLeftPicture from "../components/Auth/ContentLeftPicture.vue";
 import ConfirmButton from "../components/Auth/ConfirmButton.vue";
 export default {
-  name: "registerotp",
+  name: "registerpassword",
   components: {
     ConfirmButton,
     ContentLeftPicture,  
   }
 }
 </script>
-<style>
+<style scoped>
 .wrap {
   margin-left: auto;
   margin-right: auto;
