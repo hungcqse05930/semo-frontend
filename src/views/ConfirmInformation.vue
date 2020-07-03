@@ -12,31 +12,46 @@
           <p>Họ và tên bạn</p>
           <b-field>
             <b-input placeholder="Họ và tên"></b-input>
-          </b-field>
-          <p>Tuổi của bạn</p>
-          <section class="inputage">
-            <b-field>
-              <b-input placeholder="Số tuổi"></b-input>
+          </b-field>         
+          <section class="input-information">
+            <div class="age">
+            <p>Ngày sinh</p>
+            <b-field class="date-of-birth">
+              <b-datepicker v-model="date"
+            :first-day-of-week="1">
+              </b-datepicker>
             </b-field>
-            <!-- <div class="checkbox">
+            </div>
+            <div class="sex-checkbox">
               <p>Giới tính</p>
+            <div class="checkbox">
               <b-checkbox>Nam</b-checkbox>
               <b-checkbox>Nữ</b-checkbox>
-            </div>-->
+            </div>
+            </div>
           </section>
-          <ConfirmButton />
-        </section>
+          <div class="address-user">
+             
+             <section>
+               <p>Địa chỉ của bạn</p>
+        <b-field>
+            <b-input placeholder="Họ và tên"></b-input>
+        </b-field>
+             </section>
+          </div>
+          <!-- <ConfirmButton /> -->
+        </section>               
       </div>
     </div>
   </div>
 </template>
 <script>
-import ContenLeftPicture from "./ContentLeftPicture.vue";
-import ConfirmButton from "./ConfirmButton.vue";
+import ContenLeftPicture from "../components/Auth/ContentLeftPicture.vue";
+// import ConfirmButton from "../components/Auth/ConfirmButton";
 export default {
-  name: "registerotp",
+  name: "registerinformation",
   components: {
-    ConfirmButton,
+    // ConfirmButton,
     ContenLeftPicture
   }
 };
@@ -74,14 +89,23 @@ export default {
 .passworddetail {
   padding-left: 5px;
 }
-.inputage {
+.input-information {
   width: 300px;
   height: 44px;
   display: flex;
 }
+.date-of-birth{
+  width: 300px;
+  height: 44px;
+}
 .checkbox {
+  display: flex;
+  padding-right: 30px;
+  
+}
+.sex-checkbox{
   font-family: Roboto;
   font-size: 18px;
-  display: flex;
+  margin-left: 24px;
 }
 </style>

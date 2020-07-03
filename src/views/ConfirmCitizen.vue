@@ -13,47 +13,60 @@
             để giao dịch trên hệ thống của chúng tôi.
           </p>
           <div class="loading-picture">
-            <p>Ảnh mặt trước</p>
-            <p>Ảnh mặt sau</p>
-            <b-field>
-              <b-upload v-model="dropFiles" multiple drag-drop>
-                <section class="upload-picture">
-                  <div class="content has-text-centered">
-                    <p>Drop your files here or click to upload</p>
-                  </div>
-                </section>
-              </b-upload>
-              <b-upload v-model="dropFiles" multiple drag-drop>
-                <section class="upload-picture">
-                  <div class="content has-text-centered">
-                    <p>Drop your files here or click to upload</p>
-                  </div>
-                </section>
-              </b-upload>
-            </b-field>
-
-            <div class="tags">
-              <span v-for="(file, index) in dropFiles" :key="index" class="tag is-primary">
-                {{file.name}}
-                <button
-                  class="delete is-small"
-                  type="button"
-                  @click="deleteDropFile(index)"
-                ></button>
-              </span>
+            <div class="loading-front-picture">
+              <p>Ảnh mặt trước</p>
+              <b-field>
+                <b-upload v-model="dropFiles" multiple drag-drop>
+                  <section class="upload-picture">
+                    <div class="content has-text-centered">
+                      <p>Drop your files here or click to upload</p>
+                    </div>
+                  </section>
+                </b-upload>
+              </b-field>
             </div>
+            <div class="loading-back-picture">
+              <p>Ảnh mặt sau</p>
+              <b-field>
+                <b-upload v-model="dropFiles" multiple drag-drop>
+                  <section class="upload-picture">
+                    <div class="content has-text-centered">
+                      <p>Drop your files here or click to upload</p>
+                    </div>
+                  </section>
+                </b-upload>
+              </b-field>
+            </div>
+          </div>
+          <div class="tags">
+            <span v-for="(file, index) in dropFiles" :key="index" class="tag is-primary">
+              {{file.name}}
+              <button
+                class="delete is-small"
+                type="button"
+                @click="deleteDropFile(index)"
+              ></button>
+            </span>
           </div>
           <div class="content-midle">
-            <p>Mật khẩu của bạn phải:</p>
-            <div class="password-detail">
-              <p>-Dài từ 8 đến 25 kí tự</p>
-              <p>-Bao gồm cả chữ in thường, chữ in hoa và số</p>
-            </div>
+            <p>Họ và tên trên thẻ</p>
+            <b-field>
+              <b-input placeholder="Họ và tên"></b-input>
+            </b-field>
+            <p>Số chứng minh nhân dân/căn cước</p>
+            <b-field>
+              <b-input placeholder="Mã số thẻ"></b-input>
+            </b-field>
+            <p>Ngày cấp</p>
+            <b-field>
+              <b-datepicker ref="datepicker" expanded placeholder="Select a date"></b-datepicker>
+            </b-field>
+            <p>Nơi cấp</p>
+            <b-field>
+              <b-input placeholder="Tỉnh/Thành Phố"></b-input>
+            </b-field>
+            <ConfirmButton />
           </div>
-          <b-field type="is-success">
-            <b-input type="password" placeholder="Mật khẩu mới của bạn"></b-input>
-          </b-field>
-          <ConfirmButton />
         </section>
       </div>
     </div>
@@ -115,9 +128,13 @@ export default {
   width: 300px;
   height: 150px;
 }
-.loading-picture p {
-    vertical-align: left;
-    display: initial;
+.loading-picture {
+  display: flex;
+}
+.loading-front-picture {
+  margin-right: 26px;
+  width: 300px;
+  height: 150px;
 }
 .content-midle p {
   margin-top: 18px;

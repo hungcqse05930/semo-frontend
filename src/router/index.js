@@ -6,6 +6,7 @@ import RegisterPhoneNumber from '../views/RegisterPhoneNumber.vue'
 import RegisterOTP from '../views/RegisterOTP.vue'
 import CreatePassword from '../views/CreatePassword.vue'
 import ConfirmCitizen from '../views/ConfirmCitizen.vue'
+import ConfirmInformation from '../views/ConfirmInformation.vue'
 
 // import { component } from 'vue/types/umd';
 
@@ -44,6 +45,11 @@ Vue.use(VueRouter)
     path: '/registerstep3',
     name: 'CreatePassword',
     component: CreatePassword
+  },
+  {
+    path: '/registerstep4',
+    name: 'ConfirmInformation',
+    component: ConfirmInformation
   },
   {
     path: '/registerstep5',
