@@ -12,46 +12,50 @@
           <p>Họ và tên bạn</p>
           <b-field>
             <b-input placeholder="Họ và tên"></b-input>
-          </b-field>         
+          </b-field>
           <section class="input-information">
             <div class="age">
-            <p>Ngày sinh</p>
-            <b-field class="date-of-birth">
-              <b-datepicker v-model="date"
-            :first-day-of-week="1">
-              </b-datepicker>
-            </b-field>
+              <p>Ngày sinh</p>
+              <b-field class="date-of-birth">
+                <b-datepicker v-model="date" :first-day-of-week="1"></b-datepicker>
+              </b-field>
             </div>
             <div class="sex-checkbox">
               <p>Giới tính</p>
-            <div class="checkbox">
-              <b-checkbox>Nam</b-checkbox>
-              <b-checkbox>Nữ</b-checkbox>
-            </div>
+              <div class="checkbox">
+                <b-checkbox>Nam</b-checkbox>
+                <b-checkbox>Nữ</b-checkbox>
+              </div>
             </div>
           </section>
-          <div class="address-user">
-             
-             <section>
-               <p>Địa chỉ của bạn</p>
-        <b-field>
-            <b-input placeholder="Họ và tên"></b-input>
-        </b-field>
-             </section>
-          </div>
-          <!-- <ConfirmButton /> -->
-        </section>               
+          <section class="address-user">
+          <p>Địa chỉ</p>
+          <b-field>
+            <b-input placeholder="Tỉnh/Thành Phố"></b-input>
+          </b-field>
+          <b-field>
+            <b-input placeholder="Quận/Huyện"></b-input>
+          </b-field>
+          <b-field>
+            <b-input placeholder="Phường/Xã"></b-input>
+          </b-field>
+          <b-field>
+            <b-input placeholder="Số nhà, tên đường/phố, làng/ấp"></b-input>
+          </b-field>
+        </section>
+        <ConfirmButton />
+        </section>
       </div>
     </div>
   </div>
 </template>
 <script>
 import ContenLeftPicture from "../components/Auth/ContentLeftPicture.vue";
-// import ConfirmButton from "../components/Auth/ConfirmButton";
+import ConfirmButton from "../components/Auth/ConfirmButton";
 export default {
   name: "registerinformation",
   components: {
-    // ConfirmButton,
+    ConfirmButton,
     ContenLeftPicture
   }
 };
@@ -73,7 +77,7 @@ export default {
 }
 .inputtext {
   width: 626px;
-  height: 224px;
+  height: 524px;
 }
 .block {
   font-family: Merriweather;
@@ -94,18 +98,24 @@ export default {
   height: 44px;
   display: flex;
 }
-.date-of-birth{
+.date-of-birth {
   width: 300px;
-  height: 44px;
 }
 .checkbox {
   display: flex;
   padding-right: 30px;
-  
 }
-.sex-checkbox{
+.sex-checkbox {
   font-family: Roboto;
   font-size: 18px;
   margin-left: 24px;
+}
+.address-user{
+  font-family: Roboto;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.address-user p{
+  padding-top: 39px;
 }
 </style>

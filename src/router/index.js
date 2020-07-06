@@ -7,6 +7,7 @@ import RegisterOTP from '../views/RegisterOTP.vue'
 import CreatePassword from '../views/CreatePassword.vue'
 import ConfirmCitizen from '../views/ConfirmCitizen.vue'
 import ConfirmInformation from '../views/ConfirmInformation.vue'
+import SelectPicture from '../views/SelectPicture.vue'
 
 // import { component } from 'vue/types/umd';
 
@@ -55,6 +56,12 @@ Vue.use(VueRouter)
     path: '/registerstep5',
     name: 'ConfirmCitizen',
     component: ConfirmCitizen
+
+  },
+  {
+    path: '/registerstep6',
+    name: 'SelectPicture',
+    component: SelectPicture
 
   }
   
