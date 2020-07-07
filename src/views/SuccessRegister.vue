@@ -4,14 +4,16 @@
       <ContenLeftPicture />
       <div class="content-right">
         <div class="step-title">
-          <p>Chọn ảnh đại diện</p>
+          <p>Đăng kí thành công</p>
         </div>
         <section class="input-text">
-          <p>Hãy chọn một ảnh đẹp nhất để mọi người ghi nhớ đến bạn.</p>
-          <PictureUser/>
-          <NextButton />
+          <p>Mừng bạn đã đến với chúng tôi.
+              Đợi một chút và chúng tôi sẽ đưa bạn quay lại trang chủ.
+          </p>
+            <!-- <p>Đợi một chút và chúng tôi sẽ đưa bạn quay lại trang chủ.</p> -->
+          <PictureUser />
           <div class="buttons">
-          <a class="button is-text" >Bỏ qua</a>
+            <b-button rounded type="is-success" outlined>Đến với Semo nào!</b-button>
           </div>
         </section>
       </div>
@@ -19,19 +21,15 @@
   </div>
 </template>
 <script>
-
-
 import ContenLeftPicture from "../components/Auth/ContentLeftPicture.vue";
-import NextButton from "../components/Auth/NextButton.vue";
 import PictureUser from "../components/Auth/PictureUser.vue";
 export default {
-  name: "selectpicture",
+  name: "successregister",
   components: {
-    NextButton,
     ContenLeftPicture,
     PictureUser
   }
-}
+};
 </script>
 <style scoped>
 .wrap {
@@ -48,6 +46,7 @@ export default {
   font-size: 18px;
   margin-bottom: 14px;
   margin-top: 45px;
+  text-align: center;
 }
 .input-text {
   width: 626px;
@@ -60,12 +59,12 @@ export default {
   opacity: 1;
 }
 .step-title p {
-  width: 291px;
+  width: 323px;
   height: 43px;
   border-bottom: #01d28e solid 3px;
 }
-.buttons {
-  display: flex;
-  justify-content: center;
+.buttons button {
+  width: 626px;
+  height: 44px;
 }
 </style>

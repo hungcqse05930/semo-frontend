@@ -8,6 +8,7 @@ import CreatePassword from '../views/CreatePassword.vue'
 import ConfirmCitizen from '../views/ConfirmCitizen.vue'
 import ConfirmInformation from '../views/ConfirmInformation.vue'
 import SelectPicture from '../views/SelectPicture.vue'
+import SuccessRegister from '../views/SuccessRegister.vue'
 
 // import { component } from 'vue/types/umd';
 
@@ -63,6 +64,11 @@ Vue.use(VueRouter)
     name: 'SelectPicture',
     component: SelectPicture
 
+  },
+  {
+    path: '/registerstep7',
+    name: 'SuccessRegister',
+    component: SuccessRegister
   }
   
 ]
