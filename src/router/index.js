@@ -9,6 +9,9 @@ import ConfirmCitizen from '../views/ConfirmCitizen.vue'
 import ConfirmInformation from '../views/ConfirmInformation.vue'
 import SelectPicture from '../views/SelectPicture.vue'
 import SuccessRegister from '../views/SuccessRegister.vue'
+import NameProduct from '../views/NameProduct.vue'
+import UserInformation from '../views/UserInformation.vue'
+import ResetPassword from '../views/ResetPassword.vue'
 
 // import { component } from 'vue/types/umd';
 
@@ -69,8 +72,22 @@ Vue.use(VueRouter)
     path: '/registerstep7',
     name: 'SuccessRegister',
     component: SuccessRegister
+  },
+  {
+    path: '/productstep1',
+    name: 'NameProduct',
+    component: NameProduct
+  },
+  {
+    path: '/userinformation',
+    name: 'UserInformation',
+    component: UserInformation
+  },
+  {
+    path: '/resetpassword',
+    name: 'ResetPassword',
+    component: ResetPassword
   }
-  
 ]
 
 const router = new VueRouter({

@@ -16,6 +16,7 @@ Vue.use(Buefy)
       <router-link to="/registerstep5"></router-link>
       <router-link to="/registerstep6"></router-link>
       <router-link to="/registerstep7"></router-link>
+      <router-link to="/userinformation"></router-link>
     </div>
     <router-view />
   </div>

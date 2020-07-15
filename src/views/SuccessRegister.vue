@@ -7,9 +7,7 @@
           <p>Đăng kí thành công</p>
         </div>
         <section class="input-text">
-          <p>Mừng bạn đã đến với chúng tôi.
-              Đợi một chút và chúng tôi sẽ đưa bạn quay lại trang chủ.
-          </p>
+          <p>Mừng bạn đã đến với chúng tôi.</p>
             <!-- <p>Đợi một chút và chúng tôi sẽ đưa bạn quay lại trang chủ.</p> -->
           <PictureUser />
           <div class="buttons">
