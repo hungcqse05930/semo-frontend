@@ -2,7 +2,6 @@
   <div id="app" class="container">
     <div class="first-content">
       <UserFirstDescription />
-      <RateUser />
     </div>
     <TabInformation />
     <div class="user-content">
@@ -50,14 +49,12 @@
 import TabInformation from "../components/UserInformation/TabInformation.vue";
 import UserFirstDescription from "../components/UserInformation/UserFirstDescription.vue";
 import UserInformationMenu from "../components/UserInformation/UserInformationMenu.vue";
-import RateUser from "../components/UserInformation/RateUser.vue";
 export default {
   name: "resetpassword",
   components: {
     TabInformation,
     UserFirstDescription,
     UserInformationMenu,
-    RateUser
   }
 };
 </script>

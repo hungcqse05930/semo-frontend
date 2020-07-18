@@ -60,7 +60,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .wrap {
   margin-left: auto;
   margin-right: auto;

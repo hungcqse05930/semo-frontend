@@ -1,6 +1,5 @@
 <template>
-  <div class="container">
-    <div class="wrap">
+  <div class="login-container">
       <div class="content-left">
       <ContentLeftPicture />
       </div>
@@ -8,7 +7,6 @@
         <LoginAndRegister />
         <!-- <ContentLast /> -->
       </div>
-    </div>
   </div>
 </template>
 
@@ -28,7 +26,7 @@ export default {
 }
 </script>
 <style scoped>
-.container {
+.login-container {
   margin: 0 auto;
   width: 1366px;
   display: flex;
