@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <div class="container">
     <div class="first-content">
       <UserFirstDescription />
       <RateUser/>
@@ -122,6 +122,7 @@ export default {
 .content-information {
   display: flex;
   height: 350px;
+  margin-right: 60px;
 }
 .input-text {
   width: 480px;
@@ -175,4 +176,5 @@ export default {
   height: 44px;
   margin: 0 auto 32px auto;
 }
+
 </style>

@@ -13,8 +13,10 @@
     height: 60px;
     border-radius: 50%;
     display: block;
-    margin-right: 24px;
-    margin-bottom: 40px;
+    margin: auto 24px 40px 60px;
+    /* margin-right: 24px; */
+    /* margin-bottom: 40px; */
+
 }
 .name {
     font-family: Merriweather;

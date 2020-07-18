@@ -14,5 +14,6 @@
   width: auto;
   height: 52px;
   font-weight: bolder;
+  margin-left: 60px;
 }
 </style>

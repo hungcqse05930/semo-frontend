@@ -36,7 +36,7 @@
     width: 141px;
 }
 .user-time {
-    margin: 0 auto 0 60px;
+    margin: 0 60px 0 60px;
     width: 84px;
 }
 </style>

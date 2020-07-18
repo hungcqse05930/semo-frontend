@@ -1,7 +1,7 @@
 <template>
     <div id="app" class="container">
     <div class="wrap">
-       <ContentLeftPicture />
+      <!-- <ContentLeftPicture /> -->
        <div class="contentright">
            <LoginAndRegister />
            <section class="inputtext">
@@ -20,15 +20,15 @@
 <script>
 import NextButton from "../components/Auth/NextButton.vue";
 import ContentLast from "../components/Auth/ContentLast.vue";
-import ContentLeftPicture from "../components/Auth/ContentLeftPicture.vue";
 import LoginAndRegister from "../components/Auth/LoginAndRegister";
+// import ContentLeftPicture from "../components/Auth/ContentLeftPicture.vue";
 export default {
     name: "registerphonenumber",
     components: {
-        ContentLeftPicture,
         LoginAndRegister,
         NextButton,
-        ContentLast
+        ContentLast,
+        // ContentLeftPicture
     }
 }
 </script>
