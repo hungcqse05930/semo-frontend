@@ -12,6 +12,7 @@ import SuccessRegister from '../views/SuccessRegister.vue'
 import NameProduct from '../views/NameProduct.vue'
 import UserInformation from '../views/UserInformation.vue'
 import ResetPassword from '../views/ResetPassword.vue'
+import Search from '../views/SearchPage.vue'
 
 // import { component } from 'vue/types/umd';
 
@@ -22,6 +23,11 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: Search
   },
   {
     path: '/about',

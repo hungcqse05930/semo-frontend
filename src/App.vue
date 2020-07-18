@@ -6,22 +6,26 @@ Vue.use(Buefy)
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>
-      <router-link to="/login"></router-link>
-      <router-link to="/register"></router-link>
-      <router-link to="/registerstep2"></router-link>
-      <router-link to="/registerstep3"></router-link>
-      <router-link to="/registerstep4"></router-link>
-      <router-link to="/registerstep5"></router-link>
-      <router-link to="/registerstep6"></router-link>
-      <router-link to="/registerstep7"></router-link>
-      <router-link to="/userinformation"></router-link>
-    </div>
-    <router-view />
+      <router-link to="/">Home</router-link> | 
+      <router-link to="/about">About</router-link> |
+      <router-link to="/login">l</router-link> | 
+      <router-link to="/register">r</router-link> | 
+      <router-link to="/registerstep2">r2</router-link> | 
+      <router-link to="/registerstep3">r3</router-link> | 
+      <router-link to="/registerstep4">r4</router-link> | 
+      <router-link to="/registerstep5">r5</router-link> | 
+      <router-link to="/registerstep6">r6</router-link> | 
+      <router-link to="/registerstep7">r7</router-link> | 
+      <router-link to="/userinformation">njlbh</router-link> | 
+      <router-link to="/search">Search</router-link>
   </div>
+    
+    <router-view id="main-view"/>
+    
+  </div>
+  
 </template>
-
+  
 <style lang="scss">
 @import "~bulma/sass/utilities/_all";
 #app {
@@ -43,6 +47,11 @@ Vue.use(Buefy)
       color: #42b983;
     }
   }
+}
+
+#main-view {
+  margin: 0 auto;
+  max-width: 1366px;  
 }
 
 $primary: #01d28e;

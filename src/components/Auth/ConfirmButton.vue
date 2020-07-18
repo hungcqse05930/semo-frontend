@@ -4,7 +4,7 @@
           </div>
 
 </template>
-<style>
+<style scoped>
 .buttons button {
   width: 626px;
   height: 44px;
