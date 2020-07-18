@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="file-container">
     <div class="first-content">
       <UserFirstDescription />
     </div>
@@ -87,7 +87,7 @@ import TabInformation from "../components/UserInformation/TabInformation.vue";
 import UserFirstDescription from "../components/UserInformation/UserFirstDescription.vue";
 import UserInformationMenu from "../components/UserInformation/UserInformationMenu.vue";
 export default {
-  name: "userinformation",
+  name: "userinformationfile",
   components: {
     TabInformation,
     UserFirstDescription,
@@ -100,7 +100,7 @@ export default {
   display: flex;
   margin: 36px 0px 60px auto;
 }
-.container {
+.file-container {
   max-width: 1366px;
   margin: auto 60px auto 60px;
 }
