@@ -5,9 +5,10 @@
         <b-tab-item class="btn_group" label="🍎 Sản phẩm">
           <SanPhamSearch />
         </b-tab-item>
-        <b-tab-item class="btn_group" label="📘 Bộ sưu tập"><Collection/></b-tab-item>
+        <b-tab-item class="btn_group" label="📘 Bộ sưu tập">
+          <Collection />
+        </b-tab-item>
         <b-tab-item class="btn_group" label="👦 Người dùng">
-          
           <UserFilter />
         </b-tab-item>
       </b-tabs>
@@ -18,19 +19,17 @@
 <script>
 import SanPhamSearch from "../../components/Search/SanPhamSearch.vue";
 import UserFilter from "../../components/Search/UserFilter.vue";
-import Collection from "../../components/Search/Collection.vue"
+import Collection from "../../components/Search/Collection.vue";
 
 export default {
   name: "CategoryBar",
   components: {
     SanPhamSearch,
     UserFilter,
-    Collection,
+    Collection
   },
   data() {
-    return {
-
-    };
+    return {};
   }
 };
 </script>

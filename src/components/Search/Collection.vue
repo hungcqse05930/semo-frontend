@@ -6,7 +6,6 @@
       <CategoryBar />-->
       <Header />
       <div class="search-result">
-
         <div class="products">
           <CollectionProduct
             class="product-item"
@@ -49,125 +48,74 @@ export default {
       products: [
         {
           id: 1,
-          title: "Điền Quân Diễn Quân",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
+          title: "Mùa bưởi đến rồi!",
+          point:
+            "mùa săn bưởi đã đến! Cùng đón những buồng bưởi tròn trịa tươi mát về đội nào!",
+          time: "📅 24/02/2020"
         },
         {
           id: 1,
-          title: "Điền Quân Diễn Quân1",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
+          title: "Mùa bưởi đến rồi!",
+          point:
+            "mùa săn bưởi đã đến! Cùng đón những buồng bưởi tròn trịa tươi mát về đội nào!",
+          time: "📅 24/02/2020"
         },
         {
           id: 1,
-          title: "Điền Quân Diễn Quân",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
+          title: "Mùa bưởi đến rồi!",
+          point:
+            "mùa săn bưởi đã đến! Cùng đón những buồng bưởi tròn trịa tươi mát về đội nào!",
+          time: "📅 24/02/2020"
         },
         {
           id: 1,
-          title: "Điền Quân Diễn Quân",
-         point: "4,2",
-          address: {
-            province: "Long An"
-          }
+          title: "Mùa bưởi đến rồi!",
+          point:
+            "mùa săn bưởi đã đến! Cùng đón những buồng bưởi tròn trịa tươi mát về đội nào!",
+          time: "📅 24/02/2020"
         },
         {
           id: 1,
-          title: "Điền Quân Diễn Quân",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
+          title: "Mùa bưởi đến rồi!",
+          point:
+            "mùa săn bưởi đã đến! Cùng đón những buồng bưởi tròn trịa tươi mát về đội nào!",
+          time: "📅 24/02/2020"
         },
         {
           id: 1,
-          title: "Điền Quân Diễn Quân",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
+          title: "Mùa bưởi đến rồi!",
+          point:
+            "mùa săn bưởi đã đến! Cùng đón những buồng bưởi tròn trịa tươi mát về đội nào!",
+          time: "📅 24/02/2020"
         },
         {
           id: 1,
-          title: "Điền Quân Diễn Quân",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
+          title: "Mùa bưởi đến rồi!",
+          point:
+            "mùa săn bưởi đã đến! Cùng đón những buồng bưởi tròn trịa tươi mát về đội nào!",
+          time: "📅 24/02/2020"
         },
         {
           id: 1,
-          title: "Điền Quân Diễn Quân",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
+          title: "Mùa bưởi đến rồi!",
+          point:
+            "mùa săn bưởi đã đến! Cùng đón những buồng bưởi tròn trịa tươi mát về đội nào!",
+          time: "📅 24/02/2020"
         },
         {
           id: 1,
-          title: "Điền Quân Diễn Quân",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
+          title: "Mùa bưởi đến rồi!",
+          point:
+            "mùa săn bưởi đã đến! Cùng đón những buồng bưởi tròn trịa tươi mát về đội nào!",
+          time: "📅 24/02/2020"
         },
         {
           id: 1,
-          title: "Điền Quân Diễn Quân",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
-        },
-        {
-          id: 1,
-          title: "Điền Quân Diễn Quân",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
-        },
-        {
-          id: 1,
-          title: "Điền Quân Diễn Quân",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
-        },
-        {
-          id: 1,
-          title: "Điền Quân Diễn Quân",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
-        },
-        {
-          id: 1,
-          title: "Điền Quân Diễn Quân",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
-        },
-        {
-          id: 1,
-          title: "Điền Quân Diễn Quân",
-          point: "4,2",
-          address: {
-            province: "Long An"
-          }
-        },
-
+          title: "Mùa bưởi đến rồi!",
+          point:
+            "mùa săn bưởi đã đến! Cùng đón những buồng bưởi tròn trịa tươi mát về đội nào!",
+          time: "📅 24/02/2020"
+        }
       ]
     };
   }
@@ -182,7 +130,7 @@ export default {
   // -webkit-font-smoothing: antialiased;
   // -moz-osx-font-smoothing: grayscale;
   // color: #2c3e50;
-//   margin-left: -110px;
+  //   margin-left: -110px;
 }
 
 #nav {
@@ -218,19 +166,18 @@ export default {
 }
 
 .product-item {
-  padding: 12px;
+  padding: 10px;
 }
 .sort {
-//   margin-top: 34px;
-//   margin-left: -120px;
+  //   margin-top: 34px;
+  //   margin-left: -120px;
   width: 176px;
   height: 934px;
   /* top: 0; */
   position: sticky;
   /* z-index: 1; */
   /* background: rgba(255,255,255,0.8); */
-  //  background:darkkhaki; 
+  //  background:darkkhaki;
   backdrop-filter: saturate(180%) blur(24px);
 }
-
 </style>

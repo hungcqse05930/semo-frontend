@@ -5,13 +5,13 @@
       <div class="space"></div>
       <!-- <div class="radio"> -->
       <form action="/action_page.php">
-      <div class ="inputsize">
-        <label for="fname">{{sort4.tu}} : </label>
-        <input type="text" id="fname" name="fname" size="13" />
-        <br />
-        <div class="space1"></div>
-        <label for="pin">{{sort4.den}}:</label>
-        <input type="text" id="fname" name="fname" size="13" />
+        <div class="inputsize">
+          <label for="fname">{{sort4.tu}} :</label>
+          <input type="text" id="fname" name="fname" size="13" />
+          <br />
+          <div class="space1"></div>
+          <label for="pin">{{sort4.den}}:</label>
+          <input type="text" id="fname" name="fname" size="13" />
         </div>
         <p class="error">Vui lòng điền số phù hợp</p>
         <button class="submit2" type="submit">Xác nhận</button>
@@ -92,7 +92,7 @@ export default {
   line-height: 50px;
   color: red;
 }
-.inputsize{
+.inputsize {
   padding: 0 10px 0 10px;
 }
 </style>

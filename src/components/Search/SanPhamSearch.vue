@@ -281,5 +281,4 @@ export default {
 .product-item {
   padding: 12px;
 }
-
 </style>

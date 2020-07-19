@@ -26,6 +26,7 @@ export default {
 <style >
 .pagebar {
   /* margin-top:34px; */
+  margin-left: 120px;
   left: 272px;
   width: 1034px;
   height: 22px;
@@ -52,6 +53,9 @@ export default {
   justify-content: space-between;
 }
 .next {
-  flex: end;
+  margin-right: -35px;
+}
+.back {
+  margin-right: 50px;
 }
 </style>

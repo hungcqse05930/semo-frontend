@@ -3,12 +3,13 @@
     <div class="sort1">
       <p class="sort_thoigianconlai">{{sort1.thoigianconlai}}</p>
       <div class="space"></div>
-      <!-- <div class="field"> -->
-      <b-radio v-model="radio" native-value="tang" type="is-success">{{sort1.tangdan}}</b-radio>
-      <!-- </div> -->
+      <input type="radio" name="gender" value="male" />
+      {{sort1.tangdan}}
+      <br />
       <div class="space1"></div>
-      <!-- <div class="field2"> -->
-      <b-radio v-model="radio" native-value="giam" type="is-success">{{sort1.giamdan}}</b-radio>
+      <input type="radio" name="gender" value="female" />
+      {{sort1.giamdan}}
+      <br />
       <!-- </div> -->
       <!-- </div> -->
     </div>

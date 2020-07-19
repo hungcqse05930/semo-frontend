@@ -13,10 +13,10 @@
         <p class="section-label">{{ product.pricetext }}</p>
         <p class="product-price">{{ product.price }}</p>
 
-        <p class="product-space"></p> -->
+        <p class="product-space"></p>-->
 
         <!-- <p class="section-label">{{ product.timetext }}</p>
-        <p class="product-time">{{ product.time }}</p> -->
+        <p class="product-time">{{ product.time }}</p>-->
         <div class="product-information">
           <p class="section-label">{{ product.point }}</p>
           <p class="section-label">{{ product.address.province }}</p>
@@ -77,7 +77,6 @@ export default {
 .product-content {
   padding: 12px 16px 16px 16px;
 }
-
 
 .product-title {
   height: 40px;

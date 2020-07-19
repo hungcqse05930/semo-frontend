@@ -13,14 +13,16 @@
         <p class="section-label">{{ product.pricetext }}</p>
         <p class="product-price">{{ product.price }}</p>
 
-        <p class="product-space"></p> -->
+        <p class="product-space"></p>-->
 
         <!-- <p class="section-label">{{ product.timetext }}</p>
-        <p class="product-time">{{ product.time }}</p> -->
-        <div class="product-information">
-          <p class="section-label">{{ product.point }}</p>
-          <p class="section-label">{{ product.address.province }}</p>
+        <p class="product-time">{{ product.time }}</p>-->
+        <!-- <div class="product-information"> -->
+        <p class="section-label-1">{{ product.point }}</p>
+        <div class="section-label-2">
+          <p>{{ product.time }}</p>
         </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
@@ -28,23 +30,6 @@
 
 <script>
 export default {
-  // name: "Product",
-  //   data() {
-  //   return {
-  //     product: {
-  //       title: "Táo này đỉnh vcl các bạn ơi",
-  //       weight: "4,2 tạ",
-  //       pricetext: "Giá hiện tại",
-  //       price: "80.000.000đ",
-  //       timetext: "Thời gian còn lại",
-  //       time:"4 tháng 21 ngày",
-  //       address: {
-  //       province: "Long An"
-  //       },
-
-  //     }
-  //   };
-  // }
   name: "collectionproduct",
   props: {
     product: Object
@@ -80,15 +65,14 @@ export default {
   padding: 12px 16px 16px 16px;
 }
 
-
 .product-title {
-  height: 40px;
-  width: 100px;
-  font-size: 17px;
+  height: 28px;
+  width: 200px;
+  font-size: 22px;
   font-weight: 500;
   color: #000000;
   /* margin-bottom: 16px; */
-  font-family: "Roboto";
+  font-family: "Merriweather";
   line-height: 17px;
 }
 
@@ -96,16 +80,20 @@ export default {
   margin-bottom: 36px;
 } */
 
-.section-label {
+.section-label-1 {
   /* margin-left: 0px; */
   /* margin-top: 100px; */
+  margin-top: 15px;
   font-family: "Roboto";
   font-weight: 400;
   font-size: 15px;
   color: #707070;
 }
-.section-label1 {
+
+.section-label-2 {
   /* margin-top: 100px; */
+  margin-top: 15px;
+  margin-left: 260px;
   font-family: "Roboto";
   font-weight: 400;
   font-size: 15px;
@@ -120,28 +108,7 @@ export default {
   color: #01d28e;
 }
 
-.product-space {
-  margin-bottom: 16px;
-}
-
-.product-information {
-  /* padding-right: 16px; */
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.product-price {
-  color: #01d28e;
-  font-family: "Roboto";
-  font-weight: 700;
-  font-size: 17px;
-}
-
-.product-time {
-  color: #707070;
-  font-family: "Roboto";
-  font-weight: 700;
-  font-size: 17px;
+.collectionproduct {
+  margin-left: -100px;
 }
 </style>

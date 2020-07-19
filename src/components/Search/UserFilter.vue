@@ -8,8 +8,8 @@
       <div class="search-result">
         <div class="sort">
           <p class="sort_boloc">🔍 Bộ lọc kết quả</p>
-          <SearchRate/>
-          <SearchAddress/>
+          <SearchRate />
+          <SearchAddress />
         </div>
         <div class="products">
           <User
@@ -38,8 +38,6 @@ import Footer from "../../components/Search/Footer.vue";
 import SearchRate from "../../components/Search/SearchRate.vue";
 import SearchAddress from "../../components/Search/SearchAddress.vue";
 
-
-
 export default {
   name: "App",
   components: {
@@ -52,7 +50,7 @@ export default {
     PageBar,
     Footer,
     SearchRate,
-    SearchAddress,
+    SearchAddress
   },
   data() {
     return {
@@ -84,14 +82,6 @@ export default {
         {
           id: 1,
           title: "Điền Quân Diễn Quân",
-         point: "4,2",
-          address: {
-            province: "Long An"
-          }
-        },
-        {
-          id: 1,
-          title: "Điền Quân Diễn Quân",
           point: "4,2",
           address: {
             province: "Long An"
@@ -177,7 +167,14 @@ export default {
             province: "Long An"
           }
         },
-
+        {
+          id: 1,
+          title: "Điền Quân Diễn Quân",
+          point: "4,2",
+          address: {
+            province: "Long An"
+          }
+        }
       ]
     };
   }
@@ -239,7 +236,7 @@ export default {
   position: sticky;
   /* z-index: 1; */
   /* background: rgba(255,255,255,0.8); */
-  //  background:darkkhaki; 
+  //  background:darkkhaki;
   backdrop-filter: saturate(180%) blur(24px);
 }
 .sort_boloc {
@@ -249,5 +246,4 @@ export default {
   color: #707070;
   /* line-height: 24px; */
 }
-
 </style>

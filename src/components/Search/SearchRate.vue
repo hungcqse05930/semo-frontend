@@ -5,11 +5,13 @@
       <!-- <div class="radio"> -->
       <!-- <div class="field"> -->
       <div class="space"></div>
-      <b-radio v-model="radio" native-value="tang" type="is-success">{{sort6.tangdan}}</b-radio>
-      <!-- </div> -->
+      <input type="radio" name="gender" value="male" />
+      {{sort6.tangdan}}
+      <br />
       <div class="space1"></div>
-      <!-- <div class="field2"> -->
-      <b-radio v-model="radio" native-value="giam" type="is-success">{{sort6.giamdan}}</b-radio>
+      <input type="radio" name="gender" value="female" />
+      {{sort6.giamdan}}
+      <br />
       <!-- </div> -->
       <!-- </div> -->
     </div>
@@ -59,12 +61,10 @@ export default {
 .space {
   width: 176px;
   height: 10px;
-  
 }
 .space1 {
   width: 176px;
   height: 5px;
-
 }
 .br {
   margin-top: 8px;

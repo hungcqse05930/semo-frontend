@@ -5,13 +5,13 @@
       <!-- <div class="radio"> -->
       <div class="space"></div>
       <div class="custom-select">
-        <select>
+        <b-select placeholder="Chọn tỉnh/thành:" required>
           <option value="0">Chọn tỉnh/thành:</option>
           <option value="1">Hà Nội</option>
           <option value="2">Hải Phòng</option>
           <option value="3">TP Hồ Chí Minh</option>
           <option value="4">Long An</option>
-        </select>
+        </b-select>
         <p class="error">Vui lòng điền số phù hợp</p>
         <button class="submit" type="submit">Xác nhận</button>
       </div>
@@ -22,7 +22,7 @@
     <div class="br5">
       <p>_____________________</p>
     </div>
-    <button class="submit1" type="submit">Xác Nhận</button>
+    <button class="submit1" type="submit">Xóa tất cả</button>
   </section>
 </template>
 

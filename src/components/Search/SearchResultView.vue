@@ -4,12 +4,20 @@
       <p class="sort_luotxem">{{sort2.luotxem}}</p>
       <!-- <div class="radio"> -->
       <!-- <div class="field"> -->
-      <div class="space"></div>
-      <b-radio v-model="radio" native-value="tang" type="is-success">{{sort2.tangdan}}</b-radio>
+      <!-- <div class="space"></div> -->
+      <!-- <b-radio v-model="radio" native-value="tang" type="is-success">{{sort2.tangdan}}</b-radio> -->
       <!-- </div> -->
+      <div class="space"></div>
+      <input type="radio" name="gender" value="male" />
+      {{sort2.tangdan}}
+      <br />
       <div class="space1"></div>
+      <input type="radio" name="gender" value="female" />
+      {{sort2.giamdan}}
+      <br />
+      <!-- <div class="space1"></div> -->
       <!-- <div class="field2"> -->
-      <b-radio v-model="radio" native-value="giam" type="is-success">{{sort2.giamdan}}</b-radio>
+      <!-- <b-radio v-model="radio" native-value="giam" type="is-success">{{sort2.giamdan}}</b-radio> -->
       <!-- </div> -->
       <!-- </div> -->
     </div>
