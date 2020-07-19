@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <div class="resetpassword-container">
     <div class="first-content">
       <UserFirstDescription />
     </div>
@@ -10,7 +10,7 @@
         <div class="content-information">
           <div class="content-middle">
             <div class="first-title">
-              <p>👦 Thông tin lý lịch</p>
+              <p>🔑 Mật khẩu</p>
             </div>
             <b-field>
               <div class="field-label is-normal">
@@ -63,7 +63,7 @@ export default {
   display: flex;
   margin: 36px 0px 60px auto;
 }
-.container {
+.resetpassword-container {
   max-width: 1366px;
   margin: auto 60px auto 60px;
 }

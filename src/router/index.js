@@ -10,10 +10,10 @@ import ConfirmInformation from '../views/ConfirmInformation.vue'
 import SelectPicture from '../views/SelectPicture.vue'
 import SuccessRegister from '../views/SuccessRegister.vue'
 import NameProduct from '../views/NameProduct.vue'
-import UserInformation from '../views/UserInformation.vue'
-import ResetPassword from '../views/ResetPassword.vue'
+import UserInformationFile from '../views/UserInformationFile.vue'
+import UserInformationResetPassword from '../views/UserInformationResetPassword.vue'
+import UserInformationAddress from '../views/UserInformationAddress.vue'
 import Search from '../views/SearchPage.vue'
-
 // import { component } from 'vue/types/umd';
 
 Vue.use(VueRouter)
@@ -85,15 +85,21 @@ Vue.use(VueRouter)
     component: NameProduct
   },
   {
-    path: '/userinformation',
-    name: 'UserInformation',
-    component: UserInformation
+    path: '/userinformationfile',
+    name: 'UserInformationFile',
+    component: UserInformationFile
   },
   {
     path: '/resetpassword',
-    name: 'ResetPassword',
-    component: ResetPassword
-  }
+    name: 'UserInformationResetPassword',
+    component: UserInformationResetPassword
+  },
+  {
+    path: '/userinformationaddress',
+    name: 'UserInformationAddress',
+    component: UserInformationAddress
+  },
+
 ]
 
 const router = new VueRouter({
