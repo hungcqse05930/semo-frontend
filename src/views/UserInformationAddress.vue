@@ -17,7 +17,6 @@
             </div>
           </div>
           <div class="address-information">
-            <div class="address-columns">
               <div class="addresses">
                 <UserinformationAddressInfor
                   class="address-item"
@@ -26,7 +25,13 @@
                   v-bind:key="address.id"
                 />
               </div>
-            </div>
+          </div>
+          <div class="pagination">
+              <p class="post-infor">📰 Hiển thị 1-6 trên 10 bài đăng</p>
+              <div class="paging">
+                <p class="page-back">👈 Trang trước</p>
+                <p class="page-next">Trang sau 👉</p>
+              </div>
           </div>
         </div>
       </div>
@@ -126,7 +131,6 @@ export default {
 }
 .content-information {
   height: 350px;
-  margin-right: 60px;
 }
 .first-title p {
   font-family: Roboto;
@@ -143,7 +147,30 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: minmax(-100px, auto);
-  margin-left: 23px;
   margin-top: 24px;
 }
+.address-item{
+  margin-right: 24px;
+  margin-bottom: 24px;
+}
+.address-information{
+  width: 100%;
+}
+.pagination{
+  display: flex;
+  justify-content: space-between;
+}
+.post-infor{
+  font-family: "Roboto";
+    font-weight: 500;
+    font-size: 17px;
+    color: #707070;
+}
+.paging{
+  display: flex;
+    justify-content: space-between;
+}
+.page-back{
+  margin-right: 32px;
+} 
 </style>

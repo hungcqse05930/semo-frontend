@@ -13,6 +13,7 @@ import NameProduct from '../views/NameProduct.vue'
 import UserInformationFile from '../views/UserInformationFile.vue'
 import UserInformationResetPassword from '../views/UserInformationResetPassword.vue'
 import UserInformationAddress from '../views/UserInformationAddress.vue'
+import UserInformationAccuracy from '../views/UserInformationAccuracy.vue'
 import Search from '../views/SearchPage.vue'
 import CreateNewProduct from '../views/CreateNewProduct'
 // import { component } from 'vue/types/umd';
@@ -105,7 +106,11 @@ Vue.use(VueRouter)
     name: 'CreateNewProduct',
     component: CreateNewProduct
   },
-
+  {
+    path: '/userinformationaccuracy',
+    name: 'UserInformationAccuracy',
+    component: UserInformationAccuracy
+  },
 ]
 
 const router = new VueRouter({
