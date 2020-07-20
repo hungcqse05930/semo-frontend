@@ -17,12 +17,14 @@
             </div>
           </div>
           <div class="address-information">
-            <div class="columns">
-              <div class="column">
-                <p class="address-title"
-                 v-bind:address="address"
-            v-for="address in address"
-            v-bind:key="address.id">{{address.name}}</p>
+            <div class="address-columns">
+              <div class="addresses">
+                <UserinformationAddressInfor
+                  class="address-item"
+                  v-bind:address="address"
+                  v-for="address in addresses"
+                  v-bind:key="address.id"
+                />
               </div>
             </div>
           </div>
@@ -35,32 +37,70 @@
 import TabInformation from "../components/UserInformation/TabInformation.vue";
 import UserFirstDescription from "../components/UserInformation/UserFirstDescription.vue";
 import UserInformationMenu from "../components/UserInformation/UserInformationMenu.vue";
+import UserinformationAddressInfor from "../components/UserInformation/UserinformationAddressInfor.vue";
 export default {
   name: "userinformationaddress",
   components: {
     TabInformation,
     UserFirstDescription,
-    UserInformationMenu
+    UserInformationMenu,
+    UserinformationAddressInfor
   },
   data() {
     return {
-      address: [
+      addresses: [
         {
-          id : 1,
+          id: 1,
           name: "Bùi Trần Việt Anh",
           phonenumber: "0912345678",
           title: "Trang trại Thiên Thạch, ấp 6 thôn Đồng Phân",
-          firstaddress: "Xã Cù Mần",
-          secondadresss: "Huyện Trà Vinh",
+          first: "Xã Cù Mần",
+          second: "Huyện Trà Vinh",
           city: "Thanh Hóa"
         },
         {
-          id : 1,
+          id: 1,
           name: "Nguyễn Hoàng Minh Phương",
           phonenumber: "0732569841",
           title: "Trang trại Lếu Lều, đòn 7 ấp 2 thôn Quỳnh Hương",
-          firstaddress: "Xã Địa Đàng",
-          secondadresss: "Huyện Củ Chiêu",
+          first: "Xã Địa Đàng",
+          second: "Huyện Củ Chiêu",
+          city: "Thành phố Hồ Chí Minh"
+        },
+        {
+          id: 1,
+          name: "Dương Quí Phi",
+          phonenumber: "0732569841",
+          title: "Trang trại Lếu Lều, đòn 7 ấp 2 thôn Quỳnh Hương",
+          first: "Xã Địa Đàng",
+          second: "Huyện Củ Chiêu",
+          city: "Thành phố Hồ Chí Minh"
+        },
+        {
+          id: 1,
+          name: "Dương Quí Phi",
+          phonenumber: "0732569841",
+          title: "Trang trại Lếu Lều, đòn 7 ấp 2 thôn Quỳnh Hương",
+          first: "Xã Địa Đàng",
+          second: "Huyện Củ Chiêu",
+          city: "Thành phố Hồ Chí Minh"
+        },
+         {
+          id: 1,
+          name: "Dương Quí Phi",
+          phonenumber: "0732569841",
+          title: "Trang trại Lếu Lều, đòn 7 ấp 2 thôn Quỳnh Hương",
+          first: "Xã Địa Đàng",
+          second: "Huyện Củ Chiêu",
+          city: "Thành phố Hồ Chí Minh"
+        },
+         {
+          id: 1,
+          name: "Dương Quí Phi",
+          phonenumber: "0732569841",
+          title: "Trang trại Lếu Lều, đòn 7 ấp 2 thôn Quỳnh Hương",
+          first: "Xã Địa Đàng",
+          second: "Huyện Củ Chiêu",
           city: "Thành phố Hồ Chí Minh"
         }
       ]
@@ -85,7 +125,6 @@ export default {
   width: 1034px;
 }
 .content-information {
-  display: flex;
   height: 350px;
   margin-right: 60px;
 }
@@ -100,12 +139,11 @@ export default {
   justify-content: space-between;
   width: 100%;
 }
-.column {
-  height: 292px;
-  width: 505px;
-  border: 1px solid #00000015;
-  box-shadow: 0 2px 6px #00000014;
-  border-radius: 10px;
-  transition: 0.25s;
+.addresses{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(-100px, auto);
+  margin-left: 23px;
+  margin-top: 24px;
 }
 </style>
