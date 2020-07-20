@@ -18,6 +18,7 @@ Vue.use(Buefy)
       <router-link to="/userinformationfile">njlbh</router-link> 
       <router-link to="/resetpassword">pwđ</router-link>
       <router-link to="/userinformationaddress">add</router-link>
+      <router-link to="/userinformationaccuracy">accuracy</router-link>
       <router-link to="/search">Search</router-link>
     </div>
     <router-view id="main-view"/>
