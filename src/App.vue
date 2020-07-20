@@ -19,6 +19,7 @@ Vue.use(Buefy)
       <router-link to="/resetpassword">pwđ</router-link>
       <router-link to="/userinformationaddress">add</router-link>
       <router-link to="/search">Search</router-link>
+      <router-link to="/createnewproduct">CNP</router-link>
     </div>
     <router-view id="main-view"/>
   </div>

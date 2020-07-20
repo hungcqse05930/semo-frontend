@@ -45,7 +45,7 @@ export default {
   },
   data() {
     return {
-      products: [
+      products: [ 
         {
           id: 1,
           title: "Mùa bưởi đến rồi!",

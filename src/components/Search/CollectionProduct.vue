@@ -7,17 +7,6 @@
       />
       <div class="product-content">
         <p class="product-title">{{ product.title }}</p>
-
-        <!-- <p class="product-space"></p>
-
-        <p class="section-label">{{ product.pricetext }}</p>
-        <p class="product-price">{{ product.price }}</p>
-
-        <p class="product-space"></p>-->
-
-        <!-- <p class="section-label">{{ product.timetext }}</p>
-        <p class="product-time">{{ product.time }}</p>-->
-        <!-- <div class="product-information"> -->
         <p class="section-label-1">{{ product.point }}</p>
         <div class="section-label-2">
           <p>{{ product.time }}</p>

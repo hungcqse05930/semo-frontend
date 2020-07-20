@@ -14,6 +14,7 @@ import UserInformationFile from '../views/UserInformationFile.vue'
 import UserInformationResetPassword from '../views/UserInformationResetPassword.vue'
 import UserInformationAddress from '../views/UserInformationAddress.vue'
 import Search from '../views/SearchPage.vue'
+import CreateNewProduct from '../views/CreateNewProduct'
 // import { component } from 'vue/types/umd';
 
 Vue.use(VueRouter)
@@ -98,6 +99,11 @@ Vue.use(VueRouter)
     path: '/userinformationaddress',
     name: 'UserInformationAddress',
     component: UserInformationAddress
+  },
+  {
+    path: '/createnewproduct',
+    name: 'CreateNewProduct',
+    component: CreateNewProduct
   },
 
 ]
