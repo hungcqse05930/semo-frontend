@@ -33,8 +33,8 @@ export default {
 }
 
 .cancel-label{
-    margin-top: 18px;
-  margin-right: 500px;
+  margin-top: 18px;
+  margin-right: 500px; 
   margin-left: 15px;
   font-family: "Roboto";
   font-weight: 400;

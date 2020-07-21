@@ -16,6 +16,7 @@ import UserInformationAddress from '../views/UserInformationAddress.vue'
 import UserInformationAccuracy from '../views/UserInformationAccuracy.vue'
 import Search from '../views/SearchPage.vue'
 import CreateNewProduct from '../views/CreateNewProduct'
+import CreateNewProductForTree from '../views/CreateNewProductForTree'
 // import { component } from 'vue/types/umd';
 
 Vue.use(VueRouter)
@@ -105,6 +106,11 @@ Vue.use(VueRouter)
     path: '/createnewproduct',
     name: 'CreateNewProduct',
     component: CreateNewProduct
+  },
+  {
+    path: '/createnewproductfortree',
+    name: 'CreateNewProductForTree',
+    component: CreateNewProductForTree
   },
   {
     path: '/userinformationaccuracy',

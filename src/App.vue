@@ -21,6 +21,7 @@ Vue.use(Buefy)
       <router-link to="/userinformationaccuracy">accuracy</router-link>
       <router-link to="/search">Search</router-link>
       <router-link to="/createnewproduct">CNP</router-link>
+      <router-link to="/createnewproductfortree">CNPFT</router-link>
     </div>
     <router-view id="main-view"/>
   </div>
