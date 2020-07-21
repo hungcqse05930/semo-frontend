@@ -13,7 +13,7 @@
               <p>🏡 Địa chỉ</p>
             </div>
             <div class="address-button">
-              <b-button type="is-success">➕ Thêm địa chỉ mới</b-button>
+              <b-button type="is-primary">➕ Thêm địa chỉ mới</b-button>
             </div>
           </div>
           <div class="address-information">
