@@ -68,10 +68,9 @@ export default {
   font-size: 32px;
   color: #b88cd8;
   opacity: 1;
+  width: 222px;
 }
 .step-title p {
-  width: 222px;
-  height: 43px;
   border-bottom: #01d28e solid 3px;
 }
 .password-detail {

@@ -84,10 +84,9 @@ export default {
   font-size: 32px;
   color: #b88cd8;
   opacity: 1;
+   width: 351px;
 }
 .block p {
-  width: 351px;
-  height: 43px;
   border-bottom: #01d28e solid 3px;
 }
 .passworddetail {

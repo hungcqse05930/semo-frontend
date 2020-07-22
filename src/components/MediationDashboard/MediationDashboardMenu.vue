@@ -1,4 +1,5 @@
 <template>
+<div class="abc">
     <b-menu class="menu-container">
     <b-menu-list>
       <b-menu-item label="🏡 Trang chủ"></b-menu-item>
@@ -22,10 +23,8 @@
     <b-menu-list>
       <b-menu-item label="👦 Người dùng" tag="router-link" target="_blank" to="/expo"></b-menu-item>
     </b-menu-list>
-    <b-menu-list>
-      <b-menu-item label="Đăng xuất"></b-menu-item>
-    </b-menu-list>
   </b-menu>
+    </div>
 </template>
 <script>
 export default {
@@ -41,9 +40,12 @@ export default {
     width: 200px;
     font-family: Roboto;
     font-size: 15px;
+    margin-left: 10px;
+    
 }
 .product-item {
     font-family: Roboto;
     font-size: 12px;
 }
+
 </style>
