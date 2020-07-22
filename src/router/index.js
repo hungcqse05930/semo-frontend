@@ -17,6 +17,7 @@ import UserInformationAccuracy from '../views/UserInformationAccuracy.vue'
 import Search from '../views/SearchPage.vue'
 import CreateNewProduct from '../views/CreateNewProduct'
 import CreateNewProductForTree from '../views/CreateNewProductForTree'
+import MediationDashboardHome from '../views/MediationDashboardHome.vue'
 // import { component } from 'vue/types/umd';
 
 Vue.use(VueRouter)
@@ -116,6 +117,11 @@ Vue.use(VueRouter)
     path: '/userinformationaccuracy',
     name: 'UserInformationAccuracy',
     component: UserInformationAccuracy
+  },
+  {
+    path: '/mediationdashboardhome',
+    name: 'MediationDashboardHome',
+    component: MediationDashboardHome
   },
 ]
 
