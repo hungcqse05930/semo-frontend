@@ -23,6 +23,9 @@ Vue.use(Buefy)
       <router-link to="/createnewproduct">CNP</router-link>
       <router-link to="/createnewproductfortree">CNPFT</router-link>
       <router-link to="/mediationdashboardhome">mediationdashboardhome</router-link>
+      <router-link to="/cencorproductmediation">Cencor</router-link>
+
+      
     </div>
     <router-view id="main-view"/>
   </div>
