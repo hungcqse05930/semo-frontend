@@ -7,21 +7,24 @@
           <p>Đăng kí</p>
         </div>
         <section class="input-text">
-          <p>Chúng tôi đã gửi một mã xác thực đến số điện thoại 0912345678.
-Hãy điền vào đây nhé, dòng mã ấy có 6 chữ số.</p>
+          <p class="text-title">
+            Chúng tôi đã gửi một mã xác thực đến số điện thoại 0912345678.
+            Hãy điền vào đây nhé, dòng mã ấy có 6 chữ số.
+          </p>
           <b-field>
             <b-input placeholder="Mã số"></b-input>
           </b-field>
           <ConfirmButton />
+          <div class="content-bottom">
+            <p>Nhập số điện thoại khác</p>
+            <p>Gửi lại mã</p>
+          </div>
         </section>
-
       </div>
     </div>
   </div>
 </template>
 <script>
-
-
 import ContenLeftPicture from "../components/Auth/ContentLeftPicture.vue";
 import ConfirmButton from "../components/Auth/ConfirmButton.vue";
 export default {
@@ -30,7 +33,7 @@ export default {
     ConfirmButton,
     ContenLeftPicture
   }
-}
+};
 </script>
 <style scoped>
 .wrap {
@@ -42,7 +45,7 @@ export default {
 .content-right {
   padding-left: 60px;
 }
-.input-text p {
+.text-title {
   font-family: Roboto;
   font-size: 18px;
   margin-bottom: 14px;
@@ -50,7 +53,6 @@ export default {
 }
 .input-text {
   width: 626px;
-  height: 224px;
 }
 .step-title {
   font-family: Merriweather;
@@ -61,5 +63,12 @@ export default {
 }
 .step-title p {
   border-bottom: #01d28e solid 3px;
+}
+.content-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-family: Roboto;
+  font-size: 18px;
+  margin-top: 20px;
 }
 </style>

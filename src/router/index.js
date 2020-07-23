@@ -17,10 +17,11 @@ import UserInformationAccuracy from '../views/UserInformationAccuracy.vue'
 import Search from '../views/SearchPage.vue'
 import CreateNewProduct from '../views/CreateNewProduct'
 import CreateNewProductForTree from '../views/CreateNewProductForTree'
-import MediationDashboardHome from '../views/MediationDashboardHome.vue'
+import MediationDashboardProduct from '../views/MediationDashboardProduct.vue'
 import CencorProductMediation from '../views/CencorProductMediation.vue'
 import MediationDashboardNameProduct from '../views/MediationDashboardNameProduct.vue'
 import MediationDashboardEditProduct from '../views/MediationDashboardEditProduct.vue'
+import MediationDashboardHome from '../views/MediationDashboardHome.vue'
 // import { component } from 'vue/types/umd';
 
 Vue.use(VueRouter)
@@ -122,9 +123,9 @@ Vue.use(VueRouter)
     component: UserInformationAccuracy
   },
   {
-    path: '/mediationdashboardhome',
-    name: 'MediationDashboardHome',
-    component: MediationDashboardHome
+    path: '/mediationdashboardproduct',
+    name: 'MediationDashboardProduct',
+    component: MediationDashboardProduct
   },
   {
     path: '/cencorproductmediation',
@@ -141,7 +142,11 @@ Vue.use(VueRouter)
     name: 'MediationDashboardEditProduct',
     component: MediationDashboardEditProduct
   },
-  
+  {
+    path: '/mediationdashboardhome',
+    name: 'MediationDashboardHome',
+    component: MediationDashboardHome
+  },
 ]
 
 const router = new VueRouter({
