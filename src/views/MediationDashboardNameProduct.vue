@@ -3,27 +3,27 @@
     <div class="dashboard-header">
       <img class="logo" src="../assets/logo.png" />
       <div class="type-name">
-        <p>Sản phẩm</p>
+        <p>Loại quả</p>
       </div>
       <MediationDashboardSearch />
     </div>
     <div class="dashboard-table">
     <MediationDashboardMenu />
-    <MediationDashboardProductTable />
+    <MediationDashboardNameProductTable />
     </div>
   </div>
 </template>
 <script>
 import MediationDashboardMenu from "../components/MediationDashboard/MediationDashboardMenu.vue";
 import MediationDashboardSearch from "../components/MediationDashboard/MediationDashboardSearch.vue";
-import MediationDashboardProductTable from "../components/MediationDashboard/MediationDashboardProductTable.vue";
+import MediationDashboardNameProductTable from "../components/MediationDashboard/MediationDashboardNameProductTable.vue";
 
 export default {
-  name: "mediationdashboardhome",
+  name: "mediationdashboardnameproduct",
   components: {
     MediationDashboardMenu,
     MediationDashboardSearch,
-    MediationDashboardProductTable
+    MediationDashboardNameProductTable
   }
 };
 </script>

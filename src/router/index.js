@@ -19,7 +19,8 @@ import CreateNewProduct from '../views/CreateNewProduct'
 import CreateNewProductForTree from '../views/CreateNewProductForTree'
 import MediationDashboardHome from '../views/MediationDashboardHome.vue'
 import CencorProductMediation from '../views/CencorProductMediation.vue'
-
+import MediationDashboardNameProduct from '../views/MediationDashboardNameProduct.vue'
+import MediationDashboardEditProduct from '../views/MediationDashboardEditProduct.vue'
 // import { component } from 'vue/types/umd';
 
 Vue.use(VueRouter)
@@ -129,6 +130,16 @@ Vue.use(VueRouter)
     path: '/cencorproductmediation',
     name: 'CencorProductMediation',
     component: CencorProductMediation
+  },
+  {
+    path: '/mediationdashboardnameproduct',
+    name: 'MediationDashboardNameProduct',
+    component: MediationDashboardNameProduct
+  },
+  {
+    path: '/mediationdashboardeditproduct',
+    name: 'MediationDashboardEditProduct',
+    component: MediationDashboardEditProduct
   },
   
 ]

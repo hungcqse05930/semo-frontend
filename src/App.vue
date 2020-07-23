@@ -22,8 +22,12 @@ Vue.use(Buefy)
       <router-link to="/search">Search</router-link>
       <router-link to="/createnewproduct">CNP</router-link>
       <router-link to="/createnewproductfortree">CNPFT</router-link>
-      <router-link to="/mediationdashboardhome">mediationdashboardhome</router-link>
+      <router-link to="/mediationdashboardhome">mediationproduct</router-link>
       <router-link to="/cencorproductmediation">Cencor</router-link>
+      <router-link to="/mediationdashboardnameproduct">mediatioinNamePro</router-link>
+      <router-link to="/mediationdashboardeditproduct">mediatioinEditPro</router-link>
+
+
 
       
     </div>
