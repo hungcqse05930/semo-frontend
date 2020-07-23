@@ -26,7 +26,7 @@ Vue.use(Buefy)
       <router-link to="/cencorproductmediation">Cencor</router-link>
       <router-link to="/mediationdashboardnameproduct">mediatioinNamePro</router-link>
       <router-link to="/mediationdashboardeditproduct">mediatioinEditPro</router-link>
-
+      <router-link to="/placebid">PB</router-link>
 
 
       

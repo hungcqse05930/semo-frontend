@@ -4,13 +4,13 @@
       <p class="info">Thông tin chung về sản phẩm</p>
 
       <div class="div1">
-        <p class="smalltext">Đây là quả gì?*</p>
+        <p class="smalltext" :class="{'edited': fruit}">Đây là quả gì?*</p>
         <div class="choosefood">
           <input type="checkbox" id="checkbox" v-model="checked" />
           <label for="checkbox">{{ search.checked }}</label>
         </div>
         <b-field>
-          <b-input placeholder="Nếu không hợp lý, hãy ghi chú cho người bán biết"></b-input>
+          <b-input v-model="fruit" placeholder="Nếu không hợp lý, hãy ghi chú cho người bán biết"></b-input>
         </b-field>
       </div>
 
@@ -161,6 +161,7 @@ export default {
   },
   data() {
     return {
+      fruit: '',
       search: {
         checked: " TÁO AMBROSIA",
       },
@@ -269,6 +270,11 @@ export default {
   font-size: 18px;
   color: #686868;
 }
+
+.edited {
+  color: #FD5F55 !important;
+}
+
 .choosefood {
   margin-top: 6px;
   margin-bottom: 10px;
