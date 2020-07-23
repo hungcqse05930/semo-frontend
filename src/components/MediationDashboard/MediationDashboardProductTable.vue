@@ -16,7 +16,7 @@
                     checkable
                     :checkbox-position="checkboxPosition">
                     <template slot="bottom-left">
-                        <b>Total checked</b>: {{ checkedRows.length }}
+                        <b>Đã chọn</b>: {{ checkedRows.length }}
                     </template>
                 </b-table>
         </b-tabs>
@@ -33,7 +33,6 @@ export default {
                 { 'id': 5, 'content': 'Táo này là táo Ambrossia nè các cậu ơi. Dòng thứ 2 của sản phẩm', 'product_name': 'TÁO AMBROSSIA', 'user_name': 'Nguyen Ha Thanh' ,'date': '2016-10-15 13:43:27', 'status': '✅ Đã kiểm duyệt' },
                 { 'id': 6, 'content': 'Táo này là táo Ambrossia nè các cậu ơi. Dòng thứ 2 của sản phẩm', 'product_name': 'TÁO AMBROSSIA', 'user_name': 'Nguyen Ha Thanh' ,'date': '2016-10-15 13:43:27', 'status': '⚠ Cần chỉnh sửa' },
                 { 'id': 7, 'content': 'Táo này là táo Ambrossia nè các cậu ơi. Dòng thứ 2 của sản phẩm', 'product_name': 'TÁO AMBROSSIA', 'user_name': 'Nguyen Ha Thanh' ,'date': '2016-10-15 13:43:27', 'status': '💸 Đang đấu giá' },
-
             ]
 
             return {
