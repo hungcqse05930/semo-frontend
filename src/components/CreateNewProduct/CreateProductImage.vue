@@ -1,13 +1,53 @@
 <template>
   <div class="container">
-      <div class="content-all"></div>
+      <div class="content-all">
+        <p class="first-title">🖼️ Quản lý hình ảnh</p>
+        <div class="picture-content">
+          <p>Hãy chụp ảnh và quay phim lại sản phẩm của bạn thật đẹp để người mua ấn tượng nhé.</p>
+        </div>
+        <section>
+        <b-field>
+            <b-upload v-model="dropFiles"
+                multiple>
+                <section class="section">
+                    <div class="button is-primary">
+                        <p>📱 Chọn ảnh và phim trong máy</p>
+                    </div>
+                </section>
+            </b-upload>
+        </b-field>
+
+        <div class="tags">
+            <span v-for="(file, index) in dropFiles"
+                :key="index"
+                class="tag is-primary" >
+                {{file.name}}
+                <button class="delete is-small"
+                    type="button"
+                    @click="deleteDropFile(index)">
+                </button>
+            </span>
+        </div>
+    </section>
+      </div>
   </div>
 </template>
 <script>
 // import CreateHeader from "../components/CreateNewProduct/CreateHeader.vue";
 export default {
   name: "resetpassword-container",
-  components: {}
+  components: {},
+  data() {
+    return {
+      file: {},
+      dropFiles: []
+    };
+  },
+  methods: {
+    deleteDropFile(index) {
+      this.dropFiles.splice(index, 1);
+    }
+  }
 };
 </script>
 <style scoped>
@@ -19,6 +59,7 @@ export default {
 .flexcontent {
   display: flex;
   /* flex-flow: row; */
+  padding-right: 32px;
 }
 
 .content-all {
@@ -54,7 +95,7 @@ export default {
   margin-right: 10px;
 }
 
-.first-title p {
+.first-title {
   font-family: Roboto;
   font-size: 20px;
   font-weight: bold;
@@ -88,5 +129,11 @@ export default {
   margin-left: 32px;
   width: 250px;
 }
+.picture-content p{
+  font-family: Roboto;
+  font-size: 18px;
+  color: #686868;
+  margin: 32px auto 15px 32px;
 
+}
 </style>

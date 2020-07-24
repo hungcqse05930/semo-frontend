@@ -5,7 +5,6 @@
       <div class="type-name">
         <p>Sản phẩm</p>
       </div>
-      <MediationDashboardSearch />
     </div>
     <div class="dashboard-table">
     <MediationDashboardMenu />
@@ -15,21 +14,20 @@
 </template>
 <script>
 import MediationDashboardMenu from "../components/MediationDashboard/MediationDashboardMenu.vue";
-import MediationDashboardSearch from "../components/MediationDashboard/MediationDashboardSearch.vue";
 import MediationDashboardProductTable from "../components/MediationDashboard/MediationDashboardProductTable.vue";
 
 export default {
   name: "mediationdashboardhome",
   components: {
     MediationDashboardMenu,
-    MediationDashboardSearch,
     MediationDashboardProductTable
   }
 };
 </script>
 <style scoped>
 .dashboard-container {
-  width: 1366px;
+  width: 100%;
+  padding: 10px;
 }
 .logo {
   width: 120px;

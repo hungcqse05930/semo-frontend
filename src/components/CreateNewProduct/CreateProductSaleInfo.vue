@@ -36,6 +36,8 @@ export default {
 .flexcontent {
   display: flex;
   /* flex-flow: row; */
+  padding-right: 32px;
+
 }
 
 .content-all {

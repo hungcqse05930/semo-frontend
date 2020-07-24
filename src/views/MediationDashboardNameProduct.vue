@@ -5,31 +5,48 @@
       <div class="type-name">
         <p>Loại quả</p>
       </div>
-      <MediationDashboardSearch />
     </div>
     <div class="dashboard-table">
-    <MediationDashboardMenu />
-    <MediationDashboardNameProductTable />
+      <MediationDashboardMenu />
+      <MediationDashboardNameProductTable />
     </div>
+    <section>
+      <b-modal
+        :active.sync="isComponentModalActive"
+        has-modal-card
+        trap-focus
+        :destroy-on-hide="false"
+        aria-role="dialog"
+        aria-modal
+        style="width: auto;"
+      >    
+      <MediationDashboardEditProduct/>
+      </b-modal>
+    </section>
   </div>
 </template>
 <script>
 import MediationDashboardMenu from "../components/MediationDashboard/MediationDashboardMenu.vue";
-import MediationDashboardSearch from "../components/MediationDashboard/MediationDashboardSearch.vue";
 import MediationDashboardNameProductTable from "../components/MediationDashboard/MediationDashboardNameProductTable.vue";
-
+import MediationDashboardEditProduct from "../components/MediationDashboard/MediationDashboardEditProduct.vue";
 export default {
   name: "mediationdashboardnameproduct",
   components: {
     MediationDashboardMenu,
-    MediationDashboardSearch,
-    MediationDashboardNameProductTable
+    MediationDashboardNameProductTable,
+    MediationDashboardEditProduct
+  },
+  data() {
+    return {
+      isComponentModalActive: false,
+    };
   }
 };
 </script>
 <style scoped>
 .dashboard-container {
-  width: 1366px;
+  width: 100%;
+  padding: 10px;
 }
 .logo {
   width: 120px;

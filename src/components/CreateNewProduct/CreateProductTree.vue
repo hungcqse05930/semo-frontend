@@ -4,13 +4,13 @@
       <div class="first-title">
         <p>ℹ Thông tin cơ bản</p>
       </div>
-            <div class="flexcontent">
+      <div class="flexcontent">
         <p class="pfruit">Loại quả*</p>
-        <input input class="input" />
+        <input placeholder="Ví dụ: Táo Tàu" input class="input" />
       </div>
       <div class="flexcontent">
         <p class="pkilo">Khối lượng*</p>
-        <input input class="input1" />
+        <b-input placeholder="Ví dụ: 5.42" input class="input-kilo" />
         <b-select class="bselect" placeholder="Chọn tỉnh/thành:" required>
           <option value="0">Chọn tỉnh/thành:</option>
           <option value="1">Hà Nội</option>
@@ -20,27 +20,24 @@
         </b-select>
       </div>
       <div class="flexcontent">
-        <div  class="pplace"><p>Địa điểm thu hoạch*</p></div>
-                <div class="select is-fullwidth">
-                  <select>
-                    <option>Nam</option>
-                    <option>Nữ</option>
-                  </select>
-                </div>
+        <div class="pplace">
+          <p>Địa điểm thu hoạch*</p>
+        </div>
+        <div class="select is-fullwidth">
+          <select>
+            <option>Thôn 6, xã Thạch Hòa, huyện Thạch Thất, Hà Nội</option>
+            <option>Thôn 6, xã Thạch Hòa, huyện Thạch Thất, Hà Nội</option>
+          </select>
+        </div>
       </div>
     </div>
-    <CreateProductTreeInfo/>
-    <CreateProductImage/>
-    <CreateProductSaleInfo/>
-            <div class="save-button">
-          <b-button type="is-success">✈️ Gửi đi kiểm duyệt</b-button>
-        </div>
+    <CreateProductTreeInfo />
+    <CreateProductImage />
+    <CreateProductSaleInfo />
+    <div class="save-button">
+      <b-button type="is-success">✈️ Gửi đi kiểm duyệt</b-button>
+    </div>
   </div>
-    
-
-
-
-
 </template>
 <script>
 import CreateProductTreeInfo from "../../components/CreateNewProduct/CreateProductTreeInfo.vue";
@@ -51,7 +48,7 @@ export default {
   components: {
     CreateProductTreeInfo,
     CreateProductImage,
-    CreateProductSaleInfo,
+    CreateProductSaleInfo
   }
 };
 </script>
@@ -64,6 +61,7 @@ export default {
 .flexcontent {
   display: flex;
   /* flex-flow: row; */
+  padding-right: 32px;
 }
 
 .content-all {
@@ -80,14 +78,14 @@ export default {
   display: flex;
   height: 350px;
 }
-.save-button{
-  margin-top:-250px;
+.save-button {
+  margin-top: -250px;
   margin-left: 920px;
 }
-.bselect{
+.bselect {
   margin-top: 15px;
 }
-.select{
+.select {
   margin-top: 15px;
 }
 .input {
@@ -96,7 +94,7 @@ export default {
   height: 36px;
   /* margin-left: 30px; */
 }
-.input1 {
+.input-kilo {
   margin-top: 16px;
   width: 696px;
   height: 36px;
@@ -110,7 +108,7 @@ export default {
   color: #07d390;
   margin: 32px auto 15px 32px;
 }
-.pkilo  {
+.pkilo {
   margin-top: 20px;
   font-family: Roboto;
   font-size: 15px;
@@ -119,8 +117,8 @@ export default {
   margin-left: 32px;
   width: 200px;
 }
- .pfruit{
-   margin-top: 4px;
+.pfruit {
+  margin-top: 4px;
   font-family: Roboto;
   font-size: 15px;
   color: #fd5f55;
@@ -128,8 +126,8 @@ export default {
   margin-left: 32px;
   width: 200px;
 }
- .pplace{
-   margin-top: 20px;
+.pplace {
+  margin-top: 20px;
   font-family: Roboto;
   font-size: 15px;
   color: #fd5f55;
@@ -137,5 +135,4 @@ export default {
   margin-left: 32px;
   width: 250px;
 }
-
 </style>

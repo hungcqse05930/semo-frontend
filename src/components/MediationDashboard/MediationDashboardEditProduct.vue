@@ -1,9 +1,9 @@
 <template>
-  <div class="edit-container">
-    <div class="edit-title">
+  <div class="modal-card">
+    <div class="modal-card-head">
       <p>🖊️ Chỉnh sửa tên loại quả</p>
     </div>
-    <section>
+    <section class="modal-card-body">
       <b-field>
         <b-input v-model="name"></b-input>
       </b-field>
@@ -25,6 +25,7 @@ export default {
 .edit-container{
     max-width: 600px;
     height: 259px;
+    background-color: white;
 }
 .edit-title p {
   font-family: Roboto;

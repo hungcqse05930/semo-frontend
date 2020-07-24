@@ -20,7 +20,6 @@ import CreateNewProductForTree from '../views/CreateNewProductForTree'
 import MediationDashboardProduct from '../views/MediationDashboardProduct.vue'
 import CencorProductMediation from '../views/CencorProductMediation.vue'
 import MediationDashboardNameProduct from '../views/MediationDashboardNameProduct.vue'
-import MediationDashboardEditProduct from '../views/MediationDashboardEditProduct.vue'
 import PlaceBid from '../views/PlaceBid.vue'
 import MediationDashboardHome from '../views/MediationDashboardHome.vue'
 // import { component } from 'vue/types/umd';
@@ -137,11 +136,6 @@ Vue.use(VueRouter)
     path: '/mediationdashboardnameproduct',
     name: 'MediationDashboardNameProduct',
     component: MediationDashboardNameProduct
-  },
-  {
-    path: '/mediationdashboardeditproduct',
-    name: 'MediationDashboardEditProduct',
-    component: MediationDashboardEditProduct
   },
   {
     path: '/placebid',

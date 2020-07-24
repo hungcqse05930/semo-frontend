@@ -6,7 +6,7 @@
       </div>
       <div class="flexcontent">
         <p class="pkilo">Cân nặng quả*</p>
-        <input input class="input1" />
+        <b-input placeholder="Ví dụ: Táo Tàu" input class="input1" />
         <b-select class="bselect" placeholder="Chọn tỉnh/thành:" required>
           <option value="0">Chọn tỉnh/thành:</option>
           <option value="1">Hà Nội</option>
@@ -17,7 +17,7 @@
       </div>
       <div class="flexcontent">
         <p class="pkilo">Đường kính quả*</p>
-        <input input class="input1" />
+        <b-input placeholder="Ví dụ: 5.42" input class="input1" />
         <b-select class="bselect" placeholder="Chọn tỉnh/thành:" required>
           <option value="0">Chọn tỉnh/thành:</option>
           <option value="1">Hà Nội</option>
@@ -28,7 +28,7 @@
       </div>
       <div class="flexcontent">
         <p class="pkilo">Nồng độ đường</p>
-        <input input class="input1" />
+        <b-input placeholder="Ví dụ: 5.42" input class="input1" />
         <b-select class="bselect" placeholder="Chọn tỉnh/thành:" required>
           <option value="0">Chọn tỉnh/thành:</option>
           <option value="1">Hà Nội</option>
@@ -39,7 +39,7 @@
       </div>
             <div class="flexcontent">
         <p class="pkilo"> Phần trăm quả trênn tổng khối hàng </p>
-        <input input class="input1" />
+        <b-input placeholder="Ví dụ: 5.42" input class="input1" />
         <b-select class="bselect" placeholder="Chọn tỉnh/thành:" required>
           <option value="0">Chọn tỉnh/thành:</option>
           <option value="1">Hà Nội</option>
@@ -76,6 +76,7 @@ export default {
 .flexcontent {
   display: flex;
   /* flex-flow: row; */
+  padding-right: 32px;
 }
 
 .content-all {
