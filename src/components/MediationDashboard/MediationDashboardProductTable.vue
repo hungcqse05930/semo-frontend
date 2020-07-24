@@ -12,6 +12,7 @@
         :data="data"
         :checked-rows.sync="checkedRows"
         checkable
+        checkbox-position="right"
         paginated
         per-page="20"
         pagination-simple

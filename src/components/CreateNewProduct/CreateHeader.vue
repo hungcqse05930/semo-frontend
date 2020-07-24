@@ -43,9 +43,9 @@ export default {
 }
 
 .title-label{
-    margin-top: 16px;
-    align-items: center;
-    justify-content: center;
+  margin-top: 16px;
+  align-items: center;
+  justify-content: center;
   font-family: "Merriweather";
   font-weight: 700;
   font-size: 25px;

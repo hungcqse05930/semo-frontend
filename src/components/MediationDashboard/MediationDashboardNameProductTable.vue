@@ -12,6 +12,7 @@
         :data="data"
         :checked-rows.sync="checkedRows"
         checkable
+        checkbox-position="right"
         paginated
         pagination-simple
         hoverable
@@ -121,7 +122,6 @@ export default {
     return {
       isComponentModalActive: false,
       data,
-      checkboxPosition: "left",
       checkedRows: [],
       columns: [
         {

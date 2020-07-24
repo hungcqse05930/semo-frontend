@@ -8,7 +8,7 @@
         <b-input v-model="name"></b-input>
       </b-field>
       <div class="buttons">
-        <b-button type="is-primary">Success</b-button>
+        <b-button type="is-primary">💾 Lưu tên mới</b-button>
       </div>
     </section>
   </div>
@@ -22,16 +22,10 @@ export default {
 }
 </script>
 <style scoped>
-.edit-container{
-    max-width: 600px;
-    height: 259px;
-    background-color: white;
-}
-.edit-title p {
+.modal-card-head p {
   font-family: Roboto;
   font-size: 20px;
   color: #07d390;
-  margin-bottom: 32px;
 }
 .buttons {
   justify-content: center;

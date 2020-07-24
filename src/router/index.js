@@ -22,6 +22,7 @@ import CencorProductMediation from '../views/CencorProductMediation.vue'
 import MediationDashboardNameProduct from '../views/MediationDashboardNameProduct.vue'
 import PlaceBid from '../views/PlaceBid.vue'
 import MediationDashboardHome from '../views/MediationDashboardHome.vue'
+import CreateNewProductAddProduct from '../views/CreateNewProductAddProduct.vue'
 // import { component } from 'vue/types/umd';
 
 Vue.use(VueRouter)
@@ -146,6 +147,11 @@ Vue.use(VueRouter)
     path: '/mediationdashboardhome',
     name: 'MediationDashboardHome',
     component: MediationDashboardHome
+  },
+  {
+    path: '/createnewproductaddproduct',
+    name: 'CreateNewProductAddProduct',
+    component: CreateNewProductAddProduct
   },
 ]
 

@@ -124,7 +124,7 @@ export default {
   color: #fd5f55;
   text-align: left;
   margin-left: 32px;
-  width: 200px;
+  width: 198px;
 }
 .pplace {
   margin-top: 20px;
@@ -133,6 +133,6 @@ export default {
   color: #fd5f55;
   text-align: left;
   margin-left: 32px;
-  width: 250px;
+  width: 240px;
 }
 </style>

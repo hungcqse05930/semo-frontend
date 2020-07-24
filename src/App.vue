@@ -27,7 +27,7 @@ Vue.use(Buefy)
       <router-link to="/mediationdashboardnameproduct">mediatioinNamePro</router-link>
       <router-link to="/placebid">PB</router-link>
       <router-link to="/mediationdashboardhome">mediatioinhome</router-link>
-      
+      <router-link to="/createnewproductaddproduct">newPro</router-link>
 
 
 
