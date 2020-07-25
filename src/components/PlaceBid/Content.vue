@@ -1,5 +1,6 @@
 <template>
-  <div class="container1">
+ <section class="dashboard-wrap">
+  <!-- <div class="container1"> -->
     <div id="content">
       <div class="contentleft">
         <p class="production">
@@ -99,7 +100,7 @@
       </div>
       <div class="contentright1">
         <p class="productinfo">Ai đã đấu giá?</p>
-    <b-table :data="data" :columns="columns"></b-table>
+        <b-table :data="data" :columns="columns"></b-table>
       </div>
     </div>
 
@@ -123,19 +124,24 @@
       </div>
     </div>
     <p>____________________________________________________________________________________________________________________________________________</p>
-      <div class="bmodal">              
-      <b-modal
-        :active.sync="isComponentModalActive"
-        has-modal-card
-        :destroy-on-hide="false"
-        aria-role="dialog"
-        aria-modal
-       
-      >    
-      <productviewrow/>
-      </b-modal>
-      </div>
-  </div>
+
+    <template>
+      <section>
+        <div class="bmodal">
+          <b-modal
+            :active.sync="isComponentModalActive"
+            has-modal-card
+            :destroy-on-hide="false"
+            aria-role="dialog"
+            aria-modal
+          >
+            <productviewrow />
+          </b-modal>
+        </div>
+      </section>
+    </template>
+  <!-- </div> -->
+ </section>
 </template>
 
 <script>
@@ -146,6 +152,16 @@ export default {
     getImgUrl(value) {
       return `https://picsum.photos/id/43${value}/1230/500`;
     },
+            next(){
+            // lay ra id cua cai nut Next vua bam
+            let cur_page_button = event.target.id
+            // lay ra so trang hien tai
+            let cur_page_index = cur_page_button.slice(-1)
+            // an trang hien tai di bang display: none
+            document.getElementById('page_'.concat(cur_page_index)).style.display = 'none'
+            // hien trang tiep theo bang display: block
+            document.getElementById('page_'.concat(++cur_page_index)).style.display = 'block'
+        },
   },
   name: "container",
   components: {
@@ -154,39 +170,89 @@ export default {
   },
   data() {
     return {
-                      data: [
-                    { 'id': 1, 'user': '*** ***** KHOA', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020' },
-                    { 'id': 2, 'user': '** ****** *** ANH', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
-                    { 'id': 3, 'user': '**** ** **** *** **** PHÁT', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
-                    { 'id': 4, 'user': '*** ***** VY', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
-                    { 'id': 5, 'user': '****** *** **** PHUC', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
-                    { 'id': 6, 'user': '*** ***** KHOA', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020' },
-                    { 'id': 7, 'user': '** ****** *** ANH', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
-                    { 'id': 8, 'user': '**** ** **** *** **** PHÁT', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
-                    { 'id': 9, 'user': '*** ***** VY', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
-                    { 'id': 10, 'user': '****** *** **** PHUC', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
-                ],
-                columns: [
-                    {
-                        field: 'id',
-                        label: 'ID',
-                        width: '40',
-                        numeric: true
-                    },
-                    {
-                        field: 'user',
-                        label: 'TÊN NGƯỜI DÙNG',
-                    },
-                    {
-                        field: 'pay',
-                        label: 'TRẢ GIÁ',
-                    },
-                    {
-                        field: 'date',
-                        label: 'THỜI GIAN',
-                        centered: true
-                    },
-                ],
+      data: [
+        {
+          id: 1,
+          user: "*** ***** KHOA",
+          pay: "80,000,000đ",
+          date: "12:50:39, 30/05/2020",
+        },
+        {
+          id: 2,
+          user: "** ****** *** ANH",
+          pay: "80,000,000đ",
+          date: "12:50:39, 30/05/2020",
+        },
+        {
+          id: 3,
+          user: "**** ** **** *** **** PHÁT",
+          pay: "80,000,000đ",
+          date: "12:50:39, 30/05/2020",
+        },
+        {
+          id: 4,
+          user: "*** ***** VY",
+          pay: "80,000,000đ",
+          date: "12:50:39, 30/05/2020",
+        },
+        {
+          id: 5,
+          user: "****** *** **** PHUC",
+          pay: "80,000,000đ",
+          date: "12:50:39, 30/05/2020",
+        },
+        {
+          id: 6,
+          user: "*** ***** KHOA",
+          pay: "80,000,000đ",
+          date: "12:50:39, 30/05/2020",
+        },
+        {
+          id: 7,
+          user: "** ****** *** ANH",
+          pay: "80,000,000đ",
+          date: "12:50:39, 30/05/2020",
+        },
+        {
+          id: 8,
+          user: "**** ** **** *** **** PHÁT",
+          pay: "80,000,000đ",
+          date: "12:50:39, 30/05/2020",
+        },
+        {
+          id: 9,
+          user: "*** ***** VY",
+          pay: "80,000,000đ",
+          date: "12:50:39, 30/05/2020",
+        },
+        {
+          id: 10,
+          user: "****** *** **** PHUC",
+          pay: "80,000,000đ",
+          date: "12:50:39, 30/05/2020",
+        },
+      ],
+      columns: [
+        {
+          field: "id",
+          label: "ID",
+          width: "40",
+          numeric: true,
+        },
+        {
+          field: "user",
+          label: "TÊN NGƯỜI DÙNG",
+        },
+        {
+          field: "pay",
+          label: "TRẢ GIÁ",
+        },
+        {
+          field: "date",
+          label: "THỜI GIAN",
+          centered: true,
+        },
+      ],
       isComponentModalActive: false,
       production: {
         fruit: "🍎 Sản phẩm",
@@ -401,8 +467,8 @@ export default {
 </script>
 
 <style scoped>
-.container1 {
-  backdrop-filter: saturate(180%) blur(20px);
+.dashboard-wrap {
+  /* backdrop-filter: saturate(180%) blur(20px); */
   width: 1246px;
   margin-top: 36px;
   margin-left: 60px;
@@ -411,12 +477,12 @@ export default {
   display: flex;
 }
 .contentleft {
-  backdrop-filter: saturate(180%) blur(20px);
+  /* backdrop-filter: saturate(180%) blur(20px); */
   width: 603px;
   height: 500px;
 }
 .contentright {
-  background-color:cadetblue;
+  background-color: cadetblue;
   backdrop-filter: saturate(180%) blur(20px);
   width: 600px;
   height: 500px;
@@ -704,9 +770,8 @@ export default {
 .page-next {
   margin-left: 20px;
 }
-.bmodal { 
+/* .bmodal {
   width: 100%;
   height: 100%;
-
-}
+} */
 </style>
