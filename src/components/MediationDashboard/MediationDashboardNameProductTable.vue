@@ -6,71 +6,86 @@
         <p class="page-back">👈 Trang trước</p>
         <p class="page-next">Trang sau 👉</p>
       </div>
-    </div> -->
-      <b-table
-        class="dashboard-table"
-        :data="data"
-        :checked-rows.sync="checkedRows"
-        checkable
-        checkbox-position="right"
-        paginated
-        pagination-simple
-        hoverable
-        per-page="20"
-        @click="allAlert"
-      >
-        <template slot-scope="props">
-          <template v-for="column in columns">
-            <b-table-column :key="column.id" v-bind="column">
-              <template
-                v-if="column.searchable && !column.numeric"
-                slot="searchable"
-                slot-scope="props"
-              >
-                <b-input
-                  v-model="props.filters[props.column.field]"
-                  placeholder="Search..."
-                  size="is-small"
-                />
-              </template>
-              {{ props.row[column.field] }}
-            </b-table-column>
-          </template>
+    </div>-->
+    <b-table
+      class="dashboard-table"
+      :data="data"
+      :checked-rows.sync="checkedRows"
+      checkable
+      checkbox-position="right"
+      paginated
+      pagination-simple
+      hoverable
+      per-page="20"
+      @click="allAlert"
+    >
+      <template slot-scope="props">
+        <template v-for="column in columns">
+          <b-table-column :key="column.id" v-bind="column">
+            <template
+              v-if="column.searchable && !column.numeric"
+              slot="searchable"
+              slot-scope="props"
+            >
+              <b-input
+                v-model="props.filters[props.column.field]"
+                placeholder="Search..."
+                size="is-small"
+              />
+            </template>
+            {{ props.row[column.field] }}
+          </b-table-column>
         </template>
-        <template slot="bottom-left">
-          <b>Total checked</b>
-          : {{ checkedRows.length }}
-          <b-button type="is-text">🗑️ Xóa bài đăng</b-button>
-          <button class="button field is-danger" @click="checkedRows = []"
-                :disabled="!checkedRows.length">
-                <b-icon icon="close"></b-icon>
-                <span>Clear checked</span>
-            </button>
-        </template>
-      </b-table>
-      <b-modal
-        :active.sync="isComponentModalActive"
-        has-modal-card
-        trap-focus
-        :destroy-on-hide="false"
-        aria-role="dialog"
-        aria-modal
-        style="width: auto;"
-      >    
-      <MediationDashboardEditProduct/>
-      </b-modal>
+      </template>
+      <template slot="bottom-left">
+        <b>Total checked</b>
+        : {{ checkedRows.length }}
+          <b-button @click="deleteAlert" type="is-text">🗑️ Xóa bài đăng</b-button>
+          <b-modal>
+            <MediationDashboardDelete />
+          </b-modal>
+        <button
+          class="button field is-danger"
+          @click="checkedRows = []"
+          :disabled="!checkedRows.length"
+        >
+          <b-icon icon="close"></b-icon>
+          <span>Clear checked</span>
+        </button>
+      </template>
+    </b-table>
+    <b-modal
+      :active.sync="isComponentModalActive"
+      has-modal-card
+      trap-focus
+      :destroy-on-hide="false"
+      aria-role="dialog"
+      aria-modal
+      style="width: auto;"
+    >
+      <MediationDashboardEditProduct />
+    </b-modal>
   </section>
 </template>
 <script>
 import MediationDashboardEditProduct from "./MediationDashboardEditProduct.vue";
-
+import MediationDashboardDelete from "./MediationDashboardDelete.vue";
 export default {
   components: {
-    MediationDashboardEditProduct
-  },  
+    MediationDashboardEditProduct,
+    MediationDashboardDelete
+  },
   methods: {
     allAlert() {
       this.isComponentModalActive = true
+    },
+    deleteAlert(){
+       this.$buefy.modal.open({
+         parent: this,
+         component: MediationDashboardDelete,
+         hasModalCard: true,
+         trapFocus: true
+       })
     }
   },
   data() {
@@ -188,5 +203,4 @@ export default {
   color: #707070;
   padding-left: 3px;
 }
-
 </style>
