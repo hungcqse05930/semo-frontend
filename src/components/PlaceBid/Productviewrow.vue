@@ -1,49 +1,41 @@
 <template>
-          <div class="p3">
-          <p class="ptext3">{{production.id}}</p>
-          <p class="ptext">{{production.username}}</p>
-          <p class="ptext">{{production.paid}}</p>
-          <p class="ptext">{{production.time}}</p>          
-        </div>
+<section class="modal-card-body">
+  <div class="modal-card">
+    <div class="modal-card-head">
+      <p>🖊️ Chỉnh sửa tên loại quả</p>
+    </div>
+    
+      <b-field>
+        <b-input v-model="name"></b-input>
+      </b-field>
+      <div class="buttons">
+        <b-button type="is-primary">💾 Lưu tên mới</b-button>
+      </div>
+    
+  </div>
+  </section>
 </template>
-
 <script>
 export default {
-  name: "p3",
-  props: {
-    product: Object
+  name: "mediationdashboardeditproduct",
+  components: {
   }
-};
+  
+}
 </script>
-
 <style scoped>
-.p3{
-  display: inline-flex;
-  justify-content: space-between;
-  width: 586px;
-  height: 18px;
-  margin-bottom: 16px;
-  /* background-color: blue; */
+.modal-card-body{
+  top:0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
 }
-  .ptext3{
-  margin-right: -20px;
-    font-family: "Roboto";
-  font-weight: 500;
-  font-size: 15px;
-  color: #707070;
- 
+.modal-card-head p {
+  font-family: Roboto;
+  font-size: 20px;
+  color: #07d390;
 }
-.ptext{
-  font-family: "Roboto";
-  font-weight: 500;
-  font-size: 15px;
-  color: #707070;
-}
-.p3s {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: minmax(412px, auto);
-  margin-left: 24px;
-  margin-top: 24px;
+.buttons {
+  justify-content: center;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <nav class="container">
+  <div class="container1">
     <div id="content">
       <div class="contentleft">
         <p class="production">
@@ -27,7 +27,7 @@
           <b-button
             class="btn"
             type="is-success"
-            @click="isCardModalActive = true"
+            @click="isComponentModalActive = true"
             rounded
           >Trả giá ngay</b-button>
         </div>
@@ -45,47 +45,6 @@
             <p class="second-content">{{production.step}}đ</p>
           </div>
         </div>
-      </div>
-
-      <div class="bmodal">
-        <b-modal :active.sync="isImageModalActive">
-          <p class="image is-4by3">
-            <img src="/static/img/placeholder-1280x960.png" />
-          </p>
-        </b-modal>
-
-        <b-modal :active.sync="isCardModalActive" :width="600" scroll>
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="/static/img/placeholder-1280x960.png" alt="Image" />
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="/static/img/placeholder-1280x960.png" alt="Image" />
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="title is-4">John Smith</p>
-                  <p class="subtitle is-6">@johnsmith</p>
-                </div>
-              </div>
-
-              <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris.
-                <a>@bulmaio</a>.
-                <a>#css</a>
-                <a>#responsive</a>
-                <br />
-                <small>11:09 PM - 1 Jan 2016</small>
-              </div>
-            </div>
-          </div>
-        </b-modal>
       </div>
 
       <div class="contentright">
@@ -139,75 +98,8 @@
         </div>
       </div>
       <div class="contentright1">
-        <!-- <Productviewrow /> -->
         <p class="productinfo">Ai đã đấu giá?</p>
-        <div class="userpaidtime">
-          <p class="ptext">TÊN NGƯỜI DÙNG</p>
-          <p class="ptext">TRẢ GIÁ</p>
-          <p class="ptext">THỜI GIAN</p>
-        </div>
-        <div class="p3">
-          <p class="ptext3">{{production.id}}</p>
-          <p class="ptext">{{production.username}}</p>
-          <p class="ptext">{{production.paid}}</p>
-          <p class="ptext">{{production.time}}</p>
-        </div>
-        <div class="p3">
-          <p class="ptext3">{{production.id}}</p>
-          <p class="ptext">{{production.username}}</p>
-          <p class="ptext">{{production.paid}}</p>
-          <p class="ptext">{{production.time}}</p>
-        </div>
-        <div class="p3">
-          <p class="ptext3">{{production.id}}</p>
-          <p class="ptext">{{production.username}}</p>
-          <p class="ptext">{{production.paid}}</p>
-          <p class="ptext">{{production.time}}</p>
-        </div>
-        <div class="p3">
-          <p class="ptext3">{{production.id}}</p>
-          <p class="ptext">{{production.username}}</p>
-          <p class="ptext">{{production.paid}}</p>
-          <p class="ptext">{{production.time}}</p>
-        </div>
-        <div class="p3">
-          <p class="ptext3">{{production.id}}</p>
-          <p class="ptext">{{production.username}}</p>
-          <p class="ptext">{{production.paid}}</p>
-          <p class="ptext">{{production.time}}</p>
-        </div>
-        <div class="p3">
-          <p class="ptext3">{{production.id}}</p>
-          <p class="ptext">{{production.username}}</p>
-          <p class="ptext">{{production.paid}}</p>
-          <p class="ptext">{{production.time}}</p>
-        </div>
-        <div class="p3">
-          <p class="ptext3">{{production.id}}</p>
-          <p class="ptext">{{production.username}}</p>
-          <p class="ptext">{{production.paid}}</p>
-          <p class="ptext">{{production.time}}</p>
-        </div>
-        <div class="p3">
-          <p class="ptext3">{{production.id}}</p>
-          <p class="ptext">{{production.username}}</p>
-          <p class="ptext">{{production.paid}}</p>
-          <p class="ptext">{{production.time}}</p>
-        </div>
-        <div class="p3">
-          <p class="ptext3">{{production.id}}</p>
-          <p class="ptext">{{production.username}}</p>
-          <p class="ptext">{{production.paid}}</p>
-          <p class="ptext">{{production.time}}</p>
-        </div>
-        <div class="p3">
-          <p class="ptext3">{{production.id}}</p>
-          <p class="ptext">{{production.username}}</p>
-          <p class="ptext">{{production.paid}}</p>
-          <p class="ptext">{{production.time}}</p>
-        </div>
-
-        <p class="seemore">XEM THÊM {{production.semo}} LƯỢT ĐẤU GIÁ NỮA</p>
+    <b-table :data="data" :columns="columns"></b-table>
       </div>
     </div>
 
@@ -231,12 +123,24 @@
       </div>
     </div>
     <p>____________________________________________________________________________________________________________________________________________</p>
-  </nav>
+      <div class="bmodal">              
+      <b-modal
+        :active.sync="isComponentModalActive"
+        has-modal-card
+        :destroy-on-hide="false"
+        aria-role="dialog"
+        aria-modal
+       
+      >    
+      <productviewrow/>
+      </b-modal>
+      </div>
+  </div>
 </template>
 
 <script>
 import Productview from "../../components/PlaceBid/Productview.vue";
-// import Productviewrow from "../../components/PlaceBid/Productviewrow.vue";
+import Productviewrow from "../../components/PlaceBid/Productviewrow.vue";
 export default {
   methods: {
     getImgUrl(value) {
@@ -246,11 +150,44 @@ export default {
   name: "container",
   components: {
     Productview,
-    // Productviewrow,
+    Productviewrow,
   },
   data() {
     return {
-      isCardModalActive: false,
+                      data: [
+                    { 'id': 1, 'user': '*** ***** KHOA', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020' },
+                    { 'id': 2, 'user': '** ****** *** ANH', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
+                    { 'id': 3, 'user': '**** ** **** *** **** PHÁT', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
+                    { 'id': 4, 'user': '*** ***** VY', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
+                    { 'id': 5, 'user': '****** *** **** PHUC', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
+                    { 'id': 6, 'user': '*** ***** KHOA', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020' },
+                    { 'id': 7, 'user': '** ****** *** ANH', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
+                    { 'id': 8, 'user': '**** ** **** *** **** PHÁT', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
+                    { 'id': 9, 'user': '*** ***** VY', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
+                    { 'id': 10, 'user': '****** *** **** PHUC', 'pay': '80,000,000đ', 'date': '12:50:39, 30/05/2020'},
+                ],
+                columns: [
+                    {
+                        field: 'id',
+                        label: 'ID',
+                        width: '40',
+                        numeric: true
+                    },
+                    {
+                        field: 'user',
+                        label: 'TÊN NGƯỜI DÙNG',
+                    },
+                    {
+                        field: 'pay',
+                        label: 'TRẢ GIÁ',
+                    },
+                    {
+                        field: 'date',
+                        label: 'THỜI GIAN',
+                        centered: true
+                    },
+                ],
+      isComponentModalActive: false,
       production: {
         fruit: "🍎 Sản phẩm",
         description:
@@ -464,13 +401,11 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  /* background-color: rgba(255, 255, 255, 0.8); */
-  /* background-color: blue; */
+.container1 {
   backdrop-filter: saturate(180%) blur(20px);
   width: 1246px;
-  /* height: 1121px; */
   margin-top: 36px;
+  margin-left: 60px;
 }
 #content {
   display: flex;
@@ -481,7 +416,7 @@ export default {
   height: 500px;
 }
 .contentright {
-  background-color: yellow;
+  background-color:cadetblue;
   backdrop-filter: saturate(180%) blur(20px);
   width: 600px;
   height: 500px;
@@ -497,7 +432,6 @@ export default {
   margin-top: 40px;
 }
 .contentright1 {
-  background-color: wheat;
   backdrop-filter: saturate(180%) blur(20px);
   width: 586px;
   height: 541px;
@@ -724,14 +658,6 @@ export default {
   font-size: 15px;
   color: #707070;
 }
-.seemore {
-  margin-top: 20px;
-  text-align: center;
-  font-family: "Roboto";
-  font-weight: 500;
-  font-size: 15px;
-  color: #707070;
-}
 .image1 {
   width: 600px;
   top: 400px;
@@ -778,7 +704,9 @@ export default {
 .page-next {
   margin-left: 20px;
 }
-/* .bmodal {
-  position: initial;
-} */
+.bmodal { 
+  width: 100%;
+  height: 100%;
+
+}
 </style>
