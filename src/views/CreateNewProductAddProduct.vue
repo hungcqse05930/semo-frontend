@@ -1,9 +1,9 @@
 <template>
   <div class="Add-container">
     <nav class="title-bar-content">
-      <div id="title-bar-content">
+      <!-- <div id="title-bar-content"> -->
         <div class="column">
-        <b-button class="button-success" type="is-success">✔️ Hoàn tất</b-button>
+        <b-button class="button-success" type="is-white">❌ Hủy</b-button>
         </div>
         <div class="column is-four-fifths">
           <p class="title-label">Kiểm định sản phẩm</p>        
@@ -11,7 +11,7 @@
         <div class="column">
         <b-button class="button-success" type="is-success">✔️ Hoàn tất</b-button>
         </div>
-      </div>
+      <!-- </div> -->
     </nav>
     <div class="content-page">
     <div class="content-left">
@@ -74,14 +74,14 @@ export default {
   background: white;
   backdrop-filter: saturate(180%) blur(24px);
   border: 1px solid #00000015;
+  display: flex;
 }
-#title-bar-content {
+/* #title-bar-content {
   margin-left: auto;
   margin-right: auto;
-  display: flex;
   flex-flow: row;
   align-items: center;
-}
+} */
 .title-label {
   /* margin-top: 16px; */
   text-align: center;
@@ -96,7 +96,6 @@ export default {
   font-family: "Roboto";
   font-weight: 400;
   font-size: 17px;
-  float: right;
 }
 .page-title{
     font-family: Roboto;
