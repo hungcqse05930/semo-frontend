@@ -26,11 +26,10 @@ Vue.use(Buefy)
       <router-link to="/cencorproductmediation">Cencor</router-link>
       <router-link to="/mediationdashboardnameproduct">mediatioinNamePro</router-link>
       <router-link to="/placebid">PB</router-link>
-      <router-link to="/mediationdashboardhome">mediatioinhome</router-link>
+      <!-- <router-link to="/mediationdashboardhome">mediatioinhome</router-link> -->
       <router-link to="/createnewproductaddproduct">newPro</router-link>
-
-
-
+      <router-link to="/createnewproductsuccess">SucPRO</router-link>
+      <router-link to="/createnewproductnotification">NotiPRO</router-link>
       
     </div>
     <router-view id="main-view"/>

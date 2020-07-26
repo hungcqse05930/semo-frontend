@@ -8,14 +8,16 @@
       </div>
     </div> -->
       <b-table
-        class="dashboard-table"
-        :data="data"
-        :checked-rows.sync="checkedRows"
-        checkable
-        checkbox-position="right"
-        paginated
-        per-page="20"
-        pagination-simple
+      class="dashboard-table"
+      :data="data"
+      :checked-rows.sync="checkedRows"
+      checkable
+      checkbox-position="right"
+      paginated
+      pagination-simple
+      hoverable
+      per-page="20"
+      @click="allAlert"
       >
         <template slot-scope="props">
           <template v-for="column in columns">
@@ -38,7 +40,10 @@
         <template slot="bottom-left">
           <b>Total checked</b>
           : {{ checkedRows.length }}
-          <b-button type="is-text">🗑️ Xóa bài đăng</b-button>
+          <b-button @click="deleteAlert" type="is-text">🗑️ Xóa bài đăng</b-button>
+          <b-modal>
+            <MediationDashboardDelete />
+          </b-modal>
           <button class="button field is-danger" @click="checkedRows = []"
                 :disabled="!checkedRows.length">
                 <b-icon icon="close"></b-icon>
@@ -46,10 +51,40 @@
             </button>
         </template>    
       </b-table>
+      <!-- <b-modal
+      :active.sync="isComponentModalActive"
+      has-modal-card
+      trap-focus
+      :destroy-on-hide="false"
+      aria-role="dialog"
+      aria-modal
+      style="width: auto;"
+    >
+      <CencorProductMediation />
+    </b-modal> -->
   </section>
 </template>
 <script>
+import MediationDashboardDelete from "./MediationDashboardDelete.vue";
+// import CencorProductMediation from "../../views/CencorProductMediation.vue";
 export default {
+  components: {
+    MediationDashboardDelete,
+    // CencorProductMediation
+  },
+    methods: {
+    allAlert() {
+      this.isComponentModalActive = true
+    },
+    deleteAlert(){
+       this.$buefy.modal.open({
+         parent: this,
+         component: MediationDashboardDelete,
+         hasModalCard: true,
+         trapFocus: true
+       })
+    }
+  },
   data() {
     const data = [
       {

@@ -23,6 +23,9 @@ import MediationDashboardNameProduct from '../views/MediationDashboardNameProduc
 import PlaceBid from '../views/PlaceBid.vue'
 import MediationDashboardHome from '../views/MediationDashboardHome.vue'
 import CreateNewProductAddProduct from '../views/CreateNewProductAddProduct.vue'
+import CreateNewProductSuccess from '../views/CreateNewProductSuccess.vue'
+import CreateNewProductNotification from '../views/CreateNewProductNotification.vue'
+
 // import { component } from 'vue/types/umd';
 
 Vue.use(VueRouter)
@@ -152,6 +155,16 @@ Vue.use(VueRouter)
     path: '/createnewproductaddproduct',
     name: 'CreateNewProductAddProduct',
     component: CreateNewProductAddProduct
+  },
+  {
+    path: '/createnewproductsuccess',
+    name: 'CreateNewProductSuccess',
+    component: CreateNewProductSuccess
+  },
+  {
+    path: '/createnewproductnotification',
+    name: 'CreateNewProductNotification',
+    component: CreateNewProductNotification
   },
 ]
 
