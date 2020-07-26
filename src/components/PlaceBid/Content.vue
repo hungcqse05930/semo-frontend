@@ -152,16 +152,7 @@ export default {
     getImgUrl(value) {
       return `https://picsum.photos/id/43${value}/1230/500`;
     },
-            next(){
-            // lay ra id cua cai nut Next vua bam
-            let cur_page_button = event.target.id
-            // lay ra so trang hien tai
-            let cur_page_index = cur_page_button.slice(-1)
-            // an trang hien tai di bang display: none
-            document.getElementById('page_'.concat(cur_page_index)).style.display = 'none'
-            // hien trang tiep theo bang display: block
-            document.getElementById('page_'.concat(++cur_page_index)).style.display = 'block'
-        },
+    
   },
   name: "container",
   components: {
@@ -753,6 +744,7 @@ export default {
   margin-top: 24px;
 }
 .flex {
+
   display: flex;
   width: 1246px;
   height: 36px;
@@ -760,6 +752,7 @@ export default {
   justify-content: space-between;
 }
 .paging {
+  
   margin-top: 5px;
   display: flex;
   justify-content: space-between;

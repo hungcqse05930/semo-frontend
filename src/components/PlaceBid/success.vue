@@ -11,48 +11,24 @@
             <p class="first-content">BƯỚC GIÁ</p>
             <p class="second-content">{{production.step}}đ</p>
           </div>
-          <img id="logo"  @click="$parent.close()" src="../../assets/x.png" />
+          <img id="logo"  onclick="window.location.href='/placebid'" src="../../assets/back.png" />
         </div>
         <div class="flex">
         <div class="timeleft">{{production.timeleft}} | </div>
         <div class="countturn"> {{production.countturn}} lượt đấu giá</div>
         </div>
-        <hr>
-        <p class="pay">🤑 Trả giá</p>
-        <div class="flex">        
-          <input class="input" placeholder="80,200,000đ"/>
-        <b-button class="button" type="is-success" @click="isSuccess = true">Đấu giá</b-button>
-        </div>
-        <div class="flex">
-          <p class="wallet">👛 Ví của bạn: </p>
-          <p class="money1">{{production.money}}</p>
-          <p class="givemoney">NẠP TIỀN</p>
-        </div>
+        <br>
+      <img id="logosuccess"  src="../../assets/success.png" />
+                
       </div>
   </div>
-      <template>
-      <section>
-        <div class="bmodal">
-          <b-modal
-            :active.sync="isSuccess"
-            has-modal-card
-            :destroy-on-hide="false"
-            aria-role="dialog"
-            aria-modal
-          >
-            <success />
-          </b-modal>
-        </div>
-      </section>
-    </template>
 </section>
 </template>
 <script>
-import success from "../../components/PlaceBid/success.vue";
+
 export default {
    data() {
     return {
-      isSuccess: false,
 production: {
         price: "80,000,000",
         step: "200,000",
@@ -63,7 +39,7 @@ production: {
     }},
   name: "mediationdashboardeditproduct",
   components: {
-    success
+
   }
   
 }
@@ -139,50 +115,16 @@ production: {
   font-size: 17px;
   color: #707070;
 }
-.pay{
-  margin-left: 40px;
-  font-family: "Roboto";
-  font-weight: 700;
-  font-size: 20px;
-  color: #07D390;
-}
-.input{
-  margin-left: 40px;
-  width: 356px;
-  height: 44px;
-  text-align: right;
-  border-radius: 5px;
-}
-.button{
-  margin-left: 24px;
-  width: 140px;
-  height: 44px;
-  border-radius: 26px;
-}
+
 #logo{
-  margin-left: 210px;
+  margin-left: 220px;
+  margin-top: -20px;
   width: 20px;
   height: 20px;
 }
-.wallet{
-  margin-left: 40px;
-  font-family: "Roboto";
-  font-weight: 500;
-  font-size: 17px;
-  color: #707070;
-}
-.money1{
-  margin-left: 5px;
-  font-family: "Roboto";
-  font-weight: 500;
-  font-size: 17px;
-  color: #01D28E;
-}
-.givemoney{
-    margin-left: 250px;
-  font-family: "Roboto";
-  font-weight: 400;
-  font-size: 16px;
-  color: #01D28E;
+
+#success{
+  width: 600px;
+  height: 250px;
 }
 </style>
