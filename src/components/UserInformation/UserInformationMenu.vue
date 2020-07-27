@@ -1,11 +1,11 @@
 <template>
     <b-menu class="menu-information">
     <b-menu-list>
-      <b-menu-item icon="information-outline" tag="router-link" to="/userinformationfile" label="📜 Hồ sơ">
+      <b-menu-item tag="router-link" to="/userinformationfile" label="📜 Hồ sơ">
       </b-menu-item>
-      <b-menu-item icon="information-outline" tag="router-link" to="/userinformationaddress" label="🏡 Địa chỉ"></b-menu-item>
-      <b-menu-item icon="information-outline" tag="router-link" to="/userinformationaccuracy" label="🎟 Xác thực"></b-menu-item>
-      <b-menu-item icon="information-outline" tag="router-link" to="/resetpassword" label="🔑 Mật khẩu"></b-menu-item>
+      <b-menu-item tag="router-link" to="/userinformationaddress" label="🏡 Địa chỉ"></b-menu-item>
+      <b-menu-item tag="router-link" to="/userinformationaccuracy" label="🎟 Xác thực"></b-menu-item>
+      <b-menu-item tag="router-link" to="/resetpassword" label="🔑 Mật khẩu"></b-menu-item>
     </b-menu-list>
     </b-menu>
 </template>

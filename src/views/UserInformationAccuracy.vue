@@ -13,7 +13,10 @@
               <p>🎫 Xác thực</p>
             </div>
             <div class="accuracy-button">
-              <b-button type="is-success">➕ Thêm giấy tờ tùy thân</b-button>
+              <b-button type="is-success" @click="editAlert">➕ Thêm giấy tờ tùy thân</b-button>
+              <b-modal>
+                <UserInformationEditAddress />
+              </b-modal>
             </div>
           </div>
           <div class="accuracy-information">
@@ -42,14 +45,26 @@
 import TabInformation from "../components/UserInformation/TabInformation.vue";
 import UserFirstDescription from "../components/UserInformation/UserFirstDescription.vue";
 import UserInformationMenu from "../components/UserInformation/UserInformationMenu.vue";
-import UserinformationAccuracyInfo from "../components/UserInformation/UserInformationAccuracyInfo.vue"
+import UserinformationAccuracyInfo from "../components/UserInformation/UserInformationAccuracyInfo.vue";
+import UserInformationEditAddress from "../components/UserInformation/UserInformationEditAddress.vue";
 export default {
   name: "userinformationaccuracy",
   components: {
     TabInformation,
     UserFirstDescription,
     UserInformationMenu,
-    UserinformationAccuracyInfo
+    UserinformationAccuracyInfo,
+    UserInformationEditAddress
+  },
+  methods: {
+    editAlert() {
+      this.$buefy.modal.open({
+        parent: this,
+        component: UserInformationEditAddress,
+        hasModalCard: true,
+        trapFocus: true
+      });
+    }
   },
   data() {
     return {
@@ -57,7 +72,7 @@ export default {
         {
           id: 1,
           title: "CHỨNG MINH NHÂN DÂN",
-          number:"**********36",
+          number: "**********36",
           name: "BÙI TRẦN VIỆT ANH",
           date: "**/**/2013",
           city: "HÀ NỘI",
@@ -66,16 +81,16 @@ export default {
         {
           id: 1,
           title: "CHỨNG MINH NHÂN DÂN",
-          number:"**********36",
+          number: "**********36",
           name: "BÙI TRẦN VIỆT ANH",
           date: "**/**/2013",
           city: "HÀ NỘI",
           condition: "✔️ ĐÃ XÁC THỰC"
         },
-                {
+        {
           id: 1,
           title: "CHỨNG MINH NHÂN DÂN",
-          number:"**********36",
+          number: "**********36",
           name: "BÙI TRẦN VIỆT ANH",
           date: "**/**/2013",
           city: "HÀ NỘI",
@@ -116,34 +131,34 @@ export default {
   justify-content: space-between;
   width: 100%;
 }
-.accuracies{
+.accuracies {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: minmax(-100px, auto);
   margin-top: 24px;
 }
-.accuracy-item{
+.accuracy-item {
   margin-right: 24px;
   margin-bottom: 24px;
 }
-.accuracy-information{
+.accuracy-information {
   width: 100%;
 }
-.pagination{
+.pagination {
   display: flex;
   justify-content: space-between;
 }
-.post-infor{
+.post-infor {
   font-family: "Roboto";
-    font-weight: 500;
-    font-size: 17px;
-    color: #707070;
+  font-weight: 500;
+  font-size: 17px;
+  color: #707070;
 }
-.paging{
+.paging {
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
 }
-.page-back{
+.page-back {
   margin-right: 32px;
-} 
+}
 </style>
