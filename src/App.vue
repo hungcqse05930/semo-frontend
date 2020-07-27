@@ -33,6 +33,7 @@ Vue.use(Buefy)
       <router-link to="/affair">affair</router-link>
       <router-link to="/affaireditcontract">editCT</router-link>
       
+      <router-link to="/userbidauction">BidAuctions</router-link>      
     </div>
     <router-view id="main-view"/>
   </div>

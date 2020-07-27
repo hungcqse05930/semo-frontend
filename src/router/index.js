@@ -27,6 +27,7 @@ import CreateNewProductSuccess from '../views/CreateNewProductSuccess.vue'
 import CreateNewProductNotification from '../views/CreateNewProductNotification.vue'
 import Affair from '../views/Affair.vue'
 import AffairEditContract from '../views/AffairEditContract.vue'
+import UserBidAuction from '../views/UserBidAuction.vue'
 
 // import { component } from 'vue/types/umd';
 
@@ -177,6 +178,11 @@ Vue.use(VueRouter)
     path: '/affaireditcontract',
     name: 'AffairEditContract',
     component: AffairEditContract
+  },
+  {
+    path: '/userbidauction',
+    name: 'UserBidAuction',
+    component: UserBidAuction
   },
 ]
 
