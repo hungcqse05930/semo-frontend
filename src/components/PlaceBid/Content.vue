@@ -64,8 +64,7 @@
       </div>
     </div>
     <br />
-    <p>____________________________________________________________________________________________________________________________________________</p>
-
+  <hr>
     <div id="nextcontent">
       <div class="contentleft1">
         <p class="productinfo">Thông tin sản phẩm</p>
@@ -104,8 +103,7 @@
       </div>
     </div>
 
-    <p>____________________________________________________________________________________________________________________________________________</p>
-
+<hr>
     <div class="footer1">
       <div class="flex">
         <p class="productinfo">Sản phẩm tương tự</p>
@@ -123,8 +121,7 @@
         />
       </div>
     </div>
-    <p>____________________________________________________________________________________________________________________________________________</p>
-
+<hr>
     <template>
       <section>
         <div class="bmodal">
@@ -134,6 +131,7 @@
             :destroy-on-hide="false"
             aria-role="dialog"
             aria-modal
+            :closeModal="close"
           >
             <productviewrow />
           </b-modal>
@@ -152,7 +150,9 @@ export default {
     getImgUrl(value) {
       return `https://picsum.photos/id/43${value}/1230/500`;
     },
-    
+    close() {
+      this.isComponentModalActive = false;
+    }
   },
   name: "container",
   components: {
@@ -453,7 +453,7 @@ export default {
         },
       ],
     };
-  },
+  }
 };
 </script>
 
@@ -726,16 +726,19 @@ export default {
   width: 1246px;
   height: 500px;
   margin-top: 20px;
-  overflow-x: scroll;
   overflow-y: hidden;
   /* white-space: nowrap; */
 }
 .genimage {
-  width: 194px;
-  height: 412px;
-
+  width: 100%;
+  /* height: 412px; */
+  overflow-y: hidden;
+  overflow-x: scroll;
   display: flex;
 }
+
+
+
 .products {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -744,7 +747,7 @@ export default {
   margin-top: 24px;
 }
 .flex {
-
+  
   display: flex;
   width: 1246px;
   height: 36px;

@@ -30,6 +30,8 @@ Vue.use(Buefy)
       <router-link to="/createnewproductaddproduct">newPro</router-link>
       <router-link to="/createnewproductsuccess">SucPRO</router-link>
       <router-link to="/createnewproductnotification">NotiPRO</router-link>
+      <router-link to="/affair">affair</router-link>
+      <router-link to="/affaireditcontract">editCT</router-link>
       
     </div>
     <router-view id="main-view"/>
