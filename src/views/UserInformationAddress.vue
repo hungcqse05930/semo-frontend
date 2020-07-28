@@ -13,25 +13,28 @@
               <p>🏡 Địa chỉ</p>
             </div>
             <div class="address-button">
-              <b-button type="is-primary">➕ Thêm địa chỉ mới</b-button>
+              <b-button @click="editAlert" type="is-primary">➕ Thêm địa chỉ mới</b-button>
+              <b-modal>
+                <UserInformationEditAddress />
+              </b-modal>
             </div>
           </div>
           <div class="address-information">
-              <div class="addresses">
-                <UserinformationAddressInfor
-                  class="address-item"
-                  v-bind:address="address"
-                  v-for="address in addresses"
-                  v-bind:key="address.id"
-                />
-              </div>
+            <div class="addresses">
+              <UserinformationAddressInfor
+                class="address-item"
+                v-bind:address="address"
+                v-for="address in addresses"
+                v-bind:key="address.id"
+              />
+            </div>
           </div>
           <div class="pagination">
-              <p class="post-infor">📰 Hiển thị 1-6 trên 10 bài đăng</p>
-              <div class="paging">
-                <p class="page-back">👈 Trang trước</p>
-                <p class="page-next">Trang sau 👉</p>
-              </div>
+            <p class="post-infor">📰 Hiển thị 1-6 trên 10 bài đăng</p>
+            <div class="paging">
+              <p class="page-back">👈 Trang trước</p>
+              <p class="page-next">Trang sau 👉</p>
+            </div>
           </div>
         </div>
       </div>
@@ -43,13 +46,26 @@ import TabInformation from "../components/UserInformation/TabInformation.vue";
 import UserFirstDescription from "../components/UserInformation/UserFirstDescription.vue";
 import UserInformationMenu from "../components/UserInformation/UserInformationMenu.vue";
 import UserinformationAddressInfor from "../components/UserInformation/UserinformationAddressInfor.vue";
+import UserInformationEditAddress from "../components/UserInformation/UserInformationEditAddress.vue";
+
 export default {
   name: "userinformationaddress",
   components: {
     TabInformation,
     UserFirstDescription,
     UserInformationMenu,
-    UserinformationAddressInfor
+    UserinformationAddressInfor,
+    UserInformationEditAddress
+  },
+    methods: {
+    editAlert() {
+      this.$buefy.modal.open({
+        parent: this,
+        component: UserInformationEditAddress,
+        hasModalCard: true,
+        trapFocus: true
+      });
+    }
   },
   data() {
     return {
@@ -90,7 +106,7 @@ export default {
           second: "Huyện Củ Chiêu",
           city: "Thành phố Hồ Chí Minh"
         },
-         {
+        {
           id: 1,
           name: "Dương Quí Phi",
           phonenumber: "0732569841",
@@ -99,7 +115,7 @@ export default {
           second: "Huyện Củ Chiêu",
           city: "Thành phố Hồ Chí Minh"
         },
-         {
+        {
           id: 1,
           name: "Dương Quí Phi",
           phonenumber: "0732569841",
@@ -143,34 +159,34 @@ export default {
   justify-content: space-between;
   width: 100%;
 }
-.addresses{
+.addresses {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: minmax(-100px, auto);
   margin-top: 24px;
 }
-.address-item{
+.address-item {
   margin-right: 24px;
   margin-bottom: 24px;
 }
-.address-information{
+.address-information {
   width: 100%;
 }
-.pagination{
+.pagination {
   display: flex;
   justify-content: space-between;
 }
-.post-infor{
+.post-infor {
   font-family: "Roboto";
-    font-weight: 500;
-    font-size: 17px;
-    color: #707070;
+  font-weight: 500;
+  font-size: 17px;
+  color: #707070;
 }
-.paging{
+.paging {
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
 }
-.page-back{
+.page-back {
   margin-right: 32px;
-} 
+}
 </style>

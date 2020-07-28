@@ -15,7 +15,7 @@
             <div class="accuracy-button">
               <b-button type="is-success" @click="editAlert">➕ Thêm giấy tờ tùy thân</b-button>
               <b-modal>
-                <UserInformationEditAddress />
+                <UserInformationIndentitycard />
               </b-modal>
             </div>
           </div>
@@ -46,7 +46,7 @@ import TabInformation from "../components/UserInformation/TabInformation.vue";
 import UserFirstDescription from "../components/UserInformation/UserFirstDescription.vue";
 import UserInformationMenu from "../components/UserInformation/UserInformationMenu.vue";
 import UserinformationAccuracyInfo from "../components/UserInformation/UserInformationAccuracyInfo.vue";
-import UserInformationEditAddress from "../components/UserInformation/UserInformationEditAddress.vue";
+import UserInformationIndentitycard from "../components/UserInformation/UserInformationIdentitycard.vue";
 export default {
   name: "userinformationaccuracy",
   components: {
@@ -54,13 +54,13 @@ export default {
     UserFirstDescription,
     UserInformationMenu,
     UserinformationAccuracyInfo,
-    UserInformationEditAddress
+    UserInformationIndentitycard
   },
   methods: {
     editAlert() {
       this.$buefy.modal.open({
         parent: this,
-        component: UserInformationEditAddress,
+        component: UserInformationIndentitycard,
         hasModalCard: true,
         trapFocus: true
       });

@@ -13,7 +13,7 @@
           <p>{{address.city}}</p>
         </div>
         <div class="edit-delete">
-        <b-button class="edit-button" type="is-primary">🖊️ Chỉnh sửa</b-button>
+        <b-button class="edit-button" @click="changeAlert" type="is-primary">🖊️ Chỉnh sửa</b-button>
         <b-button class="delete-button" type="is-danger">🗑️ Xóa</b-button>
         </div>
       </div>
