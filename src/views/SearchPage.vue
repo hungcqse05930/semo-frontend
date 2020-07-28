@@ -48,8 +48,16 @@ export default {
     // PageBar,
     // Footer,
   },
+  created: function() {
+    fetch('http://localhost:3003/product/')
+    .then(response => response.json())
+    .then(json => {
+      this.products_new = json
+    })
+  },
   data() {
     return {
+      products_new: Array,
       products: [
         {
           id: 1,
