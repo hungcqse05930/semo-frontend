@@ -13,9 +13,9 @@
           <p>8,057,000đ</p>
         </div>
         <section class="button-money">
-          <b-button type="is-primary">➕ Nạp tiền vào ví</b-button>
-          <b-button type="is-warning">💳 Chuyển tiền và thanh toán</b-button>
-          <b-button type="is-light">🧾 Lịch sử giao dịch</b-button>
+          <b-button class="money-wallet" type="is-primary">➕ Nạp tiền vào ví</b-button>
+          <b-button class="money-transfer" type="is-warning">💳 Chuyển tiền và thanh toán</b-button>
+          <b-button class="history-transfer" type="is-light">🧾 Lịch sử giao dịch</b-button>
         </section>
       </div>
     </div>
@@ -43,6 +43,7 @@ export default {
   border-radius: 10px;
   transition: 0.25s;
   height: 104px;
+  text-align: center;
 }
 .content-all {
   width: 100%;
@@ -61,4 +62,9 @@ export default {
     font-weight: normal;
     text-align: center;    
 }
+.money-transfer{
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
 </style>

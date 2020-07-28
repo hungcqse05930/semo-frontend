@@ -3,13 +3,13 @@
   <b-tabs v-model="activeTab">
     <b-tab-item label="Đăng nhập">
       <div class="item-login">
-        <section class="input-text">
+        <form method="POST" @submit-prevent="submitLogin" class="input-text">
           <p>Đăng nhập bằng số điện thoại của bạn</p>
           <b-field>
-            <b-input placeholder="Số điện thoại của bạn"></b-input>
+            <b-input v-model="phone" placeholder="Số điện thoại của bạn"></b-input>
           </b-field>
           <b-field>
-            <b-input type="password" placeholder="Mật khẩu" password-reveal></b-input>
+            <b-input v-model="password" type="password" placeholder="Mật khẩu" password-reveal></b-input>
           </b-field>
           <div class="buttons">
             <b-button rounded type="is-success" outlined>Tiếp tục</b-button>
@@ -22,7 +22,7 @@
             mục đích đã được nêu trong chính sách bảo mật của semo.
           </p>
         </div>
-        </section>
+        </form>
       </div>
     </b-tab-item>
     <b-tab-item label="Đăng kí">
@@ -53,8 +53,15 @@ export default {
   components: {},
   data() {
     return {
-      activeTab: 0
-    };
+      activeTab: 0,
+      phone: '',
+      password: ''
+    }
+  },
+  methods: {
+    submitForm () {
+      console.log('hello')
+    }
   }
 };
 </script>
