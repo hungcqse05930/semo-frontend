@@ -16,18 +16,13 @@
     
           <div class="products">
             
-          <UserList
+          <UserListBuy
             class="product-item"
             v-bind:product="product"
             v-for="product in products"
             v-bind:key="product.id"
           />
-
         </div>
-
-
-        
-
         </div>
         
         </div>
@@ -48,7 +43,7 @@
 import UserFirstDescription from "../components/UserInformation/UserFirstDescription.vue";
 import TabInformation from "../components/UserInformation/TabInformation.vue";
 import UserAuctionMenu from "../components/UserBidProduct/UserAuctionMenu.vue";
-import UserList from "../components/UserInformation/UserList.vue";
+import UserListBuy from "../components/UserInformation/UserListBuy.vue";
 
 export default {
   name: "userbidauction",
@@ -56,131 +51,92 @@ export default {
     UserFirstDescription,
     TabInformation,
     UserAuctionMenu,
-    UserList
+    UserListBuy
   },
   data(){
     return{
             products: [
         {
           id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
+          title: "Táo này",
           weight: "4,2 tạ",
           pricetext: "Giá hiện tại",
           price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          seen: "64,250",
-          rank: "Bạn đang là người trả giá cao nhất",
-          button1: "🤑 Trả giá",
+          timetext: "",
+          time: "",
+          seen: "",
+          rank: "Bắt đầu từ 12:29:30, 29/12/2020",
+
+          button2: "📑 Xem chi tiết",
           address: {
             province: "Long An"
           }
         },
         {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
+          id: 2,
+          title: "Táo này đỉnh",
           weight: "4,2 tạ",
           pricetext: "Giá hiện tại",
           price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          seen: "64,250",
-          rank: "Bạn đang là người trả giá cao nhất",
-          button1: "🤑 Trả giá",
+          timetext: "",
+          time: "",
+          seen: "",
+          rank: "Bắt đầu từ 12:29:30, 29/12/2020",          
+
+          button2: "📑 Xem chi tiết",
           address: {
             province: "Long An"
           }
         },
                {
-          id: 1,
+          id: 3,
           title: "Táo này đỉnh vcl các bạn ơi",
           weight: "4,2 tạ",
           pricetext: "Giá hiện tại",
           price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          seen: "64,250",
+          timetext: "",
+          time: "",
+          seen: "",
           rank: "Bạn đang là người trả giá cao nhất",
-          button1: "🤑 Trả giá",
+
+          button2: "📑 Xem chi tiết",
           address: {
             province: "Long An"
           }
         },
         {
-          id: 1,
+          id: 4,
           title: "Táo này đỉnh vcl các bạn ơi",
           weight: "4,2 tạ",
           pricetext: "Giá hiện tại",
           price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          seen: "64,250",
+          timetext: "",
+          time: "",
+          seen: "",
           rank: "Bạn đang là người trả giá cao nhất",
-          button1: "🤑 Trả giá",
+
+          button2: "📑 Xem chi tiết",
           address: {
             province: "Long An"
           }
         },
         {
-          id: 1,
+          id: 5,
           title: "Táo này đỉnh vcl các bạn ơi",
           weight: "4,2 tạ",
           pricetext: "Giá hiện tại",
           price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          seen: "64,250",
+          timetext: "",
+          time: "",
+          seen: "",
           rank: "Bạn đang là người trả giá cao nhất",
-          button1: "🤑 Trả giá",
+
+          button2: "📑 Xem chi tiết",
           address: {
             province: "Long An"
           }
         },
-        {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          seen: "64,250",
-          rank: "Bạn đang là người trả giá cao nhất",
-          button1: "🤑 Trả giá",
-          address: {
-            province: "Long An"
-          }
-        },
-        {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          seen: "64,250",
-          rank: "Bạn đang là người trả giá cao nhất",
-          button1: "🤑 Trả giá",
-          address: {
-            province: "Long An"
-          }
-        },
-        {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          seen: "64,250",
-          rank: "Bạn đang là người trả giá cao nhất",
-          button1: "🤑 Trả giá",
-          address: {
-            province: "Long An"
-          }
-        },
+
         ]
         ,
     }
@@ -207,7 +163,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: minmax(200px, auto);
-  /* margin-left: 17px; */
+  margin-left: 7px;
   margin-top: 26px;
 }
 .paging{

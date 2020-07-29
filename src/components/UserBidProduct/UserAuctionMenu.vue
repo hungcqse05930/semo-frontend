@@ -2,8 +2,8 @@
     <b-menu class="menu-information">
     <b-menu-list>
       <b-menu-item tag="router-link" to="/userbidauction" label="💸 Đang đấu giá"></b-menu-item>
-      <b-menu-item tag="router-link" to="/" label="🤝 Đang giao kèo"></b-menu-item>
-      <b-menu-item tag="router-link" to="/" label="💰 Đã mua"></b-menu-item>
+      <b-menu-item tag="router-link" to="/userbidcontract" label="🤝 Đang giao kèo"></b-menu-item>
+      <b-menu-item tag="router-link" to="/userbidbuy" label="💰 Đã mua"></b-menu-item>
     </b-menu-list>
     </b-menu>
 </template>

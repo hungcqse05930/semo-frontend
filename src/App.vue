@@ -55,6 +55,8 @@ Vue.use(Buefy)
     <router-link to="/affaireditcontract">editCT</router-link>
     <router-link to="/userbidauction">BidAuctions</router-link>
     <router-link to="/userwallet">Wallet</router-link>
+    <router-link to="/userbidcontract">BidContracts</router-link>
+    <router-link to="/userbidbuy">userbidbuy</router-link>
   </div>
 </template>
   
@@ -69,7 +71,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "~bulma/sass/utilities/_all";
 #app {
   @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap");

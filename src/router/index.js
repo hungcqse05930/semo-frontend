@@ -29,6 +29,9 @@ import Affair from '../views/Affair.vue'
 import AffairEditContract from '../views/AffairEditContract.vue'
 import UserBidAuction from '../views/UserBidAuction.vue'
 import UserWallet from '../views/UserWallet.vue'
+import UserBidContract from '../views/UserBidContract.vue'
+import UserBidBuy from '../views/UserBidBuy.vue'
+
 
 // import { component } from 'vue/types/umd';
 
@@ -190,6 +193,17 @@ Vue.use(VueRouter)
     name: 'UserWallet',
     component: UserWallet
   },
+  {
+    path: '/userbidcontract',
+    name: 'UserBidContract',
+    component: UserBidContract
+  },
+  {
+    path: '/userbidbuy',
+    name: 'UserBidBuy',
+    component: UserBidBuy
+  },
+  
 ]
 
 const router = new VueRouter({
