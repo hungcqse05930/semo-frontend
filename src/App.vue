@@ -28,7 +28,7 @@ Vue.use(Buefy)
     </div>
     <router-view id="main-view" />
 
-    <!-- <router-link to="/about">About |</router-link>
+    <router-link to="/about">About |</router-link>
     <router-link to="/login">Login |</router-link>
     <router-link to="/registerstep2">r2 |</router-link>
     <router-link to="/registerstep3">r3 |</router-link>
@@ -53,8 +53,8 @@ Vue.use(Buefy)
     <router-link to="/createnewproductnotification">NotiPRO</router-link>
     <router-link to="/affair">affair</router-link>
     <router-link to="/affaireditcontract">editCT</router-link>
-
-    <router-link to="/userbidauction">BidAuctions</router-link>-->
+    <router-link to="/userbidauction">BidAuctions</router-link>
+    <router-link to="/userwallet">Wallet</router-link>
   </div>
 </template>
   

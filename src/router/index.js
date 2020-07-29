@@ -28,6 +28,7 @@ import CreateNewProductNotification from '../views/CreateNewProductNotification.
 import Affair from '../views/Affair.vue'
 import AffairEditContract from '../views/AffairEditContract.vue'
 import UserBidAuction from '../views/UserBidAuction.vue'
+import UserWallet from '../views/UserWallet.vue'
 
 // import { component } from 'vue/types/umd';
 
@@ -183,6 +184,11 @@ Vue.use(VueRouter)
     path: '/userbidauction',
     name: 'UserBidAuction',
     component: UserBidAuction
+  },
+  {
+    path: '/userwallet',
+    name: 'UserWallet',
+    component: UserWallet
   },
 ]
 

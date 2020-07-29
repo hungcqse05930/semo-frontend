@@ -1,29 +1,43 @@
 <template>
-    <div class="address-container">
-      <div class="address-content">
-        <div class="name-tag">
-          <p class="address-name">{{ address.name }}</p>
-          <b-tag class="default-tag" type="is-primary">Mặc định</b-tag>
-        </div>
-        <p class="address-phonenumber">{{address.phonenumber}}</p>
-        <div class="address-info">
-          <p>{{address.title}}</p>
-          <p>{{address.first}}</p>
-          <p>{{address.second}}</p>
-          <p>{{address.city}}</p>
-        </div>
-        <div class="edit-delete">
+  <div class="address-container">
+    <div class="address-content">
+      <div class="name-tag">
+        <p class="address-name">{{ address.name }}</p>
+        <b-tag class="default-tag" type="is-primary">Mặc định</b-tag>
+      </div>
+      <p class="address-phonenumber">{{address.phonenumber}}</p>
+      <div class="address-info">
+        <p>{{address.title}}</p>
+        <p>{{address.first}}</p>
+        <p>{{address.second}}</p>
+        <p>{{address.city}}</p>
+      </div>
+      <div class="edit-delete">
         <b-button class="edit-button" @click="changeAlert" type="is-primary">🖊️ Chỉnh sửa</b-button>
+        <b-modal>
+          <UserInformationAddressChange />
+        </b-modal>
         <b-button class="delete-button" type="is-danger">🗑️ Xóa</b-button>
-        </div>
       </div>
     </div>
+  </div>
 </template>
 <script>
+import UserInformationEditAddress from "./UserInformationEditAddress.vue";
 export default {
   name: "userinformationaddressinfor",
   props: {
     address: Object
+  },
+  methods: {
+  changeAlert() {
+    this.$buefy.modal.open({
+      parent: this,
+      component: UserInformationEditAddress,
+      hasModalCard: true,
+      trapFocus: true
+    });
+  }
   }
 };
 </script>
@@ -53,7 +67,7 @@ export default {
   opacity: 1;
   margin-bottom: 18px;
 }
-.address-info p{
+.address-info p {
   font-family: Roboto;
   font-size: 17px;
   color: #707070;
@@ -62,7 +76,7 @@ export default {
 .edit-button {
   margin-right: 12px;
 }
-.edit-delete{
+.edit-delete {
   display: flex;
   flex-flow: row;
   float: right;
@@ -70,7 +84,6 @@ export default {
 .name-tag {
   display: flex;
   flex-flow: row;
-  align-items: center;
   justify-content: left;
 }
 </style>
