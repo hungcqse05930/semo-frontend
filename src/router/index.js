@@ -10,7 +10,9 @@ import ConfirmInformation from '../views/ConfirmInformation.vue'
 import SelectPicture from '../views/SelectPicture.vue'
 import SuccessRegister from '../views/SuccessRegister.vue'
 import NameProduct from '../views/NameProduct.vue'
-import UserInformationFile from '../views/UserInformationFile.vue'
+//
+// import UserInformationFile from '../views/UserInformationFile.vue'
+//
 import UserInformationResetPassword from '../views/UserInformationResetPassword.vue'
 import UserInformationAddress from '../views/UserInformationAddress.vue'
 import UserInformationAccuracy from '../views/UserInformationAccuracy.vue'
@@ -32,6 +34,7 @@ import UserWallet from '../views/UserWallet.vue'
 import UserBidContract from '../views/UserBidContract.vue'
 import UserBidBuy from '../views/UserBidBuy.vue'
 
+import UserInformationTESTFILE from '../views/UserInformationTESTFILE.vue'
 
 // import { component } from 'vue/types/umd';
 
@@ -103,11 +106,12 @@ Vue.use(VueRouter)
     name: 'NameProduct',
     component: NameProduct
   },
-  {
-    path: '/userinformationfile',
-    name: 'UserInformationFile',
-    component: UserInformationFile
-  },
+  //User information file
+  // {
+  //   path: '/userinformationfile',
+  //   name: 'UserInformationFile',
+  //   component: UserInformationFile
+  // },
   {
     path: '/resetpassword',
     name: 'UserInformationResetPassword',
@@ -203,7 +207,11 @@ Vue.use(VueRouter)
     name: 'UserBidBuy',
     component: UserBidBuy
   },
-  
+  {
+    path: '/userinformationtest',
+    name: 'UserInformationTESTFILE',
+    component: UserInformationTESTFILE
+  },
 ]
 
 const router = new VueRouter({

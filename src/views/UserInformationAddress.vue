@@ -1,9 +1,9 @@
 <template>
   <div class="address-container">
     <div class="first-content">
-      <UserFirstDescription />
+      <!-- <UserFirstDescription /> -->
     </div>
-    <TabInformation />
+    <!-- <TabInformation /> -->
     <div class="user-content">
       <UserInformationMenu />
       <div class="content-all">
@@ -42,8 +42,8 @@
   </div>
 </template>
 <script>
-import TabInformation from "../components/UserInformation/TabInformation.vue";
-import UserFirstDescription from "../components/UserInformation/UserFirstDescription.vue";
+// import TabInformation from "../components/UserInformation/TabInformation.vue";
+// import UserFirstDescription from "../components/UserInformation/UserFirstDescription.vue";
 import UserInformationMenu from "../components/UserInformation/UserInformationMenu.vue";
 import UserinformationAddressInfor from "../components/UserInformation/UserinformationAddressInfor.vue";
 import UserInformationEditAddress from "../components/UserInformation/UserInformationEditAddress.vue";
@@ -51,8 +51,8 @@ import UserInformationEditAddress from "../components/UserInformation/UserInform
 export default {
   name: "userinformationaddress",
   components: {
-    TabInformation,
-    UserFirstDescription,
+    // TabInformation,
+    // UserFirstDescription,
     UserInformationMenu,
     UserinformationAddressInfor,
     UserInformationEditAddress

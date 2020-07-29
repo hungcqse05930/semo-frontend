@@ -1,7 +1,7 @@
 <template>
   <div class="accuracy-container">
     <div class="first-content">
-      <UserFirstDescription />
+      <!-- <UserFirstDescription /> -->
     </div>
     <TabInformation />
     <div class="user-content">
@@ -43,7 +43,7 @@
 </template>
 <script>
 import TabInformation from "../components/UserInformation/TabInformation.vue";
-import UserFirstDescription from "../components/UserInformation/UserFirstDescription.vue";
+// import UserFirstDescription from "../components/UserInformation/UserFirstDescription.vue";
 import UserInformationMenu from "../components/UserInformation/UserInformationMenu.vue";
 import UserinformationAccuracyInfo from "../components/UserInformation/UserInformationAccuracyInfo.vue";
 import UserInformationIndentitycard from "../components/UserInformation/UserInformationIdentitycard.vue";
@@ -51,7 +51,7 @@ export default {
   name: "userinformationaccuracy",
   components: {
     TabInformation,
-    UserFirstDescription,
+    // UserFirstDescription,
     UserInformationMenu,
     UserinformationAccuracyInfo,
     UserInformationIndentitycard
