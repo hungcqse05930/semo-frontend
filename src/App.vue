@@ -64,6 +64,7 @@ export default {
   data() {
     return {
       home: true,
+      search: ''
     };
   },
 };

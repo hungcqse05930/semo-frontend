@@ -10,9 +10,9 @@
               <b-tab-item label="Đăng ký"></b-tab-item>
             </b-tabs>
 
-            <section v-if="activeTab == 0">
+            <section v-if="activeTab === 0">
               <p class="label-info">Đăng nhập bằng số điện thoại của bạn</p>
-              <!--  -->
+              <!-- FORM LOG IN -->
               <form @submit.prevent="loginSubmit">
                 <b-input class="login-input" v-model="phone" placeholder="Số điện thoại của bạn"></b-input>
                 <b-input
@@ -38,6 +38,27 @@
                 mục đích đã được nêu trong chính sách bảo mật của semo.
               </p>
             </section>
+            <section v-if="activeTab === 1">
+              <p class="label-info">Sử dụng số điện thoại của bạn để đăng ký</p>
+              <!--  -->
+              <form @submit.prevent="signupSubmit">
+                <b-input class="login-input" v-model="phone" placeholder="Số điện thoại của bạn"></b-input>
+                <br />
+                <b-button
+                  rounded
+                  type="is-primary"
+                  style="width: 100%; font-size: 18px; font-weight: 700;"
+                  outlined
+                  native-type="submit"
+                >🤟 Tiếp tục</b-button>
+              </form>
+              <p style="margin-top: 40px; font-size: 10px;">
+                Bằng việc điền đúng số điện thoại và tiến hành đăng ký,<br>
+                bạn đã đồng ý với điều khoản về chính sách bảo mật<br>
+                thông tin và quyền sử dụng thông tin cá nhân vào<br>
+                mục đích đã được nêu trong chính sách bảo mật của semo.
+              </p>
+            </section>
           </div>
           <!-- <LoginAndRegister /> -->
         </div>
@@ -47,6 +68,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 // import NextButton from "../components/Auth/NextButton.vue";
 // import ContentLast from "../components/Auth/ContentLast.vue";
 // import ContentLeftPicture from "../components/Auth/ContentLeftPicture.vue";
@@ -62,13 +84,20 @@ export default {
   data() {
     return {
       activeTab: 0,
-      phone: "",
-      password: "",
+      phone: '',
+      password: '',
     };
   },
   methods: {
     loginSubmit() {
-      
+      axios.post('http://35.225.163.234:2301/?url=http://192.168.123.46:3003/user/login', {
+        phone: this.phone,
+        password: this.password
+      }).then(response => {
+        alert(response.token ? "yes" : "no")
+      }).catch(error => {
+        alert(error.message)
+      })
     },
   }
 };
@@ -80,8 +109,7 @@ export default {
 }
 
 .background {
-  background: url("https://beautifuldayroc.com/wp-content/uploads/2017/10/Fresh-fruit-pretty.jpg.653x0_q80_crop-smart.jpg")
-    no-repeat center;
+  background: url("https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg") no-repeat center;
   background-size: cover;
 }
 
