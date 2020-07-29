@@ -43,7 +43,9 @@ export default {
   border-radius: 10px;
   transition: 0.25s;
   height: 104px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .content-all {
   width: 100%;

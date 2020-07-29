@@ -10,7 +10,9 @@ import ConfirmInformation from '../views/ConfirmInformation.vue'
 import SelectPicture from '../views/SelectPicture.vue'
 import SuccessRegister from '../views/SuccessRegister.vue'
 import NameProduct from '../views/NameProduct.vue'
-import UserInformationFile from '../views/UserInformationFile.vue'
+//
+// import UserInformationFile from '../views/UserInformationFile.vue'
+//
 import UserInformationResetPassword from '../views/UserInformationResetPassword.vue'
 import UserInformationAddress from '../views/UserInformationAddress.vue'
 import UserInformationAccuracy from '../views/UserInformationAccuracy.vue'
@@ -29,6 +31,7 @@ import Affair from '../views/Affair.vue'
 import AffairEditContract from '../views/AffairEditContract.vue'
 import UserBidAuction from '../views/UserBidAuction.vue'
 import UserWallet from '../views/UserWallet.vue'
+import UserInformationTESTFILE from '../views/UserInformationTESTFILE.vue'
 
 // import { component } from 'vue/types/umd';
 
@@ -100,11 +103,12 @@ Vue.use(VueRouter)
     name: 'NameProduct',
     component: NameProduct
   },
-  {
-    path: '/userinformationfile',
-    name: 'UserInformationFile',
-    component: UserInformationFile
-  },
+  //User information file
+  // {
+  //   path: '/userinformationfile',
+  //   name: 'UserInformationFile',
+  //   component: UserInformationFile
+  // },
   {
     path: '/resetpassword',
     name: 'UserInformationResetPassword',
@@ -189,6 +193,11 @@ Vue.use(VueRouter)
     path: '/userwallet',
     name: 'UserWallet',
     component: UserWallet
+  },
+  {
+    path: '/userinformationtest',
+    name: 'UserInformationTESTFILE',
+    component: UserInformationTESTFILE
   },
 ]
 

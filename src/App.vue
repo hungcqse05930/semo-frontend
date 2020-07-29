@@ -36,7 +36,7 @@ Vue.use(Buefy)
     <router-link to="/registerstep5">r5</router-link>
     <router-link to="/registerstep6">r6</router-link>
     <router-link to="/registerstep7">r7</router-link>
-    <router-link to="/userinformationfile">njlbh</router-link>
+    <!-- <router-link to="/userinformationfile">njlbh</router-link> -->
     <router-link to="/resetpassword">pwđ</router-link>
     <router-link to="/userinformationaddress">add</router-link>
     <router-link to="/userinformationaccuracy">accuracy</router-link>
@@ -55,6 +55,7 @@ Vue.use(Buefy)
     <router-link to="/affaireditcontract">editCT</router-link>
     <router-link to="/userbidauction">BidAuctions</router-link>
     <router-link to="/userwallet">Wallet</router-link>
+    <router-link to="/userinformationtest">test</router-link>
   </div>
 </template>
   

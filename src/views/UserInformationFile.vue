@@ -1,4 +1,4 @@
-<template>
+<!--<template>
   <div class="file-container">
     <div class="first-content">
       <UserFirstDescription />
@@ -173,5 +173,6 @@ export default {
   height: 44px;
   margin: 0 auto 32px auto;
 }
+ -->
 
 </style>
