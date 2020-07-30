@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     modules: {
-        ui:UIModule,
+        ui: UIModule,
         user: User
     }
 });
