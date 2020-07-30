@@ -22,7 +22,8 @@ Vue.use(Buefy)
           ></b-input>
         </div>
         <div class="column is-3 right">
-          <router-link to="/login" @click="home = false">👋 Đăng nhập</router-link>
+          <router-link v-if="loggedIn" to="/login" @click="home = false">👋 Đăng nhập</router-link>
+          <router-link v-if="!loggedIn" to="/user" @click="home = false">👦 Tài khoản của bạn</router-link>
         </div>
       </div>
     </div>
@@ -59,6 +60,7 @@ Vue.use(Buefy)
     <router-link to="/userbidcontract">BidContracts</router-link>
     <router-link to="/userbidbuy">userbidbuy</router-link>
     <router-link to="/userinformationtest">test</router-link>
+    <b-button @click="logout">Log out</b-button>
   </div>
 </template>
   
@@ -71,6 +73,18 @@ export default {
       search: ''
     };
   },
+  computed: {
+    loggedIn(){
+      return this.$store.getters.loggedIn
+    }
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch('LOGOUT').then(() => {
+        this.$router.push({ name: 'Logout' })
+      })
+    }
+  }
 };
 </script>
 

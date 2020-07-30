@@ -29,9 +29,7 @@
                   aria-close-label="Đóng"
                   role="alert"
                   :active.sync="error"
-                >
-                ad
-                </b-notification>
+                >ad</b-notification>
                 <b-button
                   rounded
                   type="is-primary"
@@ -77,7 +75,6 @@
 </template>
 
 <script>
-import axios from "axios";
 // import NextButton from "../components/Auth/NextButton.vue";
 // import ContentLast from "../components/Auth/ContentLast.vue";
 // import ContentLeftPicture from "../components/Auth/ContentLeftPicture.vue";
@@ -95,22 +92,19 @@ export default {
       activeTab: 0,
       phone: "0912345678",
       password: "123456",
-      error: false
+      error: false,
     };
   },
   methods: {
     loginSubmit() {
       this.$store
         .dispatch("LOGIN", {
-          _phone: this.phone,
-          _password: this.password,
+          phone: this.phone,
+          password: this.password,
         })
-        .then((success) => {
-          this.$router.push("/");
+        .then(() => {
+          this.$router.push({ name: 'Home'})
         })
-        .catch((error) => {
-          this.error = true
-        });
     },
   },
 };
