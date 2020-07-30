@@ -1,106 +1,106 @@
 <template>
-    <div class="columns is-4">
-      <!-- menu -->
-      <div class="column is-2">
-        <b-menu class="menu-information" activable v-model="activeTab">
-          <b-menu-list v-model="activeTab">
-            <b-menu-item :active.sync="info" label="📜 Hồ sơ"></b-menu-item>
-            <b-menu-item :active.sync="address" label="🏡 Địa chỉ"></b-menu-item>
-            <b-menu-item :active.sync="identity" label="🎟 Xác thực"></b-menu-item>
-            <b-menu-item :active.sync="password" label="🔑 Mật khẩu"></b-menu-item>
-          </b-menu-list>
-          <p>
-            {{info}}
-            {{address}}
-            {{identity}}
-            {{password}}
-          </p>
-        </b-menu>
-      </div>
-      <!-- functional section -->
-      <div v-if="info" class="column is-10">
-          <div class="content-all">
-            <div class="content-information columns">
-              <div class="column is-9">
-                <div class="first-title">
-                  <p>👦 Thông tin lý lịch</p>
-                </div>
-                <b-field>
-                  <div class="field-label is-normal">
-                    <p>Số điện thoại</p>
-                  </div>
-                  <fieldset disabled>
-                    <div class="input-text">
-                      <input class="input" type="text" value="******98" />
-                    </div>
-                  </fieldset>
-                </b-field>
-                <b-field>
-                  <div class="field-label is-normal">
-                    <p>Họ và tên</p>
-                  </div>
-                  <div class="input-text">
-                    <input class="input" type="text" value="Bùi Trần Việt Anh" />
-                  </div>
-                </b-field>
-                <b-field>
-                  <div class="field-label is-normal">
-                    <p>Ngày sinh</p>
-                  </div>
-                  <div class="input-text">
-                    <b-datepicker
-                      placeholder="Click to select..."
-                      :min-date="minDate"
-                      :max-date="maxDate"
-                    ></b-datepicker>
-                  </div>
-                </b-field>
-                <b-field>
-                  <div class="field-label is-normal">
-                    <p>Giới tính</p>
-                  </div>
-                  <div class="input-text">
-                    <div class="select is-fullwidth">
-                      <select>
-                        <option>Nam</option>
-                        <option>Nữ</option>
-                      </select>
-                    </div>
-                  </div>
-                </b-field>
-              </div>
-              <div class="content-right column is-3">
-                <div class="first-title">
-                  <p>🖼️ Ảnh đại diện</p>
-                </div>
-                <img
-                  class="picture-user"
-                  src="https://st.quantrimang.com/photos/image/072015/22/avatar.jpg"
-                />
-                <div class="picture-information">
-                  <p>
-                    Dụng lượng file tối đa 1 MB
-                    Định dạng:.JPEG, .PNG
-                  </p>
-                  <div class="message-picture">
-                    <p>Không thể tải hình ảnh lên</p>
-                  </div>
-                </div>
-              </div>
+  <div class="columns is-4">
+    <!-- menu -->
+    <div class="column is-2">
+      <b-menu class="menu-information" activable v-model="activeTab">
+        <b-menu-list v-model="activeTab">
+          <b-menu-item :active.sync="info" label="📜 Hồ sơ"></b-menu-item>
+          <b-menu-item :active.sync="address" label="🏡 Địa chỉ"></b-menu-item>
+          <b-menu-item :active.sync="identity" label="🎟 Xác thực"></b-menu-item>
+          <b-menu-item :active.sync="password" label="🔑 Mật khẩu"></b-menu-item>
+        </b-menu-list>
+        <p>
+          {{info}}
+          {{address}}
+          {{identity}}
+          {{password}}
+        </p>
+      </b-menu>
+    </div>
+    <!-- functional section -->
+    <div class="column is-10">
+      <div id="info-form" v-if="info" class="content-all">
+        <div class="content-information columns">
+          <div class="column is-9">
+            <div class="first-title">
+              <p>👦 Thông tin lý lịch</p>
             </div>
-            <div class="save-button">
-              <b-button type="is-success">💾 Lưu thay đổi</b-button>
+            <b-field>
+              <div class="field-label is-normal">
+                <p>Số điện thoại</p>
+              </div>
+              <fieldset disabled>
+                <div class="input-text">
+                  <input class="input" type="text" value="******98" />
+                </div>
+              </fieldset>
+            </b-field>
+            <b-field>
+              <div class="field-label is-normal">
+                <p>Họ và tên</p>
+              </div>
+              <div class="input-text">
+                <input class="input" type="text" value="Bùi Trần Việt Anh" />
+              </div>
+            </b-field>
+            <b-field>
+              <div class="field-label is-normal">
+                <p>Ngày sinh</p>
+              </div>
+              <div class="input-text">
+                <b-datepicker
+                  placeholder="Click to select..."
+                  :min-date="minDate"
+                  :max-date="maxDate"
+                ></b-datepicker>
+              </div>
+            </b-field>
+            <b-field>
+              <div class="field-label is-normal">
+                <p>Giới tính</p>
+              </div>
+              <div class="input-text">
+                <div class="select is-fullwidth">
+                  <select>
+                    <option>Nam</option>
+                    <option>Nữ</option>
+                  </select>
+                </div>
+              </div>
+            </b-field>
+          </div>
+          <div class="content-right column is-3">
+            <div class="first-title">
+              <p>🖼️ Ảnh đại diện</p>
+            </div>
+            <img
+              class="picture-user"
+              src="https://st.quantrimang.com/photos/image/072015/22/avatar.jpg"
+            />
+            <div class="picture-information">
+              <p>
+                Dụng lượng file tối đa 1 MB
+                Định dạng:.JPEG, .PNG
+              </p>
+              <div class="message-picture">
+                <p>Không thể tải hình ảnh lên</p>
+              </div>
             </div>
           </div>
-        <section v-if="address">
-          qdqqwd
-        </section>
-        <section v-if="identity">
-          awawof2ajo3iaj
-        </section>
-        <section v-if="password">1</section>
+        </div>
+        <div class="save-button">
+          <b-button type="is-success">💾 Lưu thay đổi</b-button>
+        </div>
       </div>
+
+      <div id="address-form" v-if="address" class="content-all">
+        OKOKOKOKOKOKOKO
+      </div>
+
+      <section v-if="identity"></section>
+      <section v-if="password"></section>
     </div>
+  </div>
 </template>
 <script>
 export default {
@@ -131,7 +131,7 @@ export default {
   max-width: 1366px;
   margin: auto 60px auto 60px;
 }
-.first-content{
+.first-content {
   display: flex;
   flex-flow: row;
 }
@@ -188,9 +188,9 @@ export default {
   font-size: 16px;
   color: #fd5e53;
 }
-.save-button{
+.save-button {
   width: 135px;
   height: 44px;
-  margin: 0 auto 32px auto;
+  margin: 0 auto 24px auto;
 }
 </style>
