@@ -47,7 +47,7 @@
   </section>
 </template>
 <script>
-import MediationDashboardDelete from "./MediationDashboardDelete.vue";
+import MediationDashboardDelete from "../MediationDashboard/MediationDashboardDelete.vue";
 export default {
   components: {
     MediationDashboardDelete,
@@ -66,66 +66,38 @@ export default {
     const data = [
       {
         id: 1,
-        content:
-          "Táo này là táo Ambrossia nè các cậu ơi. Dòng thứ 2 của sản phẩm",
-        product_name: "TÁO AMBROSSIA",
         user_name: "Nguyen Ha Thanh",
-        date: "2016-10-15 13:43:27",
-        status: "⏲️ Chờ kiểm duyệt"
+        status: "200,000,000 VND"
       },
       {
         id: 2,
-        content:
-          "Táo này là táo Ambrossia nè các cậu ơi. Dòng thứ 2 của sản phẩm",
-        product_name: "TÁO AMBROSSIA",
         user_name: "Nguyen Ha Thanh",
-        date: "2016-10-15 13:43:27",
-        status: "💰 Đã bán"
+        status: "200,000,000 VND"
       },
       {
         id: 3,
-        content:
-          "Táo này là táo Ambrossia nè các cậu ơi. Dòng thứ 2 của sản phẩm",
-        product_name: "TÁO AMBROSSIA",
         user_name: "Nguyen Ha Thanh",
-        date: "2016-10-15 13:43:27",
-        status: "💰 Đã bán"
+        status: "200,000,000 VND"
       },
       {
         id: 4,
-        content:
-          "Táo này là táo Ambrossia nè các cậu ơi. Dòng thứ 2 của sản phẩm",
-        product_name: "TÁO AMBROSSIA",
         user_name: "Nguyen Ha Thanh",
-        date: "2016-10-15 13:43:27",
-        status: "🤝 Đang giao kèo"
+        status: "200,000,000 VND"
       },
       {
         id: 5,
-        content:
-          "Táo này là táo Ambrossia nè các cậu ơi. Dòng thứ 2 của sản phẩm",
-        product_name: "TÁO AMBROSSIA",
         user_name: "Nguyen Ha Thanh",
-        date: "2016-10-15 13:43:27",
-        status: "✅ Đã kiểm duyệt"
+        status: "200,000,000 VND"
       },
       {
         id: 6,
-        content:
-          "Táo này là táo Ambrossia nè các cậu ơi. Dòng thứ 2 của sản phẩm",
-        product_name: "TÁO AMBROSSIA",
         user_name: "Nguyen Ha Thanh",
-        date: "2016-10-15 13:43:27",
-        status: "⚠ Cần chỉnh sửa"
+        status: "200,000,000 VND"
       },
       {
         id: 7,
-        content:
-          "Táo này là táo Ambrossia nè các cậu ơi. Dòng thứ 2 của sản phẩm",
-        product_name: "TÁO AMBROSSIA",
         user_name: "Nguyen Ha Thanh",
-        date: "2016-10-15 13:43:27",
-        status: "💸 Đang đấu giá"
+        status: "200,000,000 VND"
       }
     ];
 
@@ -142,24 +114,8 @@ export default {
           searchable: true
         },
         {
-          field: "content",
-          label: "Content",
-          searchable: true
-        },
-        {
-          field: "product_name",
-          label: "Product Name",
-          searchable: true
-        },
-        {
           field: "user_name",
           label: "User Name",
-          searchable: true
-        },
-        {
-          field: "date",
-          label: "Date",
-          centered: true,
           searchable: true
         },
         {

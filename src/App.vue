@@ -49,7 +49,7 @@ Vue.use(Buefy)
     <router-link to="/cencorproductmediation">Cencor</router-link>
     <router-link to="/mediationdashboardnameproduct">mediatioinNamePro</router-link>
     <router-link to="/placebid">PB</router-link>
-    <router-link to="/mediationdashboardhome">mediatioinhome</router-link>
+    <!-- <router-link to="/mediationdashboardhome">mediatioinhome</router-link> -->
     <router-link to="/createnewproductaddproduct">newPro</router-link>
     <router-link to="/createnewproductsuccess">SucPRO</router-link>
     <router-link to="/createnewproductnotification">NotiPRO</router-link>
@@ -60,6 +60,7 @@ Vue.use(Buefy)
     <router-link to="/userbidcontract">BidContracts</router-link>
     <router-link to="/userbidbuy">userbidbuy</router-link>
     <router-link to="/userinformationtest">test</router-link>
+    <router-link to="/adminwallet">adwallet</router-link>
     <b-button @click="logout">Log out</b-button>
   </div>
 </template>

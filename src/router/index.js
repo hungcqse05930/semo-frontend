@@ -33,6 +33,7 @@ import UserBidAuction from '../views/UserBidAuction.vue'
 import UserWallet from '../views/UserWallet.vue'
 import UserBidContract from '../views/UserBidContract.vue'
 import UserBidBuy from '../views/UserBidBuy.vue'
+import AdminWallet from '../views/AdminWallet.vue'
 
 import UserInformationTESTFILE from '../views/UserInformationTESTFILE.vue'
 
@@ -211,6 +212,11 @@ Vue.use(VueRouter)
     path: '/userinformationtest',
     name: 'UserInformationTESTFILE',
     component: UserInformationTESTFILE
+  },
+  {
+    path: '/adminwallet',
+    name: 'AdminWallet',
+    component: AdminWallet
   },
 ]
 

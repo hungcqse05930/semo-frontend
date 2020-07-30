@@ -2,7 +2,7 @@
   <div class="menu">
     <b-menu class="menu-container">
       <b-menu-list :active="isActive">
-        <b-menu-item tag="router-link" to="/" label="Ví tiền"></b-menu-item>
+        <b-menu-item tag="router-link" to="/adminwallet" label="Ví tiền"></b-menu-item>
         <b-menu-item tag="router-link" to="/" label="Giao dịch"></b-menu-item>
         <b-menu-item tag="router-link" to="/mediationdashboardproduct" label="📦 Sản phẩm"></b-menu-item>
         <b-menu-item tag="router-link" to="/mediationdashboardnameproduct" label="🍑 Loại quả"></b-menu-item>
