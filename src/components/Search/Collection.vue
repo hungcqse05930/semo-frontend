@@ -4,6 +4,7 @@
       <!-- <PageTitleBar />
       <Content />
       <CategoryBar />-->
+      <!-- <div class="above"> -->
       <Header />
       <div class="search-result">
         <div class="products">
@@ -18,6 +19,7 @@
       <PageBar></PageBar>
     </div>
     <Footer />
+  <!-- </div> -->
   </div>
 </template>
 

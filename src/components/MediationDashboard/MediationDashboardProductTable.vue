@@ -17,11 +17,11 @@
       pagination-simple
       hoverable
       per-page="20"
-      @click="allAlert"
       >
         <template slot-scope="props">
           <template v-for="column in columns">
-            <b-table-column :key="column.id" v-bind="column">
+            <b-table-column :key="column.id" v-bind="column"
+             onclick="window.location.href='/cencorproductmediation'">
               <template
                 v-if="column.searchable && !column.numeric"
                 slot="searchable"
@@ -51,31 +51,15 @@
             </button>
         </template>    
       </b-table>
-      <!-- <b-modal
-      :active.sync="isComponentModalActive"
-      has-modal-card
-      trap-focus
-      :destroy-on-hide="false"
-      aria-role="dialog"
-      aria-modal
-      style="width: auto;"
-    >
-      <CencorProductMediation />
-    </b-modal> -->
   </section>
 </template>
 <script>
 import MediationDashboardDelete from "./MediationDashboardDelete.vue";
-// import CencorProductMediation from "../../views/CencorProductMediation.vue";
 export default {
   components: {
     MediationDashboardDelete,
-    // CencorProductMediation
   },
     methods: {
-    allAlert() {
-      this.isComponentModalActive = true
-    },
     deleteAlert(){
        this.$buefy.modal.open({
          parent: this,

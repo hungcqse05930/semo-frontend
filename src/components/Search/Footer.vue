@@ -1,11 +1,11 @@
 <template>
   <section>
-    <div class="footer"></div>
+    <div class="footer1"></div>
   </section>
 </template>
 
 <style scoped >
-.footer {
+.footer1 {
   left: 60px;
   margin-top: 40px;
   width: 1280px;

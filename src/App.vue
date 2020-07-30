@@ -37,7 +37,7 @@ Vue.use(Buefy)
     <router-link to="/registerstep5">r5</router-link>
     <router-link to="/registerstep6">r6</router-link>
     <router-link to="/registerstep7">r7</router-link>
-    <router-link to="/userinformationfile">njlbh</router-link>
+    <!-- <router-link to="/userinformationfile">njlbh</router-link> -->
     <router-link to="/resetpassword">pwđ</router-link>
     <router-link to="/userinformationaddress">add</router-link>
     <router-link to="/userinformationaccuracy">accuracy</router-link>
@@ -56,6 +56,9 @@ Vue.use(Buefy)
     <router-link to="/affaireditcontract">editCT</router-link>
     <router-link to="/userbidauction">BidAuctions</router-link>
     <router-link to="/userwallet">Wallet</router-link>
+    <router-link to="/userbidcontract">BidContracts</router-link>
+    <router-link to="/userbidbuy">userbidbuy</router-link>
+    <router-link to="/userinformationtest">test</router-link>
   </div>
 </template>
   
@@ -71,7 +74,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "~bulma/sass/utilities/_all";
 #app {
   @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap");

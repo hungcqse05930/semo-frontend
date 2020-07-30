@@ -1,20 +1,20 @@
 <template>
   <div>
-    <PageTitleBar />
+    <!-- <PageTitleBar /> -->
     <Content />
     <CategoryBar />
   </div>
 </template>
 
 <script>
-import PageTitleBar from "../../components/Search/PageTitleBar.vue";
+// import PageTitleBar from "../../components/Search/PageTitleBar.vue";
 import Content from "../../components/Search/Content.vue";
 import CategoryBar from "../../components/Search/CategoryBar.vue";
 
 export default {
   name: "sort",
   components: {
-    PageTitleBar,
+    // PageTitleBar,
     Content,
     CategoryBar
   },
