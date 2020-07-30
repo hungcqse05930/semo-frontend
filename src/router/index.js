@@ -198,12 +198,6 @@ Vue.use(VueRouter)
     component: UserWallet
   },
   {
-<<<<<<< HEAD
-    path: '/search',
-    name: 'Search',
-    component: Search
-  }
-=======
     path: '/userbidcontract',
     name: 'UserBidContract',
     component: UserBidContract
@@ -218,7 +212,6 @@ Vue.use(VueRouter)
     name: 'UserInformationTESTFILE',
     component: UserInformationTESTFILE
   },
->>>>>>> 0567d1a16659b4c9b7f243aa068d0fa459514982
 ]
 
 const router = new VueRouter({
