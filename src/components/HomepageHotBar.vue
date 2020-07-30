@@ -1,6 +1,15 @@
 <template>
-  <div class="hot-bar-container">
-      <h1>Đông đảo bà con</h1>
+  <div class="container">
+    <div class="title">
+      <p class="section-title" slot="title"></p>
+      <div>
+        <b-button label="👈 Trang trước">
+        <b-button label="Trang sau 👉">
+      </div>
+    </div>
+      <div class="products columns">
+        <div class="column is-2">
+
   </div>
 </template>
 

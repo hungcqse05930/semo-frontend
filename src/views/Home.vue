@@ -1,25 +1,37 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+  <div class="container">
+    <!-- banner -->
+    <div class="news columns">
+      <div class="column is-2" v-for="collection in collections" :key="collection.id">
+        <p class="collection-title"></p>
+      </div>
+    </div>
+
+    <!-- most viewed -->
+    
+  </div>
+
+    <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <!-- Nút này để mở modal 1, @click là event mở modal 1 -->
-    <b-button @click="open_instruction">Show modal 1</b-button>
+    <!-- <b-bu
+    333tton @click="open_instruction">Show modal 1</b-button> -->
 
     <!-- Modal 1 -->
-    <b-modal :active.sync="modal1" :width="640" scroll="keep">
+    <!-- <b-modal :active.sync="modal1" :width="640" scroll="keep">
       <div class="modal-card-body">
-        <!-- Nút này để đóng modal 1 và mở modal 2, @click là event đóng modal 1 và mở modal 2 -->
+         Nút này để đóng modal 1 và mở modal 2, @click là event đóng modal 1 và mở modal 2 
         <b-button @click="close_instruction">Show modal 2</b-button>
       </div>
-    </b-modal>
+    </b-modal> -->
 
     <!-- Modal 2 -->
-    <b-modal :active.sync="modal2" :width="640" scroll="keep">
+    <!-- <b-modal :active.sync="modal2" :width="640" scroll="keep">
       <div class="modal-card-body">
         <h2>Modal 2</h2>
         <p>Helloooooooooo</p>
       </div>
-    </b-modal>
-  </div>
+    </b-modal> -->
+  <!-- </div> -->
 </template>
 
 <script>

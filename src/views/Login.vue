@@ -23,6 +23,15 @@
                   password-reveal
                 ></b-input>
                 <br />
+                <b-notification
+                  type="is-danger"
+                  has-icon
+                  aria-close-label="Đóng"
+                  role="alert"
+                  :active.sync="error"
+                >
+                ad
+                </b-notification>
                 <b-button
                   rounded
                   type="is-primary"
@@ -32,10 +41,10 @@
                 >🙌 Tiếp tục</b-button>
               </form>
               <p style="margin-top: 40px; font-size: 10px;">
-                Bằng việc điền đúng số điện thoại và tiến hành đăng ký,<br>
-                bạn đã đồng ý với điều khoản về chính sách bảo mật<br>
-                thông tin và quyền sử dụng thông tin cá nhân vào<br>
-                mục đích đã được nêu trong chính sách bảo mật của semo.
+                Bằng việc điền đúng số điện thoại và tiến hành đăng ký,
+                <br />bạn đã đồng ý với điều khoản về chính sách bảo mật
+                <br />thông tin và quyền sử dụng thông tin cá nhân vào
+                <br />mục đích đã được nêu trong chính sách bảo mật của semo.
               </p>
             </section>
             <section v-if="activeTab === 1">
@@ -53,10 +62,10 @@
                 >🤟 Tiếp tục</b-button>
               </form>
               <p style="margin-top: 40px; font-size: 10px;">
-                Bằng việc điền đúng số điện thoại và tiến hành đăng ký,<br>
-                bạn đã đồng ý với điều khoản về chính sách bảo mật<br>
-                thông tin và quyền sử dụng thông tin cá nhân vào<br>
-                mục đích đã được nêu trong chính sách bảo mật của semo.
+                Bằng việc điền đúng số điện thoại và tiến hành đăng ký,
+                <br />bạn đã đồng ý với điều khoản về chính sách bảo mật
+                <br />thông tin và quyền sử dụng thông tin cá nhân vào
+                <br />mục đích đã được nêu trong chính sách bảo mật của semo.
               </p>
             </section>
           </div>
@@ -68,7 +77,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 // import NextButton from "../components/Auth/NextButton.vue";
 // import ContentLast from "../components/Auth/ContentLast.vue";
 // import ContentLeftPicture from "../components/Auth/ContentLeftPicture.vue";
@@ -84,22 +93,26 @@ export default {
   data() {
     return {
       activeTab: 0,
-      phone: '',
-      password: '',
+      phone: "0912345678",
+      password: "123456",
+      error: false
     };
   },
   methods: {
     loginSubmit() {
-      axios.post('http://35.225.163.234:2301/?url=http://192.168.123.46:3003/user/login', {
-        phone: this.phone,
-        password: this.password
-      }).then(response => {
-        alert(response.token ? "yes" : "no")
-      }).catch(error => {
-        alert(error.message)
-      })
+      this.$store
+        .dispatch("LOGIN", {
+          _phone: this.phone,
+          _password: this.password,
+        })
+        .then((success) => {
+          this.$router.push("/");
+        })
+        .catch((error) => {
+          this.error = true
+        });
     },
-  }
+  },
 };
 </script>
 <style scoped>
@@ -109,7 +122,8 @@ export default {
 }
 
 .background {
-  background: url("https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg") no-repeat center;
+  background: url("https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg")
+    no-repeat center;
   background-size: cover;
 }
 

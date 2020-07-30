@@ -26,6 +26,7 @@ Vue.use(Buefy)
         </div>
       </div>
     </div>
+    
     <router-view id="main-view" />
 
     <router-link to="/about">About |</router-link>
@@ -116,7 +117,6 @@ export default {
     align-items: center;
   }
 }
-
 
 $primary: #01d28e;
 $primary-invert: findColorInvert($primary);

@@ -190,6 +190,11 @@ Vue.use(VueRouter)
     name: 'UserWallet',
     component: UserWallet
   },
+  {
+    path: '/search',
+    name: 'Search',
+    component: Search
+  }
 ]
 
 const router = new VueRouter({
