@@ -2,7 +2,7 @@
   <div class="container">
     <!-- title bar -->
     <div class="title columns is-2 is-mobile">
-      <div class="column is-one-third" v-for="title in titles" :key="title.index">
+      <div class="column is-one-third-mobile is-one-quarter-tablet is-one-fifth-desktop is-2-widescreen is-2-fullhd" v-for="title in titles" :key="title.index">
         <p
           :class="{ 'list-title' : activeTab === title.index, 'list-title-inactive' : activeTab !== title.index }"
           @click="changeIndex(title.index)"

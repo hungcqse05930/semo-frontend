@@ -53,7 +53,7 @@ export default {
 }
 
 .auctions-strip {
-  padding: 10px;
+  margin: 0px;
   width: 100%;
   display: inline-flex;
   overflow: auto;
