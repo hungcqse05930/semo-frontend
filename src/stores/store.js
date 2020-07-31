@@ -1,13 +1,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-// import router from 'vue-router'
-// import { router } from '../router/index.js'
 import axios from 'axios'
+import router from '../router'
 import createPersistedState from "vuex-persistedstate"
-import VueRouter from 'vue-router';
 
 Vue.use(Vuex);
-Vue.use(VueRouter)
 
 export default new Vuex.Store({
     plugins: [createPersistedState()],
@@ -29,6 +26,9 @@ export default new Vuex.Store({
         },
         DESTROY_TOKEN(state) {
             state.token = null
+        },
+        DESTROY_USER(state) {
+            state.user = null
         }
     },
     actions: {
@@ -40,17 +40,29 @@ export default new Vuex.Store({
                             commit('SET_TOKEN', response.data.token)
                             commit('SET_USER', response.data.userId)
                         }
+
+                        router.push({ name: 'Home' })
+                        ressolve(true)
                     })
                     .catch(error => {
+                        console.log(error.response.status)
+                        if (error.response.status === 500){
+                            error.message = "Có vẻ số điện thoại này chưa được đăng ký ở semo. Bạn hãy kiểm tra lại đi."
+                        } else if (error.response.status === 401){
+                            error.message = "Hãy kiểm tra mật khẩu của bạn nhé!"
+                        }
                         reject(error)
                     })
             })
         },
-        LOGOUT: (context) => {
-            if (context.mutations.LOGGED_IN) {
+        LOGOUT: ({ commit, state }) => {
+            if (state.token !== null && state.user !== null) {
                 // localStorage.removeItem('token')
-                context.commit('DESTROY_TOKEN')
+                commit('DESTROY_TOKEN')
+                commit('DESTROY_USER')
             }
+
+            router.push({ name: 'Home'})
         }
     }
 });

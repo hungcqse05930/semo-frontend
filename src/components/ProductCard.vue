@@ -1,7 +1,9 @@
 <template>
   <a :href="product.url">
     <div class="product-container">
-      <img src="@/assets/logo.png" :alt="product.title" />
+      <div class="product-thumbnail" :style="{backgroundImage: 'url(' + product.img_url + ')'}">
+        <!-- <img src="@/assets/logo.png" :alt="product.title" /> -->
+      </div>
       <div class="product-content">
         <p class="product-title">{{ product.title }}</p>
         <div class="product-section">
@@ -25,8 +27,8 @@
 export default {
   name: "ProductCard",
   props: {
-    product: Object
-  }
+    product: Object,
+  },
   // },
   // data() {
   //   return {
@@ -47,29 +49,35 @@ export default {
 
 <style scoped>
 a {
-  width: 194px;
-  height: 412px;
+  width: 100%;
+  height: fit-content;
   text-align: left;
 }
 
 .product-container {
-  max-width: 194px;
-  max-height: 412px;
   border: 1px solid #00000015;
   box-shadow: 0 2px 6px #00000014;
   border-radius: 10px;
   transition: 0.25s;
+  overflow: hidden;
 }
 
 .product-container:hover {
   box-shadow: 0 3px 16px #00000029;
 }
 
-.product-container img {
-  width: 194px;
-  height: 194px;
-  overflow: hidden;
+.product-thumbnail {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
+/* .product-thumbnail img {
+  height: 100%;
+  width: initial;
+} */
 
 .product-content {
   padding: 12px 16px 16px 16px;
