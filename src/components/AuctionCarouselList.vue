@@ -60,7 +60,4 @@ export default {
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
-
-.next {
-}
 </style>
