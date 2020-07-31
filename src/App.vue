@@ -22,8 +22,8 @@ Vue.use(Buefy)
           ></b-input>
         </div>
         <div class="column is-3 right">
-          <router-link v-if="loggedIn" to="/login" @click="home = false">👋 Đăng nhập</router-link>
-          <router-link v-if="!loggedIn" to="/user" @click="home = false">👦 Tài khoản của bạn</router-link>
+          <router-link v-if="!token" to="/login" @click="home = false">👋 Đăng nhập</router-link>
+          <router-link v-if="token" to="/user" @click="home = false">👦 Tài khoản của bạn</router-link>
         </div>
       </div>
     </div>
@@ -70,13 +70,9 @@ export default {
   data() {
     return {
       home: true,
-      search: ''
+      search: '',
+      token: this.$cookie.get('token')
     };
-  },
-  computed: {
-    loggedIn(){
-      return this.$store.getters.loggedIn
-    }
   },
   methods: {
     logout() {
@@ -192,5 +188,5 @@ $link-focus-border: $primary;
 
 // Import Bulma and Buefy styles
 @import "~bulma";
-// @import "~buefy/src/scss/buefy";
+@import "~buefy/src/scss/buefy";
 </style>

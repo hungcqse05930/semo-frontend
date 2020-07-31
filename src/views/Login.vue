@@ -75,6 +75,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 // import NextButton from "../components/Auth/NextButton.vue";
 // import ContentLast from "../components/Auth/ContentLast.vue";
 // import ContentLeftPicture from "../components/Auth/ContentLeftPicture.vue";
@@ -97,14 +98,17 @@ export default {
   },
   methods: {
     loginSubmit() {
-      this.$store
-        .dispatch("LOGIN", {
-          phone: this.phone,
-          password: this.password,
-        })
-        .then(() => {
-          this.$router.push({ name: 'Home'})
-        })
+      axios.post(`http://192.168.123.42:3003/user/login`, {
+        phone: this.phone,
+        password: this.password
+      })
+      .then(response => {
+        this.$cookie.set('token', response.data.token)
+        this.$router.push({ name: 'Home' })
+      })
+      .catch(error => {
+        console.log(error)
+      })
     },
   },
 };
