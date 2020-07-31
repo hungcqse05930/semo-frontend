@@ -4,8 +4,8 @@
       <b-menu-list :active="isActive">
         <b-menu-item tag="router-link" to="/adminwallet" label="Ví tiền"></b-menu-item>
         <b-menu-item tag="router-link" to="/" label="Giao dịch"></b-menu-item>
-        <b-menu-item tag="router-link" to="/mediationdashboardproduct" label="📦 Sản phẩm"></b-menu-item>
-        <b-menu-item tag="router-link" to="/mediationdashboardnameproduct" label="🍑 Loại quả"></b-menu-item>
+        <b-menu-item tag="router-link" to="/admindashboardproduct" label="📦 Sản phẩm"></b-menu-item>
+        <b-menu-item tag="router-link" to="/admindashboardnameproduct" label="🍑 Loại quả"></b-menu-item>
         <b-menu-item tag="router-link" to="/" label="Đấu giá"></b-menu-item>
         <b-menu-item tag="router-link" to="/" label="Hợp đồng"></b-menu-item>
       </b-menu-list>

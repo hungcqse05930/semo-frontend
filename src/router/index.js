@@ -34,6 +34,8 @@ import UserWallet from '../views/UserWallet.vue'
 import UserBidContract from '../views/UserBidContract.vue'
 import UserBidBuy from '../views/UserBidBuy.vue'
 import AdminWallet from '../views/AdminWallet.vue'
+import AdminDashboardNameProduct from '../views/AdminDashboardNameProduct.vue'
+import AdminDashboardProduct from '../views/AdminDashboardProduct.vue'
 
 import UserInformationTESTFILE from '../views/UserInformationTESTFILE.vue'
 
@@ -217,6 +219,16 @@ Vue.use(VueRouter)
     path: '/adminwallet',
     name: 'AdminWallet',
     component: AdminWallet
+  },
+  {
+    path: '/admindashboardnameproduct',
+    name: 'AdminDashboardNameProduct',
+    component: AdminDashboardNameProduct
+  },
+  {
+    path: '/admindashboardproduct',
+    name: 'AdminDashboardProduct',
+    component: AdminDashboardProduct
   },
 ]
 
