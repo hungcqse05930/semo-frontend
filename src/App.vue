@@ -22,12 +22,12 @@ Vue.use(Buefy)
           ></b-input>
         </div>
         <div class="column is-3 right">
-          <router-link v-if="!token" to="/login" @click="home = false">👋 Đăng nhập</router-link>
-          <router-link v-if="token" to="/user" @click="home = false">👦 Tài khoản của bạn</router-link>
+          <router-link v-if="!loggedIn" to="/login">👋 Đăng nhập</router-link>
+          <router-link v-if="loggedIn" to="/user">👦 Tài khoản của bạn</router-link>
         </div>
       </div>
     </div>
-    
+
     <router-view id="main-view" />
 
     <router-link to="/about">About |</router-link>
@@ -71,17 +71,22 @@ export default {
   data() {
     return {
       home: true,
-      search: '',
-      token: this.$cookie.get('token')
+      search: "",
     };
+  },
+  computed: {
+    loggedIn() {
+      console.log(this.$store.state.token)
+      return this.$store.state.token;
+    },
   },
   methods: {
     logout() {
-      this.$store.dispatch('LOGOUT').then(() => {
-        this.$router.push({ name: 'Logout' })
-      })
-    }
-  }
+      this.$store.dispatch("LOGOUT").then(() => {
+        this.$router.push({ name: "Logout" });
+      });
+    },
+  },
 };
 </script>
 
@@ -89,7 +94,7 @@ export default {
 @import "~bulma/sass/utilities/_all";
 #app {
   @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap");
-  font-family: 'Roboto';
+  font-family: "Roboto";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -134,7 +139,7 @@ export default {
 
 $primary: #01d28e;
 $primary-invert: findColorInvert($primary);
-$primary-purple: #B88CD8;
+// $primary-purple: #B88CD8;
 $twitter: #4099ff;
 $twitter-invert: findColorInvert($twitter);
 

@@ -2,7 +2,8 @@
   <div class="container">
     <!-- banner -->
     <div class="news columns">
-      <div class="column is-2" v-for="collection in collections" :key="collection.id">
+      <div class="column is-2" >
+        <!-- v-for="collection in collections" :key="collection.id" -->
         <p class="collection-title"></p>
       </div>
     </div>

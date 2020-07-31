@@ -9,7 +9,15 @@
               <b-tab-item label="Đăng nhập"></b-tab-item>
               <b-tab-item label="Đăng ký"></b-tab-item>
             </b-tabs>
-
+            <!-- notification -->
+            <b-notification
+              type="is-danger"
+              has-icon
+              aria-close-label="Đóng"
+              role="alert"
+              :active.sync="error"
+            >{{error_msg}}</b-notification>
+            <!-- form -->
             <section v-if="activeTab === 0">
               <p class="label-info">Đăng nhập bằng số điện thoại của bạn</p>
               <!-- FORM LOG IN -->
@@ -22,14 +30,6 @@
                   placeholder="Mật khẩu"
                   password-reveal
                 ></b-input>
-                <br />
-                <b-notification
-                  type="is-danger"
-                  has-icon
-                  aria-close-label="Đóng"
-                  role="alert"
-                  :active.sync="error"
-                >ad</b-notification>
                 <b-button
                   rounded
                   type="is-primary"
@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from "axios";
 // import NextButton from "../components/Auth/NextButton.vue";
 // import ContentLast from "../components/Auth/ContentLast.vue";
 // import ContentLeftPicture from "../components/Auth/ContentLeftPicture.vue";
@@ -94,20 +94,21 @@ export default {
       phone: "0912345678",
       password: "123456",
       error: false,
+      error_msg: ''
     };
   },
   methods: {
     loginSubmit() {
-      axios.post(`http://192.168.123.42:3003/user/login`, {
+      this.$store.dispatch("LOGIN", {
         phone: this.phone,
         password: this.password
       })
-      .then(response => {
-        this.$cookie.set('token', response.data.token)
+      .then(() => {
         this.$router.push({ name: 'Home' })
       })
       .catch(error => {
-        console.log(error)
+        this.error_msg = error.message
+        this.error = true
       })
     },
   },
