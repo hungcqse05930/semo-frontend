@@ -41,11 +41,16 @@ import UserInformationTESTFILE from '../views/UserInformationTESTFILE.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'Trang chủ',
     component: Home
+  },
+  {
+    path: '/auction/latest',
+    name: 'Mới nhất',
+    component: () => import('../views/AuctionLatest.vue')
   },
   {
     path: '/search',
@@ -158,7 +163,7 @@ Vue.use(VueRouter)
     name: 'PlaceBid',
     component: PlaceBid
   },
-{
+  {
     path: '/mediationdashboardhome',
     name: 'MediationDashboardHome',
     component: MediationDashboardHome

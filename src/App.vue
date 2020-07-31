@@ -14,13 +14,15 @@ Vue.use(Buefy)
           </router-link>
         </div>
         <div class="column is-6">
-          <b-input
-            rounded
-            v-model="search"
-            v-if="isHome"
-            placeholder="🔍 Tìm kiếm quả ngon"
-            style="padding:2px;"
-          ></b-input>
+          <form @submit.prevent="search_universal">
+            <b-input
+              rounded
+              v-model="search"
+              v-if="isHome"
+              placeholder="🔍 Tìm kiếm quả ngon"
+              style="padding:2px;"
+            ></b-input>
+          </form>
         </div>
         <div class="column is-3 right">
           <router-link v-if="!loggedIn && isHome" to="/login">👋 Đăng nhập</router-link>
@@ -43,8 +45,25 @@ Vue.use(Buefy)
       </div>
     </div>
 
-    <div style="display: block; margin-top: 12px;">
+    <div class="main-view" style="display: block; margin-top: 12px;">
       <router-view id="main-view" />
+    </div>
+
+    <div class="footer">
+      <div class="footer-content columns is-2">
+        <div class="column">
+          <h2>OKOK</h2>
+        </div>
+        <div class="column">
+          <h2>OKOK</h2>
+        </div>
+        <div class="column">
+          <h2>OKOK</h2>
+        </div>
+        <div class="column">
+          <h2>OKOK</h2>
+        </div>
+      </div>
     </div>
     <router-link to="/about">About |</router-link>
     <router-link to="/login">Login |</router-link>
@@ -138,12 +157,34 @@ export default {
     logout() {
       this.$store.dispatch("LOGOUT");
     },
+    search_universal() {
+      this.$store.dispatch("SEARCH", {
+        keyword: this.search
+      })
+    }
   },
 };
 </script>
 
 <style lang="scss">
 @import "~bulma/sass/utilities/_all";
+// welcome
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome p {
+  font-size: 23px;
+  font-weight: 900;
+}
+
+.welcome .logo {
+  height: 24px;
+  margin-left: 10px;
+}
+
 // list title
 .list-title {
   font-family: "Merriweather";
@@ -260,6 +301,10 @@ export default {
       border-bottom: #01d28e solid 2px;
     }
   }
+}
+
+.footer {
+  margin-top: 80px;
 }
 
 $primary: #01d28e;

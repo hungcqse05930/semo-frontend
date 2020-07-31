@@ -1,7 +1,12 @@
 <template>
   <div class="container">
+    <!-- welcome -->
+    <div class="welcome">
+      <p>Chào mừng bạn đến với</p>
+      <img class="logo" src="@/assets/logo.png" />
+    </div>
     <!-- banner -->
-    <div class="columns is-1">
+    <div class="banners-container columns is-1">
       <div class="column is-full">
         <b-carousel
           class="banners"
@@ -40,22 +45,32 @@
     </div>
     <!-- most viewed -->
     <div class="most-viewed">
-      <product-carousel-list :products="products">
+      <auction-carousel-list :products="products">
         <template v-slot:title>Đông đảo bà con</template>
-      </product-carousel-list>
+      </auction-carousel-list>
     </div>
     <!-- fruits -->
     <div class="fruits">
-      <grid-list :items="fruits">
+      <grid-circular-list :items="fruits">
         <template v-slot:title>Loại quả</template>
         <template v-slot:show-all>
           <router-link to="/fruit">XEM TẤT CẢ</router-link>
         </template>
-      </grid-list>
+      </grid-circular-list>
     </div>
     <!-- latest and closing soon auctions -->
     <div class="auctions">
-      <product-grid-list :titles="titles"></product-grid-list>
+      <auction-grid-list :titles="titles" :products="products">
+        <template v-slot:more-button>
+          <b-button
+            class="more-button"
+            type="is-rounded"
+            label="🔽 Xem thêm"
+            tag="router-link"
+            to="/auction/latest"
+          ></b-button>
+        </template>
+      </auction-grid-list>
     </div>
   </div>
 
@@ -84,16 +99,16 @@
 
 <script>
 // @ is an alias to /src
-import ProductCarouselList from "../components/ProductCarouselList.vue";
-import ProductGridList from "../components/ProductGridList.vue"
-import GridList from "../components/GridList.vue";
+import AuctionCarouselList from "../components/AuctionCarouselList.vue";
+import AuctionGridList from "../components/AuctionGridList.vue";
+import GridCircularList from "../components/GridCircularList.vue";
 
 export default {
   name: "Home",
   components: {
-    ProductCarouselList,
-    GridList,
-    ProductGridList
+    AuctionCarouselList,
+    GridCircularList,
+    AuctionGridList,
   },
   data() {
     return {
@@ -344,32 +359,25 @@ export default {
       titles: [
         {
           index: 1,
-          name: "Mới nhất"
+          name: "Mới nhất",
         },
         {
           index: 2,
-          name: "Sắp kết thúc"
-        }
-      ]
+          name: "Sắp kết thúc",
+        },
+      ],
       // modal1: false,
       // modal2: false,
     };
-  },
-  methods: {
-    // Đóng modal 1 và mở modal 2
-    close_instruction() {
-      this.modal1 = false;
-      this.modal2 = true;
-    },
-    // Mở modal 1
-    open_instruction() {
-      this.modal1 = true;
-    },
-  },
+  }
 };
 </script>
 
 <style scoped>
+.banners-container {
+  margin-top: 24px;
+}
+
 .banners {
   overflow: hidden;
   height: 250px;
@@ -397,7 +405,9 @@ export default {
   color: white;
 }
 
-.most-viewed, .fruits, .auctions {
+.most-viewed,
+.fruits,
+.auctions {
   margin-top: 80px;
 }
 </style>

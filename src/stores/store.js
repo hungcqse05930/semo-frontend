@@ -62,7 +62,13 @@ export default new Vuex.Store({
                 commit('DESTROY_USER')
             }
 
-            router.push({ name: 'Home'})
+            router.push({ path: '/'})
+        },
+        SEARCH: ({ commit, state }) => {
+            commit('SET_USER', 22)
+            alert(state)
+
+            router.push({ path: '/search' })
         }
     }
 });

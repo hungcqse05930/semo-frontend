@@ -5,7 +5,7 @@
         <slot name="title"></slot>
       </p>
     </div>
-    <div class="fruit-list columns is-multiline">
+    <div class="fruit-list columns is-multiline is-mobile">
       <div class="fruit column is-2-fullhd is-2-widescreen is-3-desktop is-4-tablet is-half-mobile" v-for="(item, i) in items" :key="i">
         <div class="img-container" :style="{ backgroundImage: 'url(' + item.icon_url + ')' }"></div>
         <p>{{ item.title }}</p>
@@ -36,6 +36,7 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border: 1px solid #07D39029;
 }
 
 .title, .fruit, .show-all {
