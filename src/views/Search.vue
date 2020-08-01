@@ -1,10 +1,13 @@
 <template>
-  <div id="app">
+  <div class="container">
+    <div class="welcome">
+      <p>Kết quả tìm kiếm cho <strong>{{keyword}}</strong></p>
+    </div>
     <!-- <div id="nav"> -->
     <!-- <PageTitleBar />
       <Content />
     <CategoryBar />-->
-    <Header />
+    <!-- <Header /> -->
     <!-- <div class="search-result">
         <div>
           <SearchResult />        
@@ -30,7 +33,7 @@
 // import PageTitleBar from "../components/Search/PageTitleBar.vue";
 // import Content from "../components/Search/Content.vue";
 // import CategoryBar from "../components/Search/CategoryBar.vue";
-import Header from "../components/Search/Header.vue";
+// import Header from "../components/Search/Header.vue";
 // import SearchResult from "../components/Search/SearchResult.vue";
 // import Product from "../components/Search/Product.vue";
 // import PageBar from "../components/Search/PageBar.vue";
@@ -42,7 +45,7 @@ export default {
     // PageTitleBar,
     // Content,
     // CategoryBar,
-    Header
+    // Header
     // SearchResult,
     // Product,
     // PageBar,
@@ -57,7 +60,7 @@ export default {
   },
   data() {
     return {
-      products_new: Array,
+      keyword: 'HELLO',
       products: [
         {
           id: 1,

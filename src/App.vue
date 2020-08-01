@@ -18,21 +18,20 @@ Vue.use(Buefy)
             <b-input
               rounded
               v-model="search"
-              v-if="isHome"
               placeholder="🔍 Tìm kiếm quả ngon"
               style="padding:2px;"
             ></b-input>
           </form>
         </div>
         <div class="column is-3 right">
-          <router-link v-if="!loggedIn && isHome" to="/login">👋 Đăng nhập</router-link>
-          <router-link v-if="loggedIn && isHome" to="/user">👦 Tài khoản của bạn</router-link>
+          <router-link v-if="!loggedIn" to="/login">👋 Đăng nhập</router-link>
+          <router-link v-if="loggedIn" to="/user">👦 Tài khoản của bạn</router-link>
         </div>
       </div>
     </div>
 
     <!-- subtitle tabs -->
-    <div id="sub-nav" v-if="isHome">
+    <div id="sub-nav">
       <div
         id="sub-content"
         class="column is-two-thirds"
@@ -106,28 +105,7 @@ export default {
   data() {
     return {
       search: "",
-      curPath: this.$router.currentRoute.path,
-      isHome: true,
     };
-  },
-  watch: {
-    curPath() {
-      console.log(this.curPath);
-      switch (this.$router.currentRoute.path) {
-        case "/":
-          this.isHome = true;
-          break;
-        case "/auction/latest":
-          this.isHome = true;
-          break;
-        case "/fruit":
-          this.isHome = true;
-          break;
-        case "/collection":
-          this.isHome = true;
-          break;
-      }
-    },
   },
   computed: {
     loggedIn() {
@@ -173,6 +151,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 24px;
 }
 
 .welcome p {

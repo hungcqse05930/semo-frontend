@@ -374,10 +374,6 @@ export default {
 </script>
 
 <style scoped>
-.banners-container {
-  margin-top: 24px;
-}
-
 .banners {
   overflow: hidden;
   height: 250px;

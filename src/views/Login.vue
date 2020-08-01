@@ -111,9 +111,6 @@ export default {
           phone: this.phone,
           password: this.password,
         })
-        .then(function () {
-          this.$router.push({ name: "Home" });
-        })
         .catch((error) => {
           this.error_msg = error.message;
           this.error = true;

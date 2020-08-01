@@ -153,7 +153,4 @@ export default {
 </script>
 
 <style scoped>
-.auctions {
-  margin-top: 24px;
-}
 </style>

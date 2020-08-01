@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios'
-import router from '../router'
+import router from '../router/index.js'
 import createPersistedState from "vuex-persistedstate"
 
 Vue.use(Vuex);
@@ -41,14 +41,13 @@ export default new Vuex.Store({
                             commit('SET_USER', response.data.userId)
                         }
 
-                        router.push({ name: 'Home' })
+                        router.push({ name: 'Trang chủ' })
                         ressolve(true)
                     })
                     .catch(error => {
-                        console.log(error.response.status)
-                        if (error.response.status === 500){
+                        if (error.status === 500){
                             error.message = "Có vẻ số điện thoại này chưa được đăng ký ở semo. Bạn hãy kiểm tra lại đi."
-                        } else if (error.response.status === 401){
+                        } else if (error.status === 401){
                             error.message = "Hãy kiểm tra mật khẩu của bạn nhé!"
                         }
                         reject(error)
@@ -64,10 +63,9 @@ export default new Vuex.Store({
 
             router.push({ path: '/'})
         },
-        SEARCH: ({ commit, state }) => {
-            commit('SET_USER', 22)
-            alert(state)
-
+        SEARCH: ({ commit }, keyword) => {
+            commit('SET_USER', 2)
+            console.log(keyword)
             router.push({ path: '/search' })
         }
     }

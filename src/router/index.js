@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import RegisterPhoneNumber from '../views/RegisterPhoneNumber.vue'
 import RegisterOTP from '../views/RegisterOTP.vue'
@@ -16,7 +15,6 @@ import NameProduct from '../views/NameProduct.vue'
 import UserInformationResetPassword from '../views/UserInformationResetPassword.vue'
 import UserInformationAddress from '../views/UserInformationAddress.vue'
 import UserInformationAccuracy from '../views/UserInformationAccuracy.vue'
-import Search from '../views/SearchPage.vue'
 import CreateNewProduct from '../views/CreateNewProduct'
 import CreateNewProductForTree from '../views/CreateNewProductForTree'
 import MediationDashboardProduct from '../views/MediationDashboardProduct.vue'
@@ -47,7 +45,7 @@ const routes = [
   {
     path: '/',
     name: 'Trang chủ',
-    component: Home
+    component: () => import('../views/Home.vue')
   },
   {
     path: '/auction/latest',
@@ -56,8 +54,8 @@ const routes = [
   },
   {
     path: '/search',
-    name: 'search',
-    component: Search
+    name: 'Tìm kiếm',
+    component: () => import('../views/Search.vue')
   },
   {
     path: '/about',
