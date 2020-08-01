@@ -5,6 +5,7 @@ Vue.use(Buefy)
 
 <template>
   <div id="app">
+    <!-- main nav bar -->
     <div id="nav">
       <div id="content" class="columns">
         <div class="column is-3">
@@ -13,23 +14,56 @@ Vue.use(Buefy)
           </router-link>
         </div>
         <div class="column is-6">
-          <b-input
-            rounded
-            v-model="search"
-            v-if="home"
-            placeholder="🔍 Tìm kiếm quả ngon"
-            style="padding:2px;"
-          ></b-input>
+          <form @submit.prevent="search_universal">
+            <b-input
+              rounded
+              v-model="search"
+              placeholder="🔍 Tìm kiếm quả ngon"
+              style="padding:2px;"
+            ></b-input>
+          </form>
         </div>
         <div class="column is-3 right">
-          <router-link v-if="loggedIn" to="/login" @click="home = false">👋 Đăng nhập</router-link>
-          <router-link v-if="!loggedIn" to="/user" @click="home = false">👦 Tài khoản của bạn</router-link>
+          <router-link v-if="!loggedIn" to="/login">👋 Đăng nhập</router-link>
+          <router-link v-if="loggedIn" to="/user">👦 Tài khoản của bạn</router-link>
         </div>
       </div>
     </div>
-    
-    <router-view id="main-view" />
 
+    <!-- subtitle tabs -->
+    <div id="sub-nav">
+      <div
+        id="sub-content"
+        class="column is-two-thirds"
+        style="display: flex; justify-content: space-between; padding-bottom: 0;"
+      >
+        <router-link to="/">🏡 Trang chủ</router-link>
+        <router-link to="/auction/latest">🎇 Mới nhất</router-link>
+        <router-link to="/fruit">🍑 Loại quả</router-link>
+        <router-link to="/collection">📘 Bộ sưu tập</router-link>
+      </div>
+    </div>
+
+    <div class="main-view" style="display: block; margin-top: 12px;">
+      <router-view id="main-view" />
+    </div>
+
+    <div class="footer">
+      <div class="footer-content columns is-2">
+        <div class="column">
+          <h2>OKOK</h2>
+        </div>
+        <div class="column">
+          <h2>OKOK</h2>
+        </div>
+        <div class="column">
+          <h2>OKOK</h2>
+        </div>
+        <div class="column">
+          <h2>OKOK</h2>
+        </div>
+      </div>
+    </div>
     <router-link to="/about">About |</router-link>
     <router-link to="/login">Login |</router-link>
     <router-link to="/registerstep2">r2 |</router-link>
@@ -49,7 +83,7 @@ Vue.use(Buefy)
     <router-link to="/cencorproductmediation">Cencor</router-link>
     <router-link to="/mediationdashboardnameproduct">mediatioinNamePro</router-link>
     <router-link to="/placebid">PB</router-link>
-    <router-link to="/mediationdashboardhome">mediatioinhome</router-link>
+    <!-- <router-link to="/mediationdashboardhome">mediatioinhome</router-link> -->
     <router-link to="/createnewproductaddproduct">newPro</router-link>
     <router-link to="/createnewproductsuccess">SucPRO</router-link>
     <router-link to="/createnewproductnotification">NotiPRO</router-link>
@@ -60,6 +94,7 @@ Vue.use(Buefy)
     <router-link to="/userbidcontract">BidContracts</router-link>
     <router-link to="/userbidbuy">userbidbuy</router-link>
     <router-link to="/userinformationtest">test</router-link>
+    <router-link to="/adminwallet">adwallet</router-link>
     <b-button @click="logout">Log out</b-button>
   </div>
 </template>
@@ -69,51 +104,160 @@ export default {
   name: "App",
   data() {
     return {
-      home: true,
-      search: ''
+      search: "",
     };
   },
   computed: {
-    loggedIn(){
-      return this.$store.getters.loggedIn
-    }
+    loggedIn() {
+      return this.$store.state.token;
+    },
+    // isHome() {
+    //   let isHome = false;
+    //   switch (this.$router.currentRoute.path) {
+    //     case "/":
+    //       isHome = true;
+    //       break;
+    //     case "/auction/latest":
+    //       isHome = true;
+    //       break;
+    //     case "/fruit":
+    //       isHome = true;
+    //       break;
+    //     case "/collection":
+    //       isHome = true;
+    //       break;
+    //   }
+
+    //   return isHome;
+    // },
   },
   methods: {
     logout() {
-      this.$store.dispatch('LOGOUT').then(() => {
-        this.$router.push({ name: 'Logout' })
+      this.$store.dispatch("LOGOUT");
+    },
+    search_universal() {
+      this.$store.dispatch("SEARCH", {
+        keyword: this.search
       })
     }
-  }
+  },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~bulma/sass/utilities/_all";
+// welcome
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.welcome p {
+  font-size: 23px;
+  font-weight: 900;
+}
+
+.welcome .logo {
+  height: 24px;
+  margin-left: 10px;
+}
+
+// list title
+.list-title {
+  font-family: "Merriweather";
+  font-size: 25px;
+  color: #b88cd8;
+  font-weight: 900;
+  border-bottom: #01d28e solid 3px;
+  width: fit-content;
+}
+
+.list-title-inactive {
+  font-family: "Merriweather";
+  font-size: 25px;
+  font-weight: 900;
+  color: #70707075;
+  width: fit-content;
+}
+
+// sub list title
+.sub-list-title {
+  font-family: "Merriweather";
+  font-size: 19px;
+  color: #707070;
+  font-weight: 900;
+  margin-bottom: 24px;
+}
+
+// filter title
+.filter-title {
+  font-size: 17px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  color: #707070;
+  margin-bottom: 16px;
+}
+
+// scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #70707024;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #01d28e;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #01d28e;
+}
+
+// tab
+.tab {
+  font-family: "Merriweather";
+  font-weight: 900;
+}
+
+// app
 #app {
   @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap");
-  font-family: 'Roboto';
+  font-family: "Roboto";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
 
+#main-view {
+  margin-top: 36px;
+}
+
 #nav {
   z-index: 1;
-  padding: 0 60px;
+  // padding: 0 60px;
   position: sticky;
   top: 0;
   width: 100%;
-  height: 70px;
+  height: 68px;
   background-color: #ffffff99;
-  backdrop-filter: saturate(180%) blur(40px);
+  backdrop-filter: saturate(180%) blur(200px) brightness(150%);
   display: flex;
   a {
     font-weight: bold;
     color: #2c3e50;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #07d390;
     }
   }
 
@@ -135,14 +279,49 @@ export default {
   }
 }
 
+#sub-nav {
+  position: sticky;
+  top: 68px;
+  z-index: 1;
+  background-color: #ffffff99;
+  backdrop-filter: saturate(180%) blur(200px) brightness(150%);
+  width: 100%;
+
+  #sub-content {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  a {
+    font-size: 18px;
+    font-family: "Merriweather";
+    font-weight: bold;
+    color: #70707079;
+    padding-bottom: 12px;
+
+    &.router-link-exact-active {
+      color: #07d390;
+      border-bottom: #01d28e solid 2px;
+    }
+  }
+}
+
+.footer {
+  margin-top: 80px;
+}
+
 $primary: #01d28e;
 $primary-invert: findColorInvert($primary);
-$primary-purple: #B88CD8;
+$primary-purple: #b88cd8;
 $twitter: #4099ff;
 $twitter-invert: findColorInvert($twitter);
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: (
+  "green": (
+    $primary,
+    $primary-purple,
+  ),
   "white": (
     $white,
     $black,

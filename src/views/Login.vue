@@ -5,11 +5,23 @@
         <div id="bound" class="columns">
           <div class="column is-half"></div>
           <div id="form" class="column is-half">
+            <!-- selection tab -->
             <b-tabs class="tab" v-model="activeTab" size="is-medium" expanded>
               <b-tab-item label="Đăng nhập"></b-tab-item>
               <b-tab-item label="Đăng ký"></b-tab-item>
             </b-tabs>
-
+            <!-- notification -->
+            <b-notification
+              type="is-danger"
+              has-icon
+              aria-close-label="Đóng"
+              role="alert"
+              :active.sync="error"
+              v-if="activeTab === 0"
+              class="error-notification"
+            >{{error_msg}}</b-notification>
+            <!-- form -->
+            <!-- log in form -->
             <section v-if="activeTab === 0">
               <p class="label-info">Đăng nhập bằng số điện thoại của bạn</p>
               <!-- FORM LOG IN -->
@@ -22,14 +34,6 @@
                   placeholder="Mật khẩu"
                   password-reveal
                 ></b-input>
-                <br />
-                <b-notification
-                  type="is-danger"
-                  has-icon
-                  aria-close-label="Đóng"
-                  role="alert"
-                  :active.sync="error"
-                >ad</b-notification>
                 <b-button
                   rounded
                   type="is-primary"
@@ -37,6 +41,7 @@
                   outlined
                   native-type="submit"
                 >🙌 Tiếp tục</b-button>
+                <b-button type="is-text" style="width: 100%; margin-top: 16px;" rounded>Quên mật khẩu</b-button>
               </form>
               <p style="margin-top: 40px; font-size: 10px;">
                 Bằng việc điền đúng số điện thoại và tiến hành đăng ký,
@@ -45,6 +50,7 @@
                 <br />mục đích đã được nêu trong chính sách bảo mật của semo.
               </p>
             </section>
+            <!-- sign up form -->
             <section v-if="activeTab === 1">
               <p class="label-info">Sử dụng số điện thoại của bạn để đăng ký</p>
               <!--  -->
@@ -75,6 +81,7 @@
 </template>
 
 <script>
+// import axios from "axios";
 // import NextButton from "../components/Auth/NextButton.vue";
 // import ContentLast from "../components/Auth/ContentLast.vue";
 // import ContentLeftPicture from "../components/Auth/ContentLeftPicture.vue";
@@ -93,18 +100,21 @@ export default {
       phone: "0912345678",
       password: "123456",
       error: false,
+      error_msg: "",
     };
   },
   methods: {
     loginSubmit() {
+
       this.$store
         .dispatch("LOGIN", {
           phone: this.phone,
           password: this.password,
         })
-        .then(() => {
-          this.$router.push({ name: 'Home'})
-        })
+        .catch((error) => {
+          this.error_msg = error.message;
+          this.error = true;
+        });
     },
   },
 };
@@ -137,11 +147,6 @@ export default {
   width: auto;
 }
 
-.tab {
-  font-family: "Merriweather";
-  font-weight: 900;
-}
-
 .login-input {
   margin-bottom: 16px;
 }
@@ -159,6 +164,10 @@ export default {
 
 .content-right {
   padding-left: 100px;
+}
+
+.error-notification {
+  margin-top: -46px;
 }
 /* .content-left {
   padding-left: 0px;

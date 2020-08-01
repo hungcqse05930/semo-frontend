@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import RegisterPhoneNumber from '../views/RegisterPhoneNumber.vue'
 import RegisterOTP from '../views/RegisterOTP.vue'
@@ -16,7 +15,6 @@ import NameProduct from '../views/NameProduct.vue'
 import UserInformationResetPassword from '../views/UserInformationResetPassword.vue'
 import UserInformationAddress from '../views/UserInformationAddress.vue'
 import UserInformationAccuracy from '../views/UserInformationAccuracy.vue'
-import Search from '../views/SearchPage.vue'
 import CreateNewProduct from '../views/CreateNewProduct'
 import CreateNewProductForTree from '../views/CreateNewProductForTree'
 import MediationDashboardProduct from '../views/MediationDashboardProduct.vue'
@@ -33,6 +31,9 @@ import UserBidAuction from '../views/UserBidAuction.vue'
 import UserWallet from '../views/UserWallet.vue'
 import UserBidContract from '../views/UserBidContract.vue'
 import UserBidBuy from '../views/UserBidBuy.vue'
+import AdminWallet from '../views/AdminWallet.vue'
+import AdminDashboardNameProduct from '../views/AdminDashboardNameProduct.vue'
+import AdminDashboardProduct from '../views/AdminDashboardProduct.vue'
 
 import UserInformationTESTFILE from '../views/UserInformationTESTFILE.vue'
 
@@ -40,16 +41,22 @@ import UserInformationTESTFILE from '../views/UserInformationTESTFILE.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Trang chủ',
+    component: () => import('../views/Home.vue')
   },
   {
-    path: '/search',
-    name: 'search',
-    component: Search
+    path: '/auction/latest',
+    name: 'Mới nhất',
+    component: () => import('../views/AuctionLatest.vue')
+  },
+  {
+    path: '/search/:keyword',
+    name: 'Tìm kiếm',
+    props: true,
+    component: () => import('../views/Search.vue')
   },
   {
     path: '/about',
@@ -157,7 +164,7 @@ Vue.use(VueRouter)
     name: 'PlaceBid',
     component: PlaceBid
   },
-{
+  {
     path: '/mediationdashboardhome',
     name: 'MediationDashboardHome',
     component: MediationDashboardHome
@@ -211,6 +218,21 @@ Vue.use(VueRouter)
     path: '/userinformationtest',
     name: 'UserInformationTESTFILE',
     component: UserInformationTESTFILE
+  },
+  {
+    path: '/adminwallet',
+    name: 'AdminWallet',
+    component: AdminWallet
+  },
+  {
+    path: '/admindashboardnameproduct',
+    name: 'AdminDashboardNameProduct',
+    component: AdminDashboardNameProduct
+  },
+  {
+    path: '/admindashboardproduct',
+    name: 'AdminDashboardProduct',
+    component: AdminDashboardProduct
   },
 ]
 
