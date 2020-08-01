@@ -45,9 +45,9 @@ export default new Vuex.Store({
                         ressolve(true)
                     })
                     .catch(error => {
-                        if (error.status === 500){
+                        if (error.response.status === 500){
                             error.message = "Có vẻ số điện thoại này chưa được đăng ký ở semo. Bạn hãy kiểm tra lại đi."
-                        } else if (error.status === 401){
+                        } else if (error.response.status === 401){
                             error.message = "Hãy kiểm tra mật khẩu của bạn nhé!"
                         }
                         reject(error)
@@ -66,7 +66,7 @@ export default new Vuex.Store({
         SEARCH: ({ commit }, keyword) => {
             commit('SET_USER', 2)
             console.log(keyword)
-            router.push({ path: '/search' })
+            router.push({ path: '/search/' + keyword.keyword })
         }
     }
 });

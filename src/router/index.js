@@ -53,8 +53,9 @@ const routes = [
     component: () => import('../views/AuctionLatest.vue')
   },
   {
-    path: '/search',
+    path: '/search/:keyword',
     name: 'Tìm kiếm',
+    props: true,
     component: () => import('../views/Search.vue')
   },
   {

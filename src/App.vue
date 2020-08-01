@@ -182,6 +182,24 @@ export default {
   width: fit-content;
 }
 
+// sub list title
+.sub-list-title {
+  font-family: "Merriweather";
+  font-size: 19px;
+  color: #707070;
+  font-weight: 900;
+  margin-bottom: 24px;
+}
+
+// filter title
+.filter-title {
+  font-size: 17px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  color: #707070;
+  margin-bottom: 16px;
+}
+
 // scrollbar
 /* width */
 ::-webkit-scrollbar {
@@ -203,6 +221,12 @@ export default {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #01d28e;
+}
+
+// tab
+.tab {
+  font-family: "Merriweather";
+  font-weight: 900;
 }
 
 // app

@@ -147,11 +147,6 @@ export default {
   width: auto;
 }
 
-.tab {
-  font-family: "Merriweather";
-  font-weight: 900;
-}
-
 .login-input {
   margin-bottom: 16px;
 }

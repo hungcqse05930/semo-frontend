@@ -1,7 +1,72 @@
 <template>
   <div class="container">
+    <!-- search keyword -->
     <div class="welcome">
-      <p>Kết quả tìm kiếm cho <strong>{{keyword}}</strong></p>
+      <p>
+        Kết quả tìm kiếm cho
+        <strong>{{keyword}}</strong>
+      </p>
+    </div>
+    <!-- tab filtering results -->
+    <b-tabs class="tab" v-model="activeTab" expanded>
+      <b-tab-item label="🍎 Đấu giá"></b-tab-item>
+      <b-tab-item label="📘 Bộ sưu tập"></b-tab-item>
+      <b-tab-item label="👦 Người dùng"></b-tab-item>
+    </b-tabs>
+    <!-- result -->
+    <div class="result">
+      <!-- auction -->
+      <search-results class="auctions-result" v-if="activeTab === 0">
+        <template v-slot:result-frame>
+          <auction-grid-list :products="products">
+            <template v-slot:more-button>
+              <div class="container">
+                <b-pagination
+                  :total="total"
+                  :current.sync="current"
+                  range-before="1"
+                  range-after="1"
+                  order="is-centered"
+                  rounded="true"
+                  :per-page="20"
+                  icon-prev="arrow-left"
+                  icon-next="arrow-right"
+                  aria-next-label="Trang sau 👉"
+                  aria-previous-label="👈 Trang trước"
+                  aria-page-label="Trang"
+                  aria-current-label="Trang hiện tại"
+                ></b-pagination>
+              </div>
+            </template>
+          </auction-grid-list>
+        </template>
+      </search-results>
+      <!-- user -->
+      <search-results class="auctions-result" v-if="activeTab === 2">
+        <template v-slot:result-frame>
+          <auction-grid-list :products="products">
+            <template v-slot:more-button>
+              <div class="container">
+                <b-pagination
+                  :total="total"
+                  :current.sync="current"
+                  range-before="1"
+                  range-after="1"
+                  order="is-centered"
+                  rounded="true"
+                  :per-page="20"
+                  icon-prev="arrow-left"
+                  icon-next="arrow-right"
+                  aria-next-label="Trang sau 👉"
+                  aria-previous-label="👈 Trang trước"
+                  aria-page-label="Trang"
+                  aria-current-label="Trang hiện tại"
+                ></b-pagination>
+              </div>
+            </template>
+          </auction-grid-list>
+        </template>
+      </search-results>
     </div>
     <!-- <div id="nav"> -->
     <!-- <PageTitleBar />
@@ -30,218 +95,200 @@
 </template>
 
 <script>
-// import PageTitleBar from "../components/Search/PageTitleBar.vue";
-// import Content from "../components/Search/Content.vue";
-// import CategoryBar from "../components/Search/CategoryBar.vue";
-// import Header from "../components/Search/Header.vue";
-// import SearchResult from "../components/Search/SearchResult.vue";
-// import Product from "../components/Search/Product.vue";
-// import PageBar from "../components/Search/PageBar.vue";
-// import Footer from "../components/Search/Footer.vue";
+import AuctionGridList from "../components/AuctionGridList.vue";
+import SearchResults from "../components/Search/SearchResults.vue";
 
 export default {
   name: "App",
   components: {
-    // PageTitleBar,
-    // Content,
-    // CategoryBar,
-    // Header
-    // SearchResult,
-    // Product,
-    // PageBar,
-    // Footer,
+    SearchResults,
+    AuctionGridList,
   },
-  created: function() {
-    fetch('http://localhost:3003/product/')
-    .then(response => response.json())
-    .then(json => {
-      this.products_new = json
-    })
-  },
+  props: ["keyword"],
   data() {
     return {
-      keyword: 'HELLO',
+      // products
       products: [
         {
           id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
+          title: "primary",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
+        },
+        {
+          id: 2,
+          title: "info",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
+        },
+        {
+          id: 3,
+          title: "success",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
+        },
+        {
+          id: 4,
+          title: "warning",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
+        },
+        {
+          id: 5,
+          title: "danger",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
+        },
+        {
+          id: 6,
+          title: "danger",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
+        },
+        {
+          id: 7,
+          title: "danger",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
+        },
+        {
+          id: 8,
+          title: "danger",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
+        },
+        {
+          id: 9,
+          title: "danger",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
+        },
+        {
+          id: 10,
+          title: "danger",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
         },
         {
           id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
+          title: "primary",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
         },
         {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
+          id: 2,
+          title: "info",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
         },
         {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
+          id: 3,
+          title: "success",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
         },
         {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
+          id: 4,
+          title: "warning",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
         },
         {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
+          id: 5,
+          title: "danger",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
         },
         {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
+          id: 6,
+          title: "danger",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
         },
         {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
+          id: 7,
+          title: "danger",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
         },
         {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
+          id: 8,
+          title: "danger",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
         },
         {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
+          id: 9,
+          title: "danger",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
         },
         {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
+          id: 10,
+          title: "danger",
+          price: 200000,
+          img_url: "https://img1.mashed.com/img/uploads/2017/06/fruit-main.jpg",
+          remaining: "04 tháng 12 ngày",
+          weight: "5.42 tấn",
+          address: { province: "Hà Giang" },
         },
-        {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
-        },
-        {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
-        },
-        {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
-        },
-        {
-          id: 1,
-          title: "Táo này đỉnh vcl các bạn ơi",
-          weight: "4,2 tạ",
-          pricetext: "Giá hiện tại",
-          price: "80.000.000đ",
-          timetext: "Thời gian còn lại",
-          time: "4 tháng 21 ngày",
-          address: {
-            province: "Long An"
-          }
-        }
       ],
       users: [
         {
@@ -253,12 +300,15 @@ export default {
           timetext: "Thời gian còn lại",
           time: "4 tháng 21 ngày",
           address: {
-            province: "Long An"
-          }
+            province: "Long An",
+          },
         },
       ],
+      activeTab: 0,
+      total: 100,
+      current: 1,
     };
-  }
+  },
 };
 </script>
 
@@ -319,5 +369,9 @@ export default {
 
 .user-item {
   padding: 12px;
+}
+
+.result {
+  margin-top: -40px;
 }
 </style>
