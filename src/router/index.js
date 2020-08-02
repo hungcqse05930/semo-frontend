@@ -34,7 +34,7 @@ import UserBidBuy from '../views/UserBidBuy.vue'
 import AdminWallet from '../views/AdminWallet.vue'
 import AdminDashboardNameProduct from '../views/AdminDashboardNameProduct.vue'
 import AdminDashboardProduct from '../views/AdminDashboardProduct.vue'
-
+import AdminDashboardDeal from '../views/AdminDashboardDeal.vue'
 import UserInformationTESTFILE from '../views/UserInformationTESTFILE.vue'
 
 // import { component } from 'vue/types/umd';
@@ -237,6 +237,11 @@ const routes = [
     path: '/admindashboardproduct',
     name: 'AdminDashboardProduct',
     component: AdminDashboardProduct
+  },
+  {
+    path: '/admindashboarddeal',
+    name: 'AdminDashboardDeal',
+    component: AdminDashboardDeal
   },
 ]
 

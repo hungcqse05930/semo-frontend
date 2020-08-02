@@ -1,5 +1,5 @@
 <template>
-  <div class="product">
+  <div class="product" @click="displaydetails(product.id)">
     <div class="product-container">
       <img
         id="logo"
@@ -48,7 +48,13 @@ export default {
   name: "product",
   props: {
     product: Object
-  }
+  },
+   methods :{
+     displaydetails (id){
+         this.$router.push({name:'PlaceBid', params:{id:id}});
+        //  console.log("helo");
+     }
+ }
 };
 </script>
 
