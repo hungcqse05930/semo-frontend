@@ -4,7 +4,7 @@
     <div class="welcome">
       <p>
         Kết quả tìm kiếm cho
-        <strong>{{keyword}}</strong>
+        <i style="color: #42b983;">{{keyword}}</i>
       </p>
     </div>
     <!-- tab filtering results -->
@@ -27,7 +27,7 @@
                   range-before="1"
                   range-after="1"
                   order="is-centered"
-                  rounded="true"
+                  rounded
                   :per-page="20"
                   icon-prev="arrow-left"
                   icon-next="arrow-right"
@@ -53,7 +53,7 @@
                   range-before="1"
                   range-after="1"
                   order="is-centered"
-                  rounded="true"
+                  rounded
                   :per-page="20"
                   icon-prev="arrow-left"
                   icon-next="arrow-right"
