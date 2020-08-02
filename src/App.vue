@@ -7,43 +7,28 @@ Vue.use(Buefy)
   <div id="app">
     <!-- main nav bar -->
     <div id="nav">
-      <div id="content" class="columns">
-        <div class="column is-3">
+      <div id="content" class="columns is-mobile">
+        <div class="column is-narrow">
           <router-link to="/">
             <img src="./assets/logo.png" />
           </router-link>
         </div>
-        <div class="column is-6">
+        <div class="column is-centered" style="max-width: 700px;">
           <form @submit.prevent="search_universal">
             <b-input
               rounded
               v-model="search"
               placeholder="🔍 Tìm kiếm quả ngon"
-              style="padding:2px;"
+              style="padding:2px; width: 100%;"
             ></b-input>
           </form>
         </div>
-        <div class="column is-3 right">
+        <div class="column is-narrow right">
           <router-link v-if="!loggedIn" to="/login">👋 Đăng nhập</router-link>
-          <router-link v-if="loggedIn" to="/user">👦 Tài khoản của bạn</router-link>
+          <router-link v-if="loggedIn" to="/user/info">👦 Tài khoản của bạn</router-link>
         </div>
       </div>
     </div>
-
-    <!-- subtitle tabs -->
-    <div id="sub-nav">
-      <div
-        id="sub-content"
-        class="column is-two-thirds"
-        style="display: flex; justify-content: space-between; padding-bottom: 0;"
-      >
-        <router-link to="/">🏡 Trang chủ</router-link>
-        <router-link to="/auction/latest">🎇 Mới nhất</router-link>
-        <router-link to="/fruit">🍑 Loại quả</router-link>
-        <router-link to="/collection">📘 Bộ sưu tập</router-link>
-      </div>
-    </div>
-
     <div class="main-view" style="display: block; margin-top: 12px;">
       <router-view id="main-view" />
     </div>
@@ -137,21 +122,26 @@ export default {
     },
     search_universal() {
       this.$store.dispatch("SEARCH", {
-        keyword: this.search
-      })
-    }
+        keyword: this.search,
+      });
+    },
   },
 };
 </script>
 
 <style lang="scss">
 @import "~bulma/sass/utilities/_all";
+body {
+  background-color: #fcfcfc;
+}
+
 // welcome
 .welcome {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
+  margin-top: 36px;
 }
 
 .welcome p {
@@ -194,7 +184,7 @@ export default {
 // filter title
 .filter-title {
   font-size: 17px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 700;
   color: #707070;
   margin-bottom: 16px;
@@ -239,7 +229,7 @@ export default {
 }
 
 #main-view {
-  margin-top: 36px;
+  margin-top: -12px;
 }
 
 #nav {
@@ -254,6 +244,7 @@ export default {
   display: flex;
   a {
     font-weight: bold;
+    font-size: 14px;
     color: #2c3e50;
 
     &.router-link-exact-active {
@@ -283,17 +274,17 @@ export default {
   position: sticky;
   top: 68px;
   z-index: 1;
-  background-color: #ffffff99;
-  backdrop-filter: saturate(180%) blur(200px) brightness(150%);
+  background-color: #FCFCFC;
   width: 100%;
 
   #sub-content {
     display: flex;
     margin: 0 auto;
-    justify-content: center;
+    justify-content: space-between;
+    padding-bottom: 0;
   }
   a {
-    font-size: 18px;
+    font-size: 16px;
     font-family: "Merriweather";
     font-weight: bold;
     color: #70707079;

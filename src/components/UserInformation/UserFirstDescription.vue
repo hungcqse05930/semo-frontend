@@ -1,84 +1,83 @@
 <template>
-  <div class="wrap">
-      <div class="user-infor">
-    <img src="https://st.quantrimang.com/photos/image/072015/22/avatar.jpg" />
-    <div class="user-name">
-      <p class="name">Bùi Trần Việt Anh</p>
-      <p class="city">Thanh Hóa</p>
-    </div>
-    </div>
-    <div class="user-stats">
-    <div class="user-rate">
-      <p class="first-content">ĐÁNH GIÁ</p>
-      <p class="second-content">★ 3.9</p>
-    </div>
-    <div class="user-quantity">
-      <p class="first-content">SẢN LƯỢNG ĐÃ BÁN</p>
-      <p class="second-content">14,329.82 tạ</p>
-    </div>
-    <div class="user-time">
-      <p class="first-content">THAM GIA</p>
-      <p class="second-content">7 tháng</p>
-    </div>
+  <div class="container">
+    <div class="user-info columns is-multiline is-centered">
+      <div class="profile column">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column is-narrow">
+            <div class="profile-image" :style="{ backgroundImage: 'url(' + img_url + ')', margin: 0 }"></div>
+          </div>
+          <div class="user-name column">
+            <p class="name">Bùi Trần Việt Anh</p>
+            <p class="city">Thanh Hóa</p>
+          </div>
+        </div>
+      </div>
+      <div class="column is-narrow">
+        <div class="columns is-mobile is-variable is-6">
+          <div class="user-rate column is-narrow">
+            <p class="first-content">ĐÁNH GIÁ</p>
+            <p class="second-content">★ 3.9</p>
+          </div>
+          <div class="user-time column is-narrow">
+            <p class="first-content">ĐÃ BÁN</p>
+            <p class="second-content">14,294 tạ</p>
+          </div>
+          <div class="user-time column is-narrow">
+            <p class="first-content">THAM GIA</p>
+            <p class="second-content">7 tháng</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "UserFirstDescription",
+  props: {
+    user: Object,
+  },
+  data() {
+    return {
+      img_url: "https://st.quantrimang.com/photos/image/072015/22/avatar.jpg",
+    };
+  },
+};
+</script>
+
 <style scoped>
-.wrap {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.user-infor img {
+.profile-image {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  display: block;
-  margin: auto 24px 40px 60px;
-  /* margin-right: 24px; */
-  /* margin-bottom: 40px; */
+  /* bg image */
+  background-position: center;
+  background-size: cover;
 }
+
 .name {
-  font-family: Merriweather;
+  font-family: "Merriweather";
   font-size: 19px;
   color: #07d390;
-  font-weight: bolder;
-  opacity: 1;
+  font-weight: 900;
 }
+
 .city {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-size: 16px;
-  color: #909090;
-  opacity: 1;
 }
+
 .first-content {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-size: 15px;
   color: #707070;
-  opacity: 1;
 }
+
 .second-content {
   font-family: Roboto;
   font-size: 25px;
-  color: #B88CD8;
+  color: #b88cd8;
   opacity: 1;
-}
-.user-infor{
-    display: flex;
-}
-.user-stats{
-    display: flex; 
-}
-.user-rate {
-    margin: 0 auto 0 60px;
-    /* width: 232px; */
-}
-.user-quantity {
-    margin: 0 auto 0 60px;
-    /* width: 141px; */
-}
-.user-time {
-    margin: 0 60px 0 60px;
-    /* width: 84px; */
 }
 </style>

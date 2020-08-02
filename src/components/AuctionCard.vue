@@ -60,6 +60,7 @@ a {
   border-radius: 10px;
   transition: 0.25s;
   overflow: hidden;
+  background-color: #ffffff;
 }
 
 .product-container:hover {

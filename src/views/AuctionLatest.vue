@@ -1,5 +1,17 @@
 <template>
   <div class="container">
+    <!-- subtitle tabs -->
+    <div id="sub-nav">
+      <div
+        id="sub-content"
+        class="column is-two-thirds"
+      >
+        <router-link to="/">🏡 Trang chủ</router-link>
+        <router-link to="/auction/latest">🎇 Mới nhất</router-link>
+        <router-link to="/fruit">🍑 Loại quả</router-link>
+        <router-link to="/collection">📘 Bộ sưu tập</router-link>
+      </div>
+    </div>
     <!-- welcome -->
     <div class="welcome">
       <p>Sản phẩm mới nhất</p>
