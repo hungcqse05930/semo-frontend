@@ -4,18 +4,43 @@
         <div class="p1">
           <p class="ptext">{{product2.textleft}}</p>
           <p class="ptext1">{{product2.textright}}</p>
+<button class="edit" @click="editContract1 = true">Chỉnh sửa</button>
         </div>
+        <template>
+      <section>
+        <div class="bmodal">
+          <b-modal
+            :active.sync="editContract1"
+            has-modal-card
+            :destroy-on-hide="false"
+            aria-role="dialog"
+            aria-modal            
+          >
+            <BmodalEditContract />
+          </b-modal>
+        </div>
+      </section>
+    </template>
     </div>
   </div>
 </template>
 
 <script>
+ import BmodalEditContract from "../../components/Affair/BmodalEditContract.vue";
+
 export default {
+      components:{
+    BmodalEditContract,
+  },
   name: "product2",
   props: {
     product2: Object
+  },
+      data(){
+    return{
+      editContract1: false,
+    }
   }
-  
 };
 </script>
 
@@ -121,12 +146,25 @@ export default {
   font-size: 17px;
   color: #707070;
 }
-.ptext1 {
+.ptext1{
+  /* display: block;
+  color: red; */
   margin-top:10px;
-  margin-right: 5px;
+  margin-left: auto;
   font-family: "Roboto";
   font-weight: 500;
   font-size: 17px;
   color: #707070;
+}
+.edit{
+  /* display: none; */
+  /* color: #000; */
+  height: 50px;
+  width: 80px;
+  /* margin-left: -10px */
+ border-radius: 10px;
+ background-color: mediumseagreen;
+ margin-right: 5px;
+ margin-left: 5px;
 }
 </style>
