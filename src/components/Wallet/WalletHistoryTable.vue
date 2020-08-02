@@ -1,18 +1,9 @@
 <template>
   <section class="admin-wrap">
-    <!-- <div class="pagination">
-      <p class="post-infor">📰 Hiển thị 1-6 trên 10 bài đăng</p>
-      <div class="paging">
-        <p class="page-back">👈 Trang trước</p>
-        <p class="page-next">Trang sau 👉</p>
-      </div>
-    </div>-->
     <b-table
       class="admin-table"
       :data="data"
       :checked-rows.sync="checkedRows"
-      checkable
-      checkbox-position="right"
       paginated
       pagination-simple
       hoverable
@@ -40,7 +31,7 @@
             {{ props.row.status }}
         </b-table-column>
       </template>
-      <template slot="bottom-left">
+      <!-- <template slot="bottom-left">
         <b>Total checked</b>
         : {{ checkedRows.length }}
         <b-button @click="deleteAlert" type="is-text">🗑️ Xóa bài đăng</b-button>
@@ -55,7 +46,7 @@
           <b-icon icon="close"></b-icon>
           <span>Clear checked</span>
         </button>
-      </template>
+      </template> -->
     </b-table>
     <b-modal
       :active.sync="isComponentModalActive"
@@ -72,24 +63,24 @@
 </template>
 <script>
 import AdminDealInformation from "../Admin/AdminDealInformation.vue";
-import MediationDashboardDelete from "../MediationDashboard/MediationDashboardDelete.vue";
+// import MediationDashboardDelete from "../MediationDashboard/MediationDashboardDelete.vue";
 export default {
   components: {
     AdminDealInformation,
-    MediationDashboardDelete
+    // MediationDashboardDelete
   },
   methods: {
     allAlert() {
       this.isComponentModalActive = true;
     },
-    deleteAlert() {
-      this.$buefy.modal.open({
-        parent: this,
-        component: MediationDashboardDelete,
-        hasModalCard: true,
-        trapFocus: true
-      });
-    },  
+    // deleteAlert() {
+    //   this.$buefy.modal.open({
+    //     parent: this,
+    //     component: MediationDashboardDelete,
+    //     hasModalCard: true,
+    //     trapFocus: true
+    //   });
+    // },  
   },
   data() {
     const data = [
