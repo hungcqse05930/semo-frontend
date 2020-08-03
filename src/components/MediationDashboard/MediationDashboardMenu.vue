@@ -16,7 +16,7 @@
       <b-menu-item tag="router-link" to="/mediationdashboardnameproduct" label="🍑 Loại quả"></b-menu-item>
     </b-menu-list>
     <b-menu-list>
-      <b-menu-item label="👦 Đăng xuất" tag="router-link" target="_blank" to="/login"></b-menu-item>
+      <b-menu-item label="👦 Đăng xuất" tag="router-link" to="/login"></b-menu-item>
     </b-menu-list>
   </b-menu>
   <!-- </b-sidebar>

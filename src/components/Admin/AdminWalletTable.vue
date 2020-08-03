@@ -112,12 +112,12 @@ export default {
         },
         {
           field: "user_name",
-          label: "User Name",
+          label: "NGƯỜI DÙNG",
           searchable: true
         },
         {
           field: "status",
-          label: "Status",
+          label: "SỐ TIỀN",
           searchable: true
         }
       ]

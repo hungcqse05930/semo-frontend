@@ -21,7 +21,8 @@
     >
       <template slot-scope="props">
         <template v-for="column in columns">
-          <b-table-column :key="column.id" v-bind="column">
+          <b-table-column :key="column.id" v-bind="column"
+          onclick="window.location.href='/cencorproductmediation'">
             <template
               v-if="column.searchable && !column.numeric"
               slot="searchable"
@@ -68,17 +69,12 @@
   </section>
 </template>
 <script>
-import MediationDashboardEditProduct from "../MediationDashboard/MediationDashboardEditProduct";
 import MediationDashboardDelete from "../MediationDashboard/MediationDashboardDelete";
 export default {
   components: {
-    MediationDashboardEditProduct,
-    MediationDashboardDelete
+    MediationDashboardDelete,
   },
-  methods: {
-    allAlert() {
-      this.isComponentModalActive = true
-    },
+    methods: {
     deleteAlert(){
        this.$buefy.modal.open({
          parent: this,
@@ -92,80 +88,86 @@ export default {
     const data = [
       {
         id: 1,
-        product_name: "TÁO AMBROSSIA",
-        product_number: "312 SẢN PHẨM",
-        user_name: "Nguyen Ha Thanh",
+        user_source: "Nguyen Ha Thanh",
+        user_receiver: "Nguyen Ha Thanh",
+        status: "⏲️ CHỜ CHUYỂN TIỀN CỌC",
         date: "2016-10-15 13:43:27"
       },
       {
         id: 2,
-        product_name: "TÁO AMBROSSIA",
-        product_number: "312 SẢN PHẨM",
-        user_name: "Nguyen Ha Thanh",
+        user_source: "Nguyen Ha Thanh",
+        user_receiver: "Nguyen Ha Thanh",
+        status: "💵 CỌC XONG",
         date: "2016-10-15 13:43:27"
       },
       {
         id: 3,
-        product_name: "TÁO AMBROSSIA",
-        product_number: "312 SẢN PHẨM",
-        user_name: "Nguyen Ha Thanh",
+        user_source: "Nguyen Ha Thanh",
+        user_receiver: "Nguyen Ha Thanh",
+        status: "⏲️ CHỜ THANH TOÁN",
         date: "2016-10-15 13:43:27"
       },
       {
         id: 4,
-        product_name: "TÁO AMBROSSIA",
-        product_number: "312 SẢN PHẨM",
-        user_name: "Nguyen Ha Thanh",
+        user_source: "Nguyen Ha Thanh",
+        user_receiver: "Nguyen Ha Thanh",
+        status: "⚠ QUÁ HẠN THANH TOÁN",
         date: "2016-10-15 13:43:27"
       },
       {
         id: 5,
-        product_name: "TÁO AMBROSSIA",
-        product_number: "312 SẢN PHẨM",
-        user_name: "Nguyen Ha Thanh",
+        user_source: "Nguyen Ha Thanh",
+        user_receiver: "Nguyen Ha Thanh",
+        status: "⚠ QUÁ HẠN TRẢ CỌC",
         date: "2016-10-15 13:43:27"
       },
       {
         id: 6,
-        product_name: "TÁO AMBROSSIA",
-        product_number: "312 SẢN PHẨM",
-        user_name: "Nguyen Ha Thanh",
+        user_source: "Nguyen Ha Thanh",
+        user_receiver: "Nguyen Ha Thanh",
+        status: "✔️ HOÀN THÀNH",
+        date: "2016-10-15 13:43:27"
+      },
+      {
+        id: 7,
+        user_source: "Nguyen Ha Thanh",
+        user_receiver: "Nguyen Ha Thanh",
+        status: "🗑️ ĐÃ HỦY",
         date: "2016-10-15 13:43:27"
       }
     ];
 
     return {
-      isComponentModalActive: false,
       data,
+      checkboxPosition: "left",
       checkedRows: [],
       columns: [
         {
           field: "id",
           label: "ID",
-          width: "40",
+        //   width: 100,                    
+          centered: true,
           numeric: true,
           searchable: true
         },
         {
-          field: "product_name",
-          label: "TÊN LOẠI QUẢ",
-          width: 500,
+          field: "user_source",
+          label: "NGƯỜI BÁN",
           searchable: true
         },
         {
-          field: "product_number",
-          label: "SỐ SẢN PHẨM",
+          field: "user_receiver",
+          label: "NGƯỜI MUA",
           searchable: true
         },
         {
-          field: "user_name",
-          label: "NGƯỜI TẠO",
+          field: "status",
+          label: "TRẠNG THÁI",
           searchable: true
         },
         {
           field: "date",
-          label: "THỜI GIAN TẠO",
-          centered: true,
+          label: "THỜI GIAN ĐĂNG",
           searchable: true
         }
       ]

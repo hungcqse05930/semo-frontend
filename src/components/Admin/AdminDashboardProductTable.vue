@@ -165,28 +165,28 @@ export default {
         },
         {
           field: "content",
-          label: "Content",
+          label: "TÊN SẢN PHẨM",
           searchable: true
         },
         {
           field: "product_name",
-          label: "Product Name",
+          label: "LOẠI QUẢ",
           searchable: true
         },
         {
           field: "user_name",
-          label: "User Name",
+          label: "NGƯỜI ĐĂNG",
           searchable: true
         },
         {
           field: "date",
-          label: "Date",
+          label: "THỜI GIAN ĐĂNG",
           centered: true,
           searchable: true
         },
         {
           field: "status",
-          label: "Status",
+          label: "TRẠNG THÁI",
           searchable: true
         }
       ]

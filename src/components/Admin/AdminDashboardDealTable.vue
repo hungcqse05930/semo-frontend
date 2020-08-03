@@ -157,7 +157,7 @@ export default {
         },
         {
           field: "date",
-          label: "Date",
+          label: "NGÀY GIAO DỊCH",
           searchable: true
         },
         {

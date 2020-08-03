@@ -148,23 +148,23 @@ export default {
         },
         {
           field: "product_name",
-          label: "Product Name",
+          label: "TÊN LOẠI QUẢ",
           width: 500,
           searchable: true
         },
         {
           field: "product_number",
-          label: "Product Number",
+          label: "SỐ SẢN PHẨM",
           searchable: true
         },
         {
           field: "user_name",
-          label: "User Name",
+          label: "NGƯỜI TẠO",
           searchable: true
         },
         {
           field: "date",
-          label: "Date",
+          label: "THỜI GIAN TẠO",
           centered: true,
           searchable: true
         }
