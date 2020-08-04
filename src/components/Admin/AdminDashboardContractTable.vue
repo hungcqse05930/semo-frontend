@@ -22,7 +22,7 @@
       <template slot-scope="props">
         <template v-for="column in columns">
           <b-table-column :key="column.id" v-bind="column"
-          onclick="window.location.href='/cencorproductmediation'">
+          onclick="window.location.href='/affaireditcontract'">
             <template
               v-if="column.searchable && !column.numeric"
               slot="searchable"

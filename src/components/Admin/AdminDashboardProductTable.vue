@@ -21,8 +21,11 @@
     >
       <template slot-scope="props">
         <template v-for="column in columns">
-          <b-table-column :key="column.id" v-bind="column"
-          onclick="window.location.href='/cencorproductmediation'">
+          <b-table-column
+            :key="column.id"
+            v-bind="column"
+            onclick="window.location.href='/cencorproductmediation'"
+          >
             <template
               v-if="column.searchable && !column.numeric"
               slot="searchable"
@@ -41,10 +44,10 @@
       <template slot="bottom-left">
         <b>Total checked</b>
         : {{ checkedRows.length }}
-          <b-button @click="deleteAlert" type="is-text">🗑️ Xóa bài đăng</b-button>
-          <b-modal>
-            <MediationDashboardDelete />
-          </b-modal>
+        <b-button @click="deleteAlert" type="is-text">🗑️ Xóa bài đăng</b-button>
+        <b-modal>
+          <MediationDashboardDelete />
+        </b-modal>
         <button
           class="button field is-danger"
           @click="checkedRows = []"
@@ -72,16 +75,16 @@
 import MediationDashboardDelete from "../MediationDashboard/MediationDashboardDelete";
 export default {
   components: {
-    MediationDashboardDelete,
+    MediationDashboardDelete
   },
-    methods: {
-    deleteAlert(){
-       this.$buefy.modal.open({
-         parent: this,
-         component: MediationDashboardDelete,
-         hasModalCard: true,
-         trapFocus: true
-       })
+  methods: {
+    deleteAlert() {
+      this.$buefy.modal.open({
+        parent: this,
+        component: MediationDashboardDelete,
+        hasModalCard: true,
+        trapFocus: true
+      });
     }
   },
   data() {
