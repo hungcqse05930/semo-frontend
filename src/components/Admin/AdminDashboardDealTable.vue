@@ -66,16 +66,16 @@
       aria-modal
       style="width: auto;"
     >
-      <MediationDashboardEditProduct />
+      <AdminDealInformation />
     </b-modal>
   </section>
 </template>
 <script>
-import MediationDashboardEditProduct from "../MediationDashboard/MediationDashboardEditProduct";
-import MediationDashboardDelete from "../MediationDashboard/MediationDashboardDelete";
+import AdminDealInformation from "../Admin/AdminDealInformation.vue";
+import MediationDashboardDelete from "../MediationDashboard/MediationDashboardDelete.vue";
 export default {
   components: {
-    MediationDashboardEditProduct,
+    AdminDealInformation,
     MediationDashboardDelete
   },
   methods: {
@@ -157,7 +157,7 @@ export default {
         },
         {
           field: "date",
-          label: "Date",
+          label: "NGÀY GIAO DỊCH",
           searchable: true
         },
         {

@@ -3,38 +3,23 @@
     <div class="admin-header">
       <img class="logo" src="../assets/logo.png" />
       <div class="type-name">
-        <p>Giao dịch</p>
+        <p>Đấu Giá  </p>
       </div>
     </div>
     <div class="admin-table">
       <AdminMenu />
-      <AdminDashboardDealTable />
+      <AdminDashboardBidTable />
     </div>
-    <section>
-      <b-modal
-        :active.sync="isComponentModalActive"
-        has-modal-card
-        trap-focus
-        :destroy-on-hide="false"
-        aria-role="dialog"
-        aria-modal
-        style="width: auto;"
-      >    
-      <AdminDealInformation />
-      </b-modal>
-    </section>
   </div>
 </template>
 <script>
 import AdminMenu from "../components/Admin/AdminMenu.vue";
-import AdminDashboardDealTable from "../components/Admin/AdminDashboardDealTable.vue";
-import AdminDealInformation from "../components/Admin/AdminDealInformation.vue";
+import AdminDashboardBidTable from "../components/Admin/AdminDashboardBidTable.vue";
 export default {
-  name: "admindashboarddeal",
+  name: "admindashboardbid",
   components: {
     AdminMenu,
-    AdminDashboardDealTable,
-    AdminDealInformation
+    AdminDashboardBidTable,
   },
   data() {
     return {

@@ -4,8 +4,6 @@
       class="admin-table"
       :data="data"
       :checked-rows.sync="checkedRows"
-      checkable
-      checkbox-position="right"
       paginated
       pagination-simple
       hoverable
@@ -13,8 +11,7 @@
       >
         <template slot-scope="props">
           <template v-for="column in columns">
-            <b-table-column :key="column.id" v-bind="column"
-             onclick="window.location.href='/cencorproductmediation'">
+            <b-table-column :key="column.id" v-bind="column">
               <template
                 v-if="column.searchable && !column.numeric"
                 slot="searchable"
@@ -30,7 +27,7 @@
             </b-table-column>
           </template>
         </template>
-        <template slot="bottom-left">
+        <!-- <template slot="bottom-left">
           <b>Total checked</b>
           : {{ checkedRows.length }}
           <b-button @click="deleteAlert" type="is-text">🗑️ Xóa bài đăng</b-button>
@@ -42,26 +39,26 @@
                 <b-icon icon="close"></b-icon>
                 <span>Clear checked</span>
             </button>
-        </template>    
+        </template>     -->
       </b-table>
   </section>
 </template>
 <script>
-import MediationDashboardDelete from "../MediationDashboard/MediationDashboardDelete.vue";
+// import MediationDashboardDelete from "../MediationDashboard/MediationDashboardDelete.vue";
 export default {
   components: {
-    MediationDashboardDelete,
+    // MediationDashboardDelete,
   },
-    methods: {
-    deleteAlert(){
-       this.$buefy.modal.open({
-         parent: this,
-         component: MediationDashboardDelete,
-         hasModalCard: true,
-         trapFocus: true
-       })
-    }
-  },
+    // methods: {
+    // deleteAlert(){
+    //    this.$buefy.modal.open({
+    //      parent: this,
+    //      component: MediationDashboardDelete,
+    //      hasModalCard: true,
+    //      trapFocus: true
+    //    })
+    // }
+  // },
   data() {
     const data = [
       {
@@ -115,12 +112,12 @@ export default {
         },
         {
           field: "user_name",
-          label: "User Name",
+          label: "NGƯỜI DÙNG",
           searchable: true
         },
         {
           field: "status",
-          label: "Status",
+          label: "SỐ TIỀN",
           searchable: true
         }
       ]

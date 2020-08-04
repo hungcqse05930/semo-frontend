@@ -6,20 +6,44 @@
           <!-- <button class="hover">Chỉnh sửa</button> -->
 
           <p class="ptext1">{{product.textright}}</p>
-          <!-- <button class="hover">Chỉnh sửa</button> -->
-
+          <button class="edit"  @click="editContract1 = true">Chỉnh sửa</button>
         </div>
+                <template>
+      <section>
+        <div class="bmodal">
+          <b-modal
+            :active.sync="editContract1"
+            has-modal-card
+            :destroy-on-hide="false"
+            aria-role="dialog"
+            aria-modal
+            
+          >
+            <BmodalEditContract />
+          </b-modal>
+        </div>
+      </section>
+    </template>
     </div>
   </div>
 </template>
 
 <script>
+ import BmodalEditContract from "../../components/Affair/BmodalEditContract.vue";
+
 export default {
   name: "product",
+  components:{
+    BmodalEditContract,
+  },
   props: {
     product: Object
+  },
+  data(){
+    return{
+      editContract1: false,
+    }
   }
-  
 };
 </script>
 
@@ -42,7 +66,7 @@ export default {
 
 .p1{
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 .ptext {
   margin-top:12px;
@@ -56,18 +80,21 @@ export default {
   /* display: block;
   color: red; */
   margin-top:10px;
-  margin-right: 5px;
+  margin-left: auto;
   font-family: "Roboto";
   font-weight: 500;
   font-size: 17px;
   color: #707070;
 }
-.hover{
-  display: none;
-  color: #000;
-  height: 20px;
-  width: 50px;
+.edit{
+  /* display: none; */
+  /* color: #000; */
+  height: 50px;
+  width: 80px;
   /* margin-left: -10px */
-  z-index: 1;
+ border-radius: 10px;
+ background-color: mediumseagreen;
+ margin-right: 5px;
+ margin-left: 5px;
 }
 </style>

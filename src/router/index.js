@@ -34,6 +34,10 @@ import AdminDashboardNameProduct from '../views/AdminDashboardNameProduct.vue'
 import AdminDashboardProduct from '../views/AdminDashboardProduct.vue'
 import AdminDashboardDeal from '../views/AdminDashboardDeal.vue'
 import UserInformationTESTFILE from '../views/UserInformationTESTFILE.vue'
+import UserWalletHistory from '../views/UserWalletHitory.vue'
+import AdminDashboardContract from '../views/AdminDashboardContract.vue'
+import AdminDashboardBid from '../views/AdminDashboardBid.vue'
+import AdminDashboardCheckBid from '../views/AdminDashboardCheckBid.vue'
 
 // import { component } from 'vue/types/umd';
 
@@ -251,6 +255,26 @@ const routes = [
     path: '/admindashboarddeal',
     name: 'AdminDashboardDeal',
     component: AdminDashboardDeal
+  },
+  {
+    path: '/userwallethistory',
+    name: 'UserWalletHistory',
+    component: UserWalletHistory
+  },
+  {
+    path: '/admindashboardcontract',
+    name: 'AdminDashboardContract',
+    component: AdminDashboardContract
+  },
+  {
+    path: '/admindashboardbid',
+    name: 'AdminDashboardBid',
+    component: AdminDashboardBid
+  },
+  {
+    path: '/admindashboardcheckbid',
+    name: 'AdminDashboardCheckBid',
+    component: AdminDashboardCheckBid
   },
 ]
 

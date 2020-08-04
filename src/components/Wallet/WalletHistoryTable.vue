@@ -1,18 +1,9 @@
 <template>
   <section class="admin-wrap">
-    <!-- <div class="pagination">
-      <p class="post-infor">📰 Hiển thị 1-6 trên 10 bài đăng</p>
-      <div class="paging">
-        <p class="page-back">👈 Trang trước</p>
-        <p class="page-next">Trang sau 👉</p>
-      </div>
-    </div>-->
     <b-table
       class="admin-table"
       :data="data"
       :checked-rows.sync="checkedRows"
-      checkable
-      checkbox-position="right"
       paginated
       pagination-simple
       hoverable
@@ -36,14 +27,17 @@
             {{ props.row[column.field] }}
           </b-table-column>
         </template>
+                 <b-table-column field="status" label="TRẠNG THÁI" sortable>
+            {{ props.row.status }}
+        </b-table-column>
       </template>
-      <template slot="bottom-left">
+      <!-- <template slot="bottom-left">
         <b>Total checked</b>
         : {{ checkedRows.length }}
-          <b-button @click="deleteAlert" type="is-text">🗑️ Xóa bài đăng</b-button>
-          <b-modal>
-            <MediationDashboardDelete />
-          </b-modal>
+        <b-button @click="deleteAlert" type="is-text">🗑️ Xóa bài đăng</b-button>
+        <b-modal>
+          <MediationDashboardDelete />
+        </b-modal>
         <button
           class="button field is-danger"
           @click="checkedRows = []"
@@ -52,7 +46,7 @@
           <b-icon icon="close"></b-icon>
           <span>Clear checked</span>
         </button>
-      </template>
+      </template> -->
     </b-table>
     <b-modal
       :active.sync="isComponentModalActive"
@@ -63,74 +57,80 @@
       aria-modal
       style="width: auto;"
     >
-      <MediationDashboardEditProduct />
+      <AdminDealInformation />
     </b-modal>
   </section>
 </template>
 <script>
-import MediationDashboardEditProduct from "../MediationDashboard/MediationDashboardEditProduct";
-import MediationDashboardDelete from "../MediationDashboard/MediationDashboardDelete";
+import AdminDealInformation from "../Admin/AdminDealInformation.vue";
+// import MediationDashboardDelete from "../MediationDashboard/MediationDashboardDelete.vue";
 export default {
   components: {
-    MediationDashboardEditProduct,
-    MediationDashboardDelete
+    AdminDealInformation,
+    // MediationDashboardDelete
   },
   methods: {
     allAlert() {
-      this.isComponentModalActive = true
+      this.isComponentModalActive = true;
     },
-    deleteAlert(){
-       this.$buefy.modal.open({
-         parent: this,
-         component: MediationDashboardDelete,
-         hasModalCard: true,
-         trapFocus: true
-       })
-    }
+    // deleteAlert() {
+    //   this.$buefy.modal.open({
+    //     parent: this,
+    //     component: MediationDashboardDelete,
+    //     hasModalCard: true,
+    //     trapFocus: true
+    //   });
+    // },  
   },
   data() {
     const data = [
       {
         id: 1,
-        product_name: "TÁO AMBROSSIA",
-        product_number: "312 SẢN PHẨM",
-        user_name: "Nguyen Ha Thanh",
-        date: "2016-10-15 13:43:27"
+        date: "2016-10-15 13:43:27",
+        cash_out: "-3,500,000",
+        user_source: "Nguyen Ha Thanh",
+        user_receiver: "Nguyen Ha Thanh",
+        status: "TIỀN PHÍ"
       },
       {
         id: 2,
-        product_name: "TÁO AMBROSSIA",
-        product_number: "312 SẢN PHẨM",
-        user_name: "Nguyen Ha Thanh",
-        date: "2016-10-15 13:43:27"
+        date: "2016-10-15 13:43:27",
+        cash_out: "-3,500,000",
+        user_source: "Nguyen Ha Thanh",
+        user_receiver: "Nguyen Ha Thanh",
+        status: "TIỀN CỌC"
       },
       {
         id: 3,
-        product_name: "TÁO AMBROSSIA",
-        product_number: "312 SẢN PHẨM",
-        user_name: "Nguyen Ha Thanh",
-        date: "2016-10-15 13:43:27"
+        date: "2016-10-15 13:43:27",
+        cash_out: "-3,500,000",
+        user_source: "Nguyen Ha Thanh",
+        user_receiver: "Nguyen Ha Thanh",
+        status: "TIỀN CỌC"
       },
       {
         id: 4,
-        product_name: "TÁO AMBROSSIA",
-        product_number: "312 SẢN PHẨM",
-        user_name: "Nguyen Ha Thanh",
-        date: "2016-10-15 13:43:27"
+        date: "2016-10-15 13:43:27",
+        cash_out: "-3,500,000",
+        user_source: "Nguyen Ha Thanh",
+        user_receiver: "Nguyen Ha Thanh",
+        status: "TIỀN CỌC"
       },
       {
         id: 5,
-        product_name: "TÁO AMBROSSIA",
-        product_number: "312 SẢN PHẨM",
-        user_name: "Nguyen Ha Thanh",
-        date: "2016-10-15 13:43:27"
+        date: "2016-10-15 13:43:27",
+        cash_out: "-3,500,000",
+        user_source: "Nguyen Ha Thanh",
+        user_receiver: "Nguyen Ha Thanh",
+        status: "TIỀN CỌC"
       },
       {
         id: 6,
-        product_name: "TÁO AMBROSSIA",
-        product_number: "312 SẢN PHẨM",
-        user_name: "Nguyen Ha Thanh",
-        date: "2016-10-15 13:43:27"
+        date: "2016-10-15 13:43:27",
+        cash_out: "-3,500,000",
+        user_source: "Nguyen Ha Thanh",
+        user_receiver: "Nguyen Ha Thanh",
+        status: "TIỀN PHÍ"
       }
     ];
 
@@ -147,27 +147,30 @@ export default {
           searchable: true
         },
         {
-          field: "product_name",
-          label: "TÊN LOẠI QUẢ",
-          width: 500,
-          searchable: true
-        },
-        {
-          field: "product_number",
-          label: "SỐ SẢN PHẨM",
-          searchable: true
-        },
-        {
-          field: "user_name",
-          label: "NGƯỜI TẠO",
-          searchable: true
-        },
-        {
           field: "date",
-          label: "THỜI GIAN TẠO",
-          centered: true,
+          label: "Date",
           searchable: true
-        }
+        },
+        {
+          field: "cash_out",
+          label: "SỐ TIỀN",
+          searchable: true
+        },
+        {
+          field: "user_source",
+          label: "NGƯỜI CHUYỂN TIỀN",
+          searchable: true
+        },
+        {
+          field: "user_receiver",
+          label: "NGƯỜI NHẬN TIỀN",
+          searchable: true
+        },
+        // {
+        //   field: "status",
+        //   label: "TRẠNG THÁI",
+        //   sortable: true
+        // }
       ]
     };
   }

@@ -1,14 +1,14 @@
 <template>
-  <div class="admin-container">
-    <div class="admin-header">
+  <div class="user-container">
+    <div class="user-header">
       <img class="logo" src="../assets/logo.png" />
       <div class="type-name">
-        <p>Giao dịch</p>
+        <p>Lịch Sử giao dịch</p>
       </div>
     </div>
-    <div class="admin-table">
-      <AdminMenu />
-      <AdminDashboardDealTable />
+    <div class="user-table">
+      <WalletMenu />
+      <WalletHistoryTable />
     </div>
     <section>
       <b-modal
@@ -20,21 +20,21 @@
         aria-modal
         style="width: auto;"
       >    
-      <AdminDealInformation />
+      <WalletHistoryInformation />
       </b-modal>
     </section>
   </div>
 </template>
 <script>
-import AdminMenu from "../components/Admin/AdminMenu.vue";
-import AdminDashboardDealTable from "../components/Admin/AdminDashboardDealTable.vue";
-import AdminDealInformation from "../components/Admin/AdminDealInformation.vue";
+import WalletHistoryTable from "../components/Wallet/WalletHistoryTable.vue";
+import WalletHistoryInformation from "../components/Wallet/WalletHistoryInformation.vue";
+import WalletMenu from "../components/Wallet/WalletMenu.vue"
 export default {
-  name: "admindashboarddeal",
+  name: "userwallethistory",
   components: {
-    AdminMenu,
-    AdminDashboardDealTable,
-    AdminDealInformation
+    WalletHistoryTable,
+    WalletHistoryInformation,
+    WalletMenu
   },
   data() {
     return {
@@ -44,7 +44,7 @@ export default {
 };
 </script>
 <style scoped>
-.admin-container {
+.user-container {
   width: 100%;
   padding: 10px;
 }
@@ -63,11 +63,11 @@ export default {
   border-bottom: #01d28e solid 3px;
   margin: 24px auto auto 40px;
 }
-.admin-header {
+.user-header {
   display: flex;
   flex-flow: row;
 }
-.admin-table {
+.user-table {
   display: flex;
   flex-flow: row;
 }
