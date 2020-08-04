@@ -6,10 +6,14 @@
           <div class="column is-half"></div>
           <div id="form" class="column is-half">
             <!-- selection tab -->
-            <b-tabs class="tab" v-model="activeTab" size="is-medium" expanded>
-              <b-tab-item label="Đăng nhập"></b-tab-item>
-              <b-tab-item label="Đăng ký"></b-tab-item>
-            </b-tabs>
+            <div class="columns nav-tabs is-mobile is-variable is-5">
+              <div class="column is-centered router-link is-narrow">
+                <router-link to="/login">Đăng nhập</router-link>
+              </div>
+              <div class="column is-centered router-link is-narrow">
+                <router-link to="/register">Đăng ký</router-link>
+              </div>
+            </div>
             <!-- notification -->
             <b-notification
               type="is-danger"
@@ -17,12 +21,11 @@
               aria-close-label="Đóng"
               role="alert"
               :active.sync="error"
-              v-if="activeTab === 0"
               class="error-notification"
             >{{error_msg}}</b-notification>
             <!-- form -->
             <!-- log in form -->
-            <section v-if="activeTab === 0">
+            <section class="form">
               <p class="label-info">Đăng nhập bằng số điện thoại của bạn</p>
               <!-- FORM LOG IN -->
               <form @submit.prevent="loginSubmit">
@@ -41,37 +44,20 @@
                   outlined
                   native-type="submit"
                 >🙌 Tiếp tục</b-button>
-                <b-button type="is-text" style="width: 100%; margin-top: 16px;" rounded>Quên mật khẩu</b-button>
-              </form>
-              <p style="margin-top: 40px; font-size: 10px;">
-                Bằng việc điền đúng số điện thoại và tiến hành đăng ký,
-                <br />bạn đã đồng ý với điều khoản về chính sách bảo mật
-                <br />thông tin và quyền sử dụng thông tin cá nhân vào
-                <br />mục đích đã được nêu trong chính sách bảo mật của semo.
-              </p>
-            </section>
-            <!-- sign up form -->
-            <section v-if="activeTab === 1">
-              <p class="label-info">Sử dụng số điện thoại của bạn để đăng ký</p>
-              <!--  -->
-              <form @submit.prevent="signupSubmit">
-                <b-input class="login-input" v-model="phone" placeholder="Số điện thoại của bạn"></b-input>
-                <br />
                 <b-button
+                  type="is-text"
+                  style="width: 100%; margin-top: 16px;"
                   rounded
-                  type="is-primary"
-                  style="width: 100%; font-size: 18px; font-weight: 700;"
-                  outlined
-                  native-type="submit"
-                >🤟 Tiếp tục</b-button>
+                >Quên mật khẩu</b-button>
               </form>
-              <p style="margin-top: 40px; font-size: 10px;">
-                Bằng việc điền đúng số điện thoại và tiến hành đăng ký,
-                <br />bạn đã đồng ý với điều khoản về chính sách bảo mật
-                <br />thông tin và quyền sử dụng thông tin cá nhân vào
-                <br />mục đích đã được nêu trong chính sách bảo mật của semo.
-              </p>
             </section>
+
+            <p style="margin-top: 40px; font-size: 10px;">
+              Bằng việc điền đúng số điện thoại và tiến hành đăng ký,
+              <br />bạn đã đồng ý với điều khoản về chính sách bảo mật
+              <br />thông tin và quyền sử dụng thông tin cá nhân vào
+              <br />mục đích đã được nêu trong chính sách bảo mật của semo.
+            </p>
           </div>
           <!-- <LoginAndRegister /> -->
         </div>
@@ -81,35 +67,26 @@
 </template>
 
 <script>
-// import axios from "axios";
-// import NextButton from "../components/Auth/NextButton.vue";
-// import ContentLast from "../components/Auth/ContentLast.vue";
-// import ContentLeftPicture from "../components/Auth/ContentLeftPicture.vue";
-// import LoginAndRegister from "../components/Auth/LoginAndRegister";
 export default {
-  name: "login",
-  components: {
-    // NextButton,
-    // ContentLast,
-    // ContentLeftPicture,
-    // LoginAndRegister,
-  },
+  name: "Login",
   data() {
     return {
-      activeTab: 0,
-      phone: "0912345678",
-      password: "123456",
+      phone: "012345678",
+      password: "123123",
       error: false,
       error_msg: "",
     };
   },
   methods: {
     loginSubmit() {
-
+      let vm = this
       this.$store
         .dispatch("LOGIN", {
           phone: this.phone,
           password: this.password,
+        })
+        .then(() => {
+          vm.$router.push({ name: 'Trang chủ' })
         })
         .catch((error) => {
           this.error_msg = error.message;
@@ -152,7 +129,6 @@ export default {
 }
 
 .label-info {
-  margin-top: -20px;
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -165,11 +141,4 @@ export default {
 .content-right {
   padding-left: 100px;
 }
-
-.error-notification {
-  margin-top: -46px;
-}
-/* .content-left {
-  padding-left: 0px;
-} */
 </style>

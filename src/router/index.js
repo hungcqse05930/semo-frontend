@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
-import RegisterPhoneNumber from '../views/RegisterPhoneNumber.vue'
 import RegisterOTP from '../views/RegisterOTP.vue'
-import CreatePassword from '../views/CreatePassword.vue'
 import ConfirmCitizen from '../views/ConfirmCitizen.vue'
 import ConfirmInformation from '../views/ConfirmInformation.vue'
 import SelectPicture from '../views/SelectPicture.vue'
@@ -59,6 +57,12 @@ const routes = [
     component: () => import('../views/Search.vue')
   },
   {
+    path: '/auction/:id',
+    name: 'Đấu giá',
+    props: true,
+    component: () => import('../views/Auction.vue')
+  },
+  {
     path: '/user/info',
     name: 'Tài khoản của bạn',
     // route level code-splitting
@@ -77,8 +81,13 @@ const routes = [
   },
   {
     path: '/register',
-    name: 'RegisterPhoneNumber',
-    component: RegisterPhoneNumber
+    name: 'Đăng ký',
+    component: () => import('../views/Register.vue')
+  },
+  {
+    path: '/register/otp',
+    name: 'Nhập OTP',
+    component: () => import('../views/RegisterOTP.vue')
   },
   {
     path: '/registerstep2',
@@ -86,9 +95,9 @@ const routes = [
     component: RegisterOTP
   },
   {
-    path: '/registerstep3',
-    name: 'CreatePassword',
-    component: CreatePassword
+    path: '/register/pwd',
+    name: 'Tạo mật khẩu',
+    component: () => import('../views/RegisterPassword')
   },
   {
     path: '/registerstep4',
@@ -248,6 +257,22 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      const position = {}
+
+      if (to.hash) {
+        position.selector = to.hash
+
+        if (document.querySelector(to.hash)) {
+          return position
+        }
+        return false
+      }
+    }
+  },
   routes
 })
 

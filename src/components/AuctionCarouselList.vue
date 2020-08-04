@@ -5,8 +5,8 @@
         <slot name="title"></slot>
       </p>
       <div class="nav-button">
-        <b-button type="is-rounded" @click="swipeLeft">👈 Trang trước</b-button>
-        <b-button type="is-rounded" @click="swipeRight" style="margin-left: 16px;">Trang sau 👉</b-button>
+        <b-button type="is-rounded" @click="swipeLeft">👈 Trước</b-button>
+        <b-button type="is-rounded" @click="swipeRight" style="margin-left: 16px;">Sau 👉</b-button>
       </div>
     </div>
     <div class="auctions-strip columns is-mobile is-1">
@@ -36,11 +36,11 @@ export default {
     /*eslint-disable */
     swipeLeft() {
       let content = document.querySelector(".auctions-strip");
-      content.scrollLeft -= 500;
+      content.scrollLeft -= 600;
     },
     swipeRight() {
       let content = document.querySelector(".auctions-strip");
-      content.scrollLeft += 500;
+      content.scrollLeft += 600;
     },
   },
 };

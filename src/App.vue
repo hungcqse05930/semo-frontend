@@ -25,12 +25,23 @@ Vue.use(Buefy)
         </div>
         <div class="column is-narrow right">
           <router-link v-if="!loggedIn" to="/login">👋 Đăng nhập</router-link>
-          <router-link v-if="loggedIn" to="/user/info">👦 Tài khoản của bạn</router-link>
+          <router-link v-if="loggedIn" to="'/user/info'">👦 Tài khoản của bạn</router-link>
         </div>
       </div>
     </div>
+    <!-- subtitle tabs -->
+    <div id="sub-nav">
+      <div id="sub-content" class="column is-two-thirds">
+        <router-link to="/">🏡 Trang chủ</router-link>
+        <router-link to="/auction/latest">🎇 Mới nhất</router-link>
+        <router-link to="/fruit">🍑 Loại quả</router-link>
+        <router-link to="/collection">📘 Bộ sưu tập</router-link>
+      </div>
+    </div>
     <div class="main-view" style="display: block; margin-top: 12px;">
-      <router-view id="main-view" />
+      <transition name="moveUp">
+        <router-view id="main-view" />
+      </transition>
     </div>
 
     <div class="footer">
@@ -131,6 +142,7 @@ export default {
 
 <style lang="scss">
 @import "~bulma/sass/utilities/_all";
+
 body {
   background-color: #fcfcfc;
 }
@@ -242,6 +254,7 @@ body {
   background-color: #ffffff99;
   backdrop-filter: saturate(180%) blur(200px) brightness(150%);
   display: flex;
+
   a {
     font-weight: bold;
     font-size: 14px;
@@ -274,7 +287,7 @@ body {
   position: sticky;
   top: 68px;
   z-index: 1;
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   width: 100%;
 
   #sub-content {
@@ -282,7 +295,9 @@ body {
     margin: 0 auto;
     justify-content: space-between;
     padding-bottom: 0;
+    max-width: 960px;
   }
+
   a {
     font-size: 16px;
     font-family: "Merriweather";
@@ -297,8 +312,56 @@ body {
   }
 }
 
+// router link
+.nav-tabs {
+  margin-bottom: 12px;
+}
+
+.router-link {
+  text-align: center;
+  a {
+    font-size: 23px;
+    font-family: "Merriweather";
+    font-weight: 900;
+    color: #70707079;
+    padding-bottom: 12px;
+
+    &.router-link-exact-active {
+      color: #B88CD8;
+      border-bottom: #01d28e solid 2px;
+    }
+  }
+}
+
 .footer {
   margin-top: 80px;
+}
+
+// animation
+.moveUp-enter-active {
+  animation: fadeIn 0.25s ease-in;
+}
+
+@keyframes fadeIn {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.moveUp-leave-active {
+  animation: fadeOut 0.125s ease-in;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 $primary: #01d28e;
