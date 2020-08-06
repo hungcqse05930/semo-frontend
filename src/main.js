@@ -12,7 +12,7 @@ import http from 'http'
 // import VueCookie from 'vue-cookie'
 
 // set default axios location
-axios.defaults.baseURL = "http://192.168.123.37:3003/"
+axios.defaults.baseURL = "http://localhost:3003/"
 
 /*eslint-disable */
 // init Firebase
