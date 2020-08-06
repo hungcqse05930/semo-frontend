@@ -87,6 +87,10 @@
         <div class="p2">
           <p class="ptext2">{{production.descriptiondetail}}</p>
         </div>
+                    <div class="buttons">
+          <b-button type="is-danger">🗑️ Xóa trả giá</b-button>
+          <b-button type="is-link">❌ Bỏ chọn</b-button>
+        </div>
       </div>
       <div class="contentright1">
         <p class="productinfo">Ai đã đấu giá?</p>
@@ -122,6 +126,22 @@
               </b-table-column>
             </template>
           </template>
+          <template slot="bottom-left">
+            <b>Total checked</b>
+            : {{ checkedRows.length }}
+            <b-button @click="deleteAlert" type="is-text">🗑️ Xóa đấu giá</b-button>
+            <b-modal>
+              <MediationDashboardDelete />
+            </b-modal>
+            <button
+              class="button field is-danger"
+              @click="checkedRows = []"
+              :disabled="!checkedRows.length"
+            >
+              <b-icon icon="close"></b-icon>
+              <span>Clear checked</span>
+            </button>
+          </template>
         </b-table>
       </div>
     </div>
@@ -129,12 +149,24 @@
 </template>
     
 <script>
+/* eslint-disable */
+import MediationDashboardDelete from "../components/MediationDashboard/MediationDashboardDelete.vue";
 export default {
   name: "admindashboardcheckbid",
-  components: {},
+  components: {
+    MediationDashboardDelete
+  },
   methods: {
     getImgUrl(value) {
       return `https://picsum.photos/id/43${value}/1230/500`;
+    },
+    deleteAlert() {
+      this.$buefy.modal.open({
+        parent: this,
+        component: MediationDashboardDelete,
+        hasModalCard: true,
+        trapFocus: true
+      });
     }
   },
   data() {
@@ -201,16 +233,18 @@ export default {
           date: "12:50:39, 30/05/2020"
         }
       ],
+      checkedRows: [],
       columns: [
         {
           field: "id",
           label: "ID",
-          width: "60",
+          width: "40",
           numeric: true
         },
         {
           field: "user",
           searchable: true,
+          width: "200",
           label: "TÊN NGƯỜI DÙNG"
         },
         {
@@ -445,6 +479,7 @@ export default {
   margin-top: 36px;
   margin-left: 60px;
 }
+
 #content {
   display: flex;
 }
@@ -665,6 +700,10 @@ export default {
   font-size: 17px;
   color: #707070;
 }
+.buttons {
+  display: flex;
+  flex-flow: row;
+}
 .userpaidtime {
   display: inline-flex;
   justify-content: space-between;
@@ -702,5 +741,12 @@ export default {
   grid-auto-rows: minmax(412px, auto);
   margin-left: 24px;
   margin-top: 24px;
+}
+.productinfo {
+  margin-bottom: 24px;
+  font-family: "Merriweather";
+  font-weight: 700;
+  font-size: 25px;
+  color: #b88cd8;
 }
 </style>

@@ -32,6 +32,7 @@ import UserWalletHistory from '../views/UserWalletHitory.vue'
 import AdminDashboardContract from '../views/AdminDashboardContract.vue'
 import AdminDashboardBid from '../views/AdminDashboardBid.vue'
 import AdminDashboardCheckBid from '../views/AdminDashboardCheckBid.vue'
+import AdminDashboardUser from '../views/AdminDashboardUser.vue'
 
 // import { component } from 'vue/types/umd';
 
@@ -262,6 +263,11 @@ const routes = [
     path: '/admindashboardcheckbid',
     name: 'AdminDashboardCheckBid',
     component: AdminDashboardCheckBid
+  },
+  {
+    path: '/admindashboarduser',
+    name: 'AdminDashboardUser',
+    component: AdminDashboardUser
   },
 ]
 

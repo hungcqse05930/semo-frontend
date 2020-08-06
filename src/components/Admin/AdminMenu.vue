@@ -8,7 +8,7 @@
         <b-menu-item tag="router-link" to="/admindashboardnameproduct" label="🍑 Loại quả"></b-menu-item>
         <b-menu-item tag="router-link" to="/admindashboardcontract" label="Giao kèo"></b-menu-item>
         <b-menu-item tag="router-link" to="/admindashboardbid" label="Đấu giá"></b-menu-item>
-        <b-menu-item tag="router-link" to="/" label="Người dùng"></b-menu-item>
+        <b-menu-item tag="router-link" to="/admindashboarduser" label="Người dùng"></b-menu-item>
       </b-menu-list>
       <b-menu-list>
         <b-menu-item label="👦 Đăng xuất" tag="router-link" to="/login"></b-menu-item>
