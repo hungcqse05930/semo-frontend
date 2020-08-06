@@ -1,12 +1,21 @@
 <template>
   <div class="container">
-    <div class="title">
-      <p class="list-title">
-        <slot name="title"></slot>
-      </p>
-      <div class="nav-button">
-        <b-button type="is-rounded" @click="swipeLeft">👈 Trước</b-button>
-        <b-button type="is-rounded" @click="swipeRight" style="margin-left: 16px;">Sau 👉</b-button>
+    <div class="title columns is-mobile">
+      <div class="column is-narrow">
+        <p class="list-title">
+          <slot name="title"></slot>
+        </p>
+      </div>
+      <div class="column"></div>
+      <div class="nav-button column is-narrow">
+        <div class="columns is-variable is-1 is-mobile">
+          <div class="column">
+            <b-button type="is-rounded" @click="swipeLeft">👈</b-button>
+          </div>
+          <div class="column">
+            <b-button type="is-rounded" @click="swipeRight">👉</b-button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="auctions-strip columns is-mobile is-1">
@@ -47,11 +56,6 @@ export default {
 </script>
 /*eslint-enable */
 <style scoped>
-.title {
-  display: flex;
-  justify-content: space-between;
-}
-
 .auctions-strip {
   margin: 0px;
   width: 100%;

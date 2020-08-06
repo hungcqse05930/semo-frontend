@@ -25,12 +25,12 @@ Vue.use(Buefy)
         </div>
         <div class="column is-narrow right">
           <router-link v-if="!loggedIn" to="/login">👋 Đăng nhập</router-link>
-          <router-link v-if="loggedIn" to="'/user/info'">👦 Tài khoản của bạn</router-link>
+          <router-link v-if="loggedIn" to="/user/info">👦 Tài khoản của bạn</router-link>
         </div>
       </div>
     </div>
     <!-- subtitle tabs -->
-    <div id="sub-nav">
+    <div id="sub-nav" v-if="home">
       <div id="sub-content" class="column is-two-thirds">
         <router-link to="/">🏡 Trang chủ</router-link>
         <router-link to="/auction/latest">🎇 Mới nhất</router-link>
@@ -60,19 +60,10 @@ Vue.use(Buefy)
         </div>
       </div>
     </div>
-    <router-link to="/about">About |</router-link>
     <router-link to="/login">Login |</router-link>
-    <router-link to="/registerstep2">r2 |</router-link>
-    <router-link to="/registerstep3">r3 |</router-link>
-    <router-link to="/registerstep4">r4 |</router-link>
-    <router-link to="/registerstep5">r5</router-link>
-    <router-link to="/registerstep6">r6</router-link>
-    <router-link to="/registerstep7">r7</router-link>
-    <!-- <router-link to="/userinformationfile">njlbh</router-link> -->
     <router-link to="/resetpassword">pwđ</router-link>
     <router-link to="/userinformationaddress">add</router-link>
     <router-link to="/userinformationaccuracy">accuracy</router-link>
-    <router-link to="/search">Search</router-link>
     <router-link to="/createnewproduct">CNP</router-link>
     <router-link to="/createnewproductfortree">CNPFT</router-link>
     <router-link to="/mediationdashboardproduct">mediationproduct</router-link>
@@ -101,35 +92,50 @@ export default {
   data() {
     return {
       search: "",
+      home: true,
     };
   },
   computed: {
     loggedIn() {
-      return this.$store.state.token;
+      return this.$store.state.user.token;
     },
-    // isHome() {
-    //   let isHome = false;
-    //   switch (this.$router.currentRoute.path) {
-    //     case "/":
-    //       isHome = true;
-    //       break;
-    //     case "/auction/latest":
-    //       isHome = true;
-    //       break;
-    //     case "/fruit":
-    //       isHome = true;
-    //       break;
-    //     case "/collection":
-    //       isHome = true;
-    //       break;
-    //   }
-
-    //   return isHome;
-    // },
+  },
+  watch: {
+    "$route.currentRoute.path": function () {
+      if(this.$route.currentRoute.path === '/' || this.$route.currentRoute.path === '/auction/latest'
+      || this.$route.currentRoute.path === '/fruit' || this.$route.currentRoute.path === '/collection'){
+        this.home = true
+      } else {
+        this.home = false
+      }
+    },
+  },
+  created() {
+    this.routeWatcher = this.$watch(
+      function () {
+        return this.$route.currentRoute.path;
+      },
+      function (route) {
+        if (
+          route === "/" ||
+          route === "/auction/latest" ||
+          route === "/fruit" ||
+          route === "/collection"
+        ) {
+          this.home = true;
+        } else {
+          this.home = false;
+        }
+      }
+    );
   },
   methods: {
     logout() {
-      this.$store.dispatch("LOGOUT");
+      let vm = this;
+
+      this.$store.dispatch("LOGOUT").then(() => {
+        vm.$router.push({ path: "/" });
+      });
     },
     search_universal() {
       this.$store.dispatch("SEARCH", {
@@ -327,7 +333,7 @@ body {
     padding-bottom: 12px;
 
     &.router-link-exact-active {
-      color: #B88CD8;
+      color: #b88cd8;
       border-bottom: #01d28e solid 2px;
     }
   }

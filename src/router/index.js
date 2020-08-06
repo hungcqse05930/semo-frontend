@@ -1,11 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../views/Login.vue'
-import RegisterOTP from '../views/RegisterOTP.vue'
-import ConfirmCitizen from '../views/ConfirmCitizen.vue'
-import ConfirmInformation from '../views/ConfirmInformation.vue'
-import SelectPicture from '../views/SelectPicture.vue'
-import SuccessRegister from '../views/SuccessRegister.vue'
 import NameProduct from '../views/NameProduct.vue'
 //
 // import UserInformationFile from '../views/UserInformationFile.vue'
@@ -81,7 +75,7 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: () => import('../views/Login.vue')
   },
   {
     path: '/register',
@@ -94,36 +88,29 @@ const routes = [
     component: () => import('../views/RegisterOTP.vue')
   },
   {
-    path: '/registerstep2',
-    name: 'RegisterOTP',
-    component: RegisterOTP
-  },
-  {
     path: '/register/pwd',
     name: 'Tạo mật khẩu',
     component: () => import('../views/RegisterPassword')
   },
   {
-    path: '/registerstep4',
-    name: 'ConfirmInformation',
-    component: ConfirmInformation
+    path: '/register/info',
+    name: 'Hoàn thành thông tin',
+    component: () => import('../views/RegisterInfo.vue')
   },
   {
-    path: '/registerstep5',
-    name: 'ConfirmCitizen',
-    component: ConfirmCitizen
-
+    path: '/register/identity',
+    name: 'Xác minh công dân',
+    component: () => import('../views/RegisterIdentity.vue')
   },
   {
-    path: '/registerstep6',
-    name: 'SelectPicture',
-    component: SelectPicture
-
+    path: '/register/avatar',
+    name: 'Chọn ảnh đại diện',
+    component: () => import('../views/RegisterAvatar')
   },
   {
-    path: '/registerstep7',
-    name: 'SuccessRegister',
-    component: SuccessRegister
+    path: '/register/completed',
+    name: 'Đăng ký thành công',
+    component: () => import('../views/RegisterCompleted')
   },
   {
     path: '/productstep1',

@@ -3,8 +3,8 @@
     <div class="background">
       <div class="container">
         <div id="bound" class="columns">
-          <div class="column is-half"></div>
-          <div id="form" class="column is-half">
+          <div class="column"></div>
+          <div id="form" class="column is-three-fifths">
             <!-- selection tab -->
             <div class="columns nav-tabs is-mobile is-variable is-5">
               <div class="column is-centered router-link is-narrow">
@@ -13,6 +13,14 @@
             </div>
             <!-- form -->
             <!-- sign up form -->
+            <b-notification
+              type="is-danger"
+              has-icon
+              aria-close-label="Đóng"
+              role="alert"
+              :active.sync="error"
+              class="error-notification"
+            >{{error_msg}}</b-notification>
             <section>
               <!-- input number -->
               <p class="label-info">
@@ -61,6 +69,13 @@
                 >👌 Xác nhận</b-button>
               </form>
             </section>
+
+            <p style="margin-top: 40px; font-size: 10px;">
+              Bằng việc điền đúng số điện thoại và tiến hành đăng ký,
+              <br />bạn đã đồng ý với điều khoản về chính sách bảo mật
+              <br />thông tin và quyền sử dụng thông tin cá nhân vào
+              <br />mục đích đã được nêu trong chính sách bảo mật của semo.
+            </p>
           </div>
         </div>
       </div>
@@ -81,6 +96,8 @@ export default {
       inputMessage: "",
       isDisabled: true,
       isLoading: false,
+      error: false,
+      error_msg: "",
     };
   },
   /*eslint-disable */
@@ -117,13 +134,35 @@ export default {
   methods: {
     createPassword() {
       let vm = this;
-      this.$store.dispatch("SIGN_UP_PASSWORD", {
-        password: vm.password
-      }).then(() => {
-        vm.$router.push({ path: '/' })
-      })
-    }
-  }
+
+      this.isLoading = true;
+      this.isDisabled = true;
+      this.$store
+        .dispatch("SIGN_UP_PASSWORD", {
+          password: vm.password,
+        })
+        .then(() => {
+          vm.$store
+            .dispatch("LOGIN", {
+              phone: vm.$store.state.new_user.phone,
+              password: vm.password,
+            })
+            .then(() => {
+              vm.$router.push("/register/info");
+            })
+            .catch((error) => {
+              vm.isLoading = false;
+              vm.error = true;
+              vm.error_msg = error.message;
+            });
+        })
+        .catch((error) => {
+          vm.isLoading = false;
+          vm.error = true;
+          vm.error_msg = error.message;
+        });
+    },
+  },
 };
 </script>
 <style scoped>

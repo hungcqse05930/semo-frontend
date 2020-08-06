@@ -1,6 +1,9 @@
 /*eslint eqeqeq:0*/
 // libraries
 // import firebase from 'firebase/app'
+import firebase from '@firebase/app'
+import 'firebase/firebase-auth'
+import 'firebase/storage'
 
 // set firebase config
 const firebaseConfig = ({
@@ -12,6 +15,11 @@ const firebaseConfig = ({
     messagingSenderId: "1083903204858",
     appId: "1:1083903204858:web:babd3c6c7a677eee415843"
 });
+
+const fb = firebase.initializeApp(firebaseConfig)
+const storage = firebase.storage()
+
+export {fb, storage}
 
 // firebase auth for phone number
 // function phoneAuth(firebase, phone_number) {
@@ -35,10 +43,3 @@ const firebaseConfig = ({
 //     }
 
 // };
-
-
-
-module.exports = {
-    firebaseConfig,
-    // formatNumber
-}

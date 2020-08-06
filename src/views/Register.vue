@@ -3,8 +3,8 @@
     <div class="background">
       <div class="container">
         <div id="bound" class="columns">
-          <div class="column is-half"></div>
-          <div id="form" class="column is-half">
+          <div class="column"></div>
+          <div id="form" class="column is-three-fifths">
             <!-- selection tab -->
             <div class="columns nav-tabs is-mobile is-variable is-5">
               <div class="column is-centered router-link is-narrow">
@@ -52,6 +52,7 @@
 
 <script>
 import firebase from "firebase";
+
 export default {
   name: "Register",
   data() {
@@ -198,7 +199,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .login-container {
   height: 100%;
   margin-top: 12px;
